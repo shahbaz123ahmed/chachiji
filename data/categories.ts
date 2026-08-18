@@ -1,0 +1,58 @@
+import { CategoryInfo } from "@/types/ecommerce";
+
+export const CATEGORIES: CategoryInfo[] = [
+  {
+    id: "achar",
+    slug: "achar",
+    name: "Handcrafted Achar",
+    hindiName: "पारंपरिक हस्तनिर्मित अचार",
+    headline: "Bold, Tangy & Sun-Cured with Heirloom Mithila Recipes",
+    tagline: "Bold, tangy and traditionally crafted.",
+    description: "Crafted in earthen martabans under bright natural sunshine. Made exclusively with pure wood cold-pressed mustard oil, whole hand-roasted spices, and fresh seasonal harvests from local Bihar orchards.",
+    heroImage: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1400&q=80",
+    seoTitle: "Traditional Bihari & Mithila Achar | Handcrafted Pickles Online - Chachiji",
+    seoDescription: "Buy authentic sun-cured Bihari pickles online. Hand-stuffed Bharwa Lal Mirch, Kacha Aam, and Oal Jimikand achar in pure cold-pressed mustard oil. Zero preservatives.",
+    highlights: [
+      "100% Sun-Cured in Ceramic Martabans",
+      "Wood Cold-Pressed Mustard Oil",
+      "Hand-Roasted In-House Spices",
+      "Zero Synthetic Preservatives or Vinegar",
+    ],
+  },
+  {
+    id: "makhana",
+    slug: "makhana",
+    name: "Mithila Makhana",
+    hindiName: "प्रीमियम मिथिला मखाना (फॉक्स नट्स)",
+    headline: "Light, Crunchy & Sourced from Sacred Mithila Wetlands",
+    tagline: "Light, crunchy and naturally delicious.",
+    description: "Harvested directly from pristine lotus ponds across Mithila, Bihar. Our Grade A+ jumbo fox nuts are naturally popped and roasted in pure A2 Desi Cow Ghee with organic rock salts and herbal spices.",
+    heroImage: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=1400&q=80",
+    seoTitle: "Authentic Mithila Makhana Online | Raw & Ghee-Roasted Fox Nuts - Chachiji",
+    seoDescription: "Order GI-Tagged Mithila Makhana online from Chachiji. Jumbo grade raw and A2 cow ghee roasted flavours. Protein-rich, gluten-free traditional Indian superfood.",
+    highlights: [
+      "GI-Tagged Mithila Regional Sourcing",
+      "Jumbo Grade A+ 6-Suta+ Sorted Kernels",
+      "Roasted in Pure A2 Desi Ghee (0% Palm Oil)",
+      "High Protein, Gluten-Free & Low Calorie",
+    ],
+  },
+  {
+    id: "bundles",
+    slug: "bundles",
+    name: "Curated Boxes & Gifts",
+    hindiName: "क्युरेटेड गिफ्ट बॉक्स एवं बंडल्स",
+    headline: "Handpicked Heritage Collections for Gifting & Feasting",
+    tagline: "Taste of home, beautifully boxed.",
+    description: "Experience the complete spectrum of Chachiji's culinary heritage. Handcrafted gift boxes featuring our most celebrated pickles, premium makhana packs, and artisan wooden accessories.",
+    heroImage: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1400&q=80",
+    seoTitle: "Indian Food Gift Boxes & Pickle Hampers | Bundles - Chachiji",
+    seoDescription: "Explore luxury gift boxes and value bundles of authentic Indian pickles and Mithila makhana. Packed in premium keepsake boxes with complimentary wooden spoons.",
+    highlights: [
+      "Save up to 28% with Bundle Pricing",
+      "Premium Gift-Ready Packaging",
+      "Complimentary Artisan Wooden Spoon",
+      "Ideal for Festivals & Family Gifting",
+    ],
+  },
+];

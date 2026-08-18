@@ -1,26 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Chachiji Exact Design Tokens — 100% Solid & Crisp */
+  --chachiji-red: #8B3E3E;
+  --chachiji-red-hover: #733232;
+  --chachiji-peach: #F7A77A;
+  --chachiji-peach-hover: #E89565;
+  --chachiji-cream: #FCE9D6;
+  --chachiji-text: #333333;
+  --chachiji-white: #FFFFFF;
+  --chachiji-border: rgba(51, 51, 51, 0.10);
+  --star-gold: #E5A93C;
+
+  /* Semantic shortcuts */
+  --primary: #8B3E3E;
+  --secondary: #F7A77A;
+  --cream: #FCE9D6;
+  --charcoal: #333333;
+  --white: #FFFFFF;
+  --card-border: rgba(51, 51, 51, 0.10);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  
+  --color-primary: #8B3E3E;
+  --color-primary-hover: #733232;
+  --color-secondary: #F7A77A;
+  --color-secondary-hover: #E89565;
+  --color-cream: #FCE9D6;
+  --color-charcoal: #333333;
+  --color-white: #FFFFFF;
+  --color-card-border: rgba(51, 51, 51, 0.10);
+  --color-star-gold: #E5A93C;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: #FFFFFF;
+  color: #333333;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-serif, .serif-heading {
+  font-family: var(--font-serif);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FCE9D6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B3E3E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #733232;
+}
+
+/* Smooth Focus Rings */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #8B3E3E;
+  outline-offset: 2px;
 }
