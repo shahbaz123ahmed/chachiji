@@ -44,12 +44,12 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className="group relative bg-[#FFFFFF] rounded-2xl border border-[rgba(51,51,51,0.12)] hover:border-[#8B3E3E] shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden"
+      className="group relative bg-[#FFFFFF] rounded-2xl border border-[rgba(51,51,51,0.12)] hover:border-[#8C201C] shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Top Image Section - Clean #FCE9D6 backdrop */}
-      <div className="relative aspect-square w-full overflow-hidden bg-[#FCE9D6]">
+      {/* Top Image Section - Clean #FFF9F3 backdrop */}
+      <div className="relative aspect-square w-full overflow-hidden bg-[#FFF9F3]">
         <Link href={`/product/${product.slug}`} className="block w-full h-full">
           <Image
             src={displayImage}
@@ -63,13 +63,13 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Badges - 100% Solid Colors */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
           {product.isBestseller && (
-            <span className="bg-[#8B3E3E] text-[#FFFFFF] text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1">
-              <Sparkles className="w-2.5 h-2.5 text-[#F7A77A]" />
+            <span className="bg-[#8C201C] text-[#FFFFFF] text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1">
+              <Sparkles className="w-2.5 h-2.5 text-[#E07A4A]" />
               Bestseller
             </span>
           )}
           {product.discountPercentage > 0 && (
-            <span className="bg-[#F7A77A] text-[#333333] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-sm">
+            <span className="bg-[#E07A4A] text-[#231F20] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-sm">
               {product.discountPercentage}% OFF
             </span>
           )}
@@ -82,12 +82,12 @@ export default function ProductCard({ product }: ProductCardProps) {
             e.stopPropagation();
             toggleWishlist(product.id);
           }}
-          className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-[#FFFFFF] flex items-center justify-center text-[#333333] hover:text-[#8B3E3E] shadow-sm transition-all border border-[rgba(51,51,51,0.10)]"
+          className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-[#FFFFFF] flex items-center justify-center text-[#231F20] hover:text-[#8C201C] shadow-sm transition-all border border-[rgba(51,51,51,0.10)]"
           aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
         >
           <Heart
             className={`w-4 h-4 transition-colors ${
-              isWishlisted ? "fill-[#8B3E3E] text-[#8B3E3E]" : "text-[#777777]"
+              isWishlisted ? "fill-[#8C201C] text-[#8C201C]" : "text-[#777777]"
             }`}
           />
         </button>
@@ -96,11 +96,11 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="absolute inset-x-3 bottom-3 z-10 hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity duration-150">
           <button
             onClick={handleQuickAdd}
-            className="w-full bg-[#8B3E3E] hover:bg-[#733232] text-[#FFFFFF] font-bold text-xs py-2.5 px-4 rounded-xl shadow-md flex items-center justify-center gap-2 transition-all active:scale-95"
+            className="w-full bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs py-2.5 px-4 rounded-xl shadow-md flex items-center justify-center gap-2 transition-all active:scale-95"
           >
             {isAddedRecently ? (
               <>
-                <Check className="w-4 h-4 text-[#F7A77A]" />
+                <Check className="w-4 h-4 text-[#E07A4A]" />
                 <span>Added to Basket!</span>
               </>
             ) : (
@@ -114,27 +114,27 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Content Section - 100% Solid White */}
-      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between bg-[#FFFFFF]">
+      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between bg-[#FFF9F3]">
         <div>
           {/* Category & Rating */}
           <div className="flex items-center justify-between gap-2 mb-1.5">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#8B3E3E]">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C201C]">
               {product.category === "achar"
                 ? "Sun-Cured Achar"
                 : product.category === "makhana"
                 ? "Mithila Makhana"
                 : "Curated Box"}
             </span>
-            <div className="flex items-center gap-1 text-xs text-[#E5A93C]">
-              <Star className="w-3.5 h-3.5 fill-[#E5A93C]" />
-              <span className="font-bold text-[#333333]">{product.rating}</span>
+            <div className="flex items-center gap-1 text-xs text-[#F3A83B]">
+              <Star className="w-3.5 h-3.5 fill-[#F3A83B]" />
+              <span className="font-bold text-[#231F20]">{product.rating}</span>
               <span className="text-[10px] text-[#777777]">({product.reviewCount})</span>
             </div>
           </div>
 
           {/* Product Name */}
           <Link href={`/product/${product.slug}`} className="block">
-            <h3 className="font-serif text-base sm:text-lg font-bold text-[#333333] leading-snug line-clamp-1 hover:text-[#8B3E3E] transition-colors">
+            <h3 className="font-serif text-base sm:text-lg font-bold text-[#231F20] leading-snug line-clamp-1 hover:text-[#8C201C] transition-colors">
               {product.name}
             </h3>
             {product.hindiName && (
@@ -160,8 +160,8 @@ export default function ProductCard({ product }: ProductCardProps) {
                   onClick={() => setSelectedVariant(v)}
                   className={`text-[10px] px-2.5 py-0.5 rounded-md border font-semibold transition-colors ${
                     selectedVariant.id === v.id
-                      ? "bg-[#8B3E3E] text-[#FFFFFF] border-[#8B3E3E]"
-                      : "bg-[#FFFFFF] text-[#555555] border-[rgba(51,51,51,0.15)] hover:border-[#8B3E3E]"
+                      ? "bg-[#8C201C] text-[#FFFFFF] border-[#8C201C]"
+                      : "bg-[#FFFFFF] text-[#555555] border-[rgba(51,51,51,0.15)] hover:border-[#8C201C]"
                   }`}
                 >
                   {v.weight}
@@ -176,7 +176,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           <div className="flex items-center justify-between">
             <div className="flex items-baseline gap-2">
-              <span className="font-serif text-xl sm:text-2xl font-bold text-[#8B3E3E]">
+              <span className="font-serif text-xl sm:text-2xl font-bold text-[#8C201C]">
                 ₹{selectedVariant.price}
               </span>
               {selectedVariant.mrp > selectedVariant.price && (
@@ -189,7 +189,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             {/* Mobile Quick Add Button */}
             <button
               onClick={handleQuickAdd}
-              className="sm:hidden p-2 rounded-xl bg-[#8B3E3E] text-[#FFFFFF] hover:bg-[#733232] transition-colors shadow-xs"
+              className="sm:hidden p-2 rounded-xl bg-[#8C201C] text-[#FFFFFF] hover:bg-[#6B1815] transition-colors shadow-xs"
               aria-label="Add to cart"
             >
               <ShoppingBag className="w-4 h-4" />
@@ -200,3 +200,4 @@ export default function ProductCard({ product }: ProductCardProps) {
     </div>
   );
 }
+

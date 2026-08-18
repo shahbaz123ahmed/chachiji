@@ -11,7 +11,7 @@ import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import Toast from "@/components/ui/Toast";
 
 export const viewport: Viewport = {
-  themeColor: "#8B3E3E",
+  themeColor: "#8C201C",
   width: "device-width",
   initialScale: 1,
 };
@@ -76,7 +76,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-[#FFFFFF] text-[#333333] antialiased">
+      <body className="min-h-screen flex flex-col bg-[#FFFFFF] text-[#231F20] antialiased">
         <CartProvider>
           <WishlistProvider>
             <SearchProvider>
@@ -94,3 +94,4 @@ export default function RootLayout({
     </html>
   );
 }
+

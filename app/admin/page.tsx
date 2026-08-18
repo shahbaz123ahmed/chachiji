@@ -85,20 +85,20 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="bg-[#FFFFFF] min-h-screen flex flex-col lg:flex-row">
-      {/* 1. ADMIN SIDEBAR - 100% Solid Deep Red (#8B3E3E) */}
-      <aside className="w-full lg:w-64 bg-[#8B3E3E] text-[#FFFFFF] flex flex-col justify-between shrink-0 p-5 lg:min-h-screen border-r border-[#733232]">
+      {/* 1. ADMIN SIDEBAR - 100% Solid Deep Red (#8C201C) */}
+      <aside className="w-full lg:w-64 bg-[#8C201C] text-[#FFFFFF] flex flex-col justify-between shrink-0 p-5 lg:min-h-screen border-r border-[#6B1815]">
         <div>
           {/* Brand Header */}
-          <div className="flex items-center justify-between pb-6 border-b border-[#733232] mb-6">
+          <div className="flex items-center justify-between pb-6 border-b border-[#6B1815] mb-6">
             <Link href="/" className="flex flex-col">
               <span className="font-serif text-2xl font-bold tracking-tight text-[#FFFFFF]">
                 CHACHIJI
               </span>
-              <span className="text-[9px] uppercase tracking-[0.25em] text-[#F7A77A] font-bold">
+              <span className="text-[9px] uppercase tracking-[0.25em] text-[#E07A4A] font-bold">
                 Admin Console
               </span>
             </Link>
-            <span className="bg-[#F7A77A] text-[#333333] text-[9px] font-bold px-2 py-0.5 rounded-md">
+            <span className="bg-[#E07A4A] text-[#231F20] text-[9px] font-bold px-2 py-0.5 rounded-md">
               v2.4
             </span>
           </div>
@@ -109,8 +109,8 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("overview")}
               className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition-all ${
                 activeTab === "overview"
-                  ? "bg-[#F7A77A] text-[#333333] shadow-sm font-bold"
-                  : "text-[#FFFFFF] hover:bg-[#733232]"
+                  ? "bg-[#E07A4A] text-[#231F20] shadow-sm font-bold"
+                  : "text-[#FFFFFF] hover:bg-[#6B1815]"
               }`}
             >
               <LayoutDashboard className="w-4 h-4" />
@@ -121,8 +121,8 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("orders")}
               className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all ${
                 activeTab === "orders"
-                  ? "bg-[#F7A77A] text-[#333333] shadow-sm font-bold"
-                  : "text-[#FFFFFF] hover:bg-[#733232]"
+                  ? "bg-[#E07A4A] text-[#231F20] shadow-sm font-bold"
+                  : "text-[#FFFFFF] hover:bg-[#6B1815]"
               }`}
             >
               <div className="flex items-center gap-3">
@@ -138,8 +138,8 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("products")}
               className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition-all ${
                 activeTab === "products"
-                  ? "bg-[#F7A77A] text-[#333333] shadow-sm font-bold"
-                  : "text-[#FFFFFF] hover:bg-[#733232]"
+                  ? "bg-[#E07A4A] text-[#231F20] shadow-sm font-bold"
+                  : "text-[#FFFFFF] hover:bg-[#6B1815]"
               }`}
             >
               <Package className="w-4 h-4" />
@@ -150,8 +150,8 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("customers")}
               className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition-all ${
                 activeTab === "customers"
-                  ? "bg-[#F7A77A] text-[#333333] shadow-sm font-bold"
-                  : "text-[#FFFFFF] hover:bg-[#733232]"
+                  ? "bg-[#E07A4A] text-[#231F20] shadow-sm font-bold"
+                  : "text-[#FFFFFF] hover:bg-[#6B1815]"
               }`}
             >
               <Users className="w-4 h-4" />
@@ -162,8 +162,8 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveTab("settings")}
               className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition-all ${
                 activeTab === "settings"
-                  ? "bg-[#F7A77A] text-[#333333] shadow-sm font-bold"
-                  : "text-[#FFFFFF] hover:bg-[#733232]"
+                  ? "bg-[#E07A4A] text-[#231F20] shadow-sm font-bold"
+                  : "text-[#FFFFFF] hover:bg-[#6B1815]"
               }`}
             >
               <Settings className="w-4 h-4" />
@@ -173,14 +173,14 @@ export default function AdminDashboardPage() {
         </div>
 
         {/* Sidebar Footer */}
-        <div className="pt-6 border-t border-[#733232] text-xs text-[#FFFFFF] flex items-center justify-between">
+        <div className="pt-6 border-t border-[#6B1815] text-xs text-[#FFFFFF] flex items-center justify-between">
           <div>
             <span className="font-bold block text-white">Vaishali Kitchen Hub</span>
-            <span className="text-[10px] text-[#F7A77A] font-bold">Status: Active &amp; Sun-Curing</span>
+            <span className="text-[10px] text-[#E07A4A] font-bold">Status: Active &amp; Sun-Curing</span>
           </div>
           <Link
             href="/"
-            className="p-2 bg-[#733232] hover:bg-[#F7A77A] hover:text-[#333333] rounded-lg text-white transition-colors"
+            className="p-2 bg-[#6B1815] hover:bg-[#E07A4A] hover:text-[#231F20] rounded-lg text-white transition-colors"
             title="View Live Storefront"
           >
             <Eye className="w-4 h-4" />
@@ -193,20 +193,20 @@ export default function AdminDashboardPage() {
         {/* Top Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-[rgba(51,51,51,0.10)]">
           <div>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B3E3E]">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
               Dashboard Analytics
             </span>
-            <h1 className="font-serif text-3xl font-bold text-[#333333] mt-0.5">
+            <h1 className="font-serif text-3xl font-bold text-[#231F20] mt-0.5">
               Kitchen Performance &amp; Operations
             </h1>
           </div>
 
           <div className="flex items-center gap-3">
-            <button className="p-2.5 rounded-xl bg-[#FFFFFF] border-2 border-[rgba(51,51,51,0.12)] text-[#333333] hover:text-[#8B3E3E] shadow-2xs relative">
+            <button className="p-2.5 rounded-xl bg-[#FFFFFF] border-2 border-[rgba(51,51,51,0.12)] text-[#231F20] hover:text-[#8C201C] shadow-2xs relative">
               <Bell className="w-4 h-4" />
-              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-[#8B3E3E]" />
+              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-[#8C201C]" />
             </button>
-            <button className="bg-[#8B3E3E] hover:bg-[#733232] text-[#FFFFFF] font-bold text-xs px-5 py-3 rounded-xl shadow-sm flex items-center gap-1.5 transition-all">
+            <button className="bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs px-5 py-3 rounded-xl shadow-sm flex items-center gap-1.5 transition-all">
               <Plus className="w-3.5 h-3.5" />
               <span>New Batch / Product</span>
             </button>
@@ -223,7 +223,7 @@ export default function AdminDashboardPage() {
                 <ArrowUpRight className="w-3 h-3" /> +26.4%
               </span>
             </div>
-            <span className="font-serif text-3xl font-bold text-[#8B3E3E] block">
+            <span className="font-serif text-3xl font-bold text-[#8C201C] block">
               ₹4,92,450
             </span>
             <span className="text-[11px] text-[#777777] font-medium mt-1 block">
@@ -235,11 +235,11 @@ export default function AdminDashboardPage() {
           <div className="bg-[#FFFFFF] p-5 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs">
             <div className="flex items-center justify-between text-xs text-[#555555] font-bold mb-2">
               <span>Orders in Pipeline</span>
-              <span className="inline-flex items-center text-[10px] font-bold text-[#333333] bg-[#F7A77A] px-2 py-0.5 rounded-md shadow-2xs">
+              <span className="inline-flex items-center text-[10px] font-bold text-[#231F20] bg-[#E07A4A] px-2 py-0.5 rounded-md shadow-2xs">
                 18 Pending Dispatch
               </span>
             </div>
-            <span className="font-serif text-3xl font-bold text-[#333333] block">
+            <span className="font-serif text-3xl font-bold text-[#231F20] block">
               42 Orders
             </span>
             <span className="text-[11px] text-[#777777] font-medium mt-1 block">
@@ -251,11 +251,11 @@ export default function AdminDashboardPage() {
           <div className="bg-[#FFFFFF] p-5 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs">
             <div className="flex items-center justify-between text-xs text-[#555555] font-bold mb-2">
               <span>Sun-Curing Batches</span>
-              <span className="inline-flex items-center text-[10px] font-bold text-[#8B3E3E] bg-[#FCE9D6] px-2 py-0.5 rounded-md border border-[rgba(51,51,51,0.10)]">
+              <span className="inline-flex items-center text-[10px] font-bold text-[#8C201C] bg-[#FFF9F3] px-2 py-0.5 rounded-md border border-[rgba(51,51,51,0.10)]">
                 Day 8 of 14
               </span>
             </div>
-            <span className="font-serif text-3xl font-bold text-[#8B3E3E] block">
+            <span className="font-serif text-3xl font-bold text-[#8C201C] block">
               14 Martabans
             </span>
             <span className="text-[11px] text-[#777777] font-medium mt-1 block">
@@ -267,11 +267,11 @@ export default function AdminDashboardPage() {
           <div className="bg-[#FFFFFF] p-5 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs">
             <div className="flex items-center justify-between text-xs text-[#555555] font-bold mb-2">
               <span>Customer Satisfaction</span>
-              <span className="inline-flex items-center text-[10px] font-bold text-[#333333] bg-amber-200 px-2 py-0.5 rounded-md">
+              <span className="inline-flex items-center text-[10px] font-bold text-[#231F20] bg-amber-200 px-2 py-0.5 rounded-md">
                 ★ 4.9 Rating
               </span>
             </div>
-            <span className="font-serif text-3xl font-bold text-[#333333] block">
+            <span className="font-serif text-3xl font-bold text-[#231F20] block">
               98.2%
             </span>
             <span className="text-[11px] text-[#777777] font-medium mt-1 block">
@@ -286,7 +286,7 @@ export default function AdminDashboardPage() {
           <div className="lg:col-span-7 bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs space-y-6">
             <div className="flex items-center justify-between border-b border-[rgba(51,51,51,0.10)] pb-4">
               <div>
-                <h3 className="font-serif text-lg font-bold text-[#333333]">
+                <h3 className="font-serif text-lg font-bold text-[#231F20]">
                   6-Month Revenue &amp; Growth
                 </h3>
                 <span className="text-xs text-[#555555] font-medium">
@@ -294,12 +294,12 @@ export default function AdminDashboardPage() {
                 </span>
               </div>
               <div className="flex items-center gap-3 text-xs">
-                <span className="flex items-center gap-1.5 text-[#8B3E3E] font-bold">
-                  <span className="w-3 h-3 rounded-full bg-[#8B3E3E]" />
+                <span className="flex items-center gap-1.5 text-[#8C201C] font-bold">
+                  <span className="w-3 h-3 rounded-full bg-[#8C201C]" />
                   Sales (₹)
                 </span>
-                <span className="flex items-center gap-1.5 text-[#F7A77A] font-bold">
-                  <span className="w-3 h-3 rounded-full bg-[#F7A77A]" />
+                <span className="flex items-center gap-1.5 text-[#E07A4A] font-bold">
+                  <span className="w-3 h-3 rounded-full bg-[#E07A4A]" />
                   Orders
                 </span>
               </div>
@@ -312,16 +312,16 @@ export default function AdminDashboardPage() {
                   const heightPercent = Math.round((item.sales / maxSales) * 100);
                   return (
                     <div key={idx} className="flex flex-col items-center gap-2 h-full justify-end group">
-                      <div className="text-[10px] font-bold text-[#8B3E3E] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="text-[10px] font-bold text-[#8C201C] opacity-0 group-hover:opacity-100 transition-opacity">
                         ₹{(item.sales / 1000).toFixed(0)}k
                       </div>
-                      <div className="w-full max-w-[36px] bg-[#FCE9D6] rounded-t-lg overflow-hidden flex flex-col justify-end h-full">
+                      <div className="w-full max-w-[36px] bg-[#FFF9F3] rounded-t-lg overflow-hidden flex flex-col justify-end h-full">
                         <div
-                          className="w-full bg-[#8B3E3E] hover:bg-[#733232] rounded-t-lg transition-all"
+                          className="w-full bg-[#8C201C] hover:bg-[#6B1815] rounded-t-lg transition-all"
                           style={{ height: `${heightPercent}%` }}
                         />
                       </div>
-                      <span className="text-xs font-bold text-[#333333]">
+                      <span className="text-xs font-bold text-[#231F20]">
                         {item.month}
                       </span>
                     </div>
@@ -333,48 +333,48 @@ export default function AdminDashboardPage() {
 
           {/* Quick Stock & Top Categories */}
           <div className="lg:col-span-5 bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs space-y-5">
-            <h3 className="font-serif text-lg font-bold text-[#333333] border-b border-[rgba(51,51,51,0.10)] pb-3">
+            <h3 className="font-serif text-lg font-bold text-[#231F20] border-b border-[rgba(51,51,51,0.10)] pb-3">
               Top Selling Flavour Categories
             </h3>
 
             <div className="space-y-4 text-xs">
               <div>
-                <div className="flex justify-between font-bold text-[#333333] mb-1">
+                <div className="flex justify-between font-bold text-[#231F20] mb-1">
                   <span>Bharwa Lal Mirch &amp; Mango Achar</span>
-                  <span className="text-[#8B3E3E]">54% (₹2.65L)</span>
+                  <span className="text-[#8C201C]">54% (₹2.65L)</span>
                 </div>
-                <div className="w-full bg-[#FCE9D6] rounded-full h-2.5">
-                  <div className="bg-[#8B3E3E] h-2.5 rounded-full" style={{ width: "54%" }} />
+                <div className="w-full bg-[#FFF9F3] rounded-full h-2.5">
+                  <div className="bg-[#8C201C] h-2.5 rounded-full" style={{ width: "54%" }} />
                 </div>
               </div>
 
               <div>
-                <div className="flex justify-between font-bold text-[#333333] mb-1">
+                <div className="flex justify-between font-bold text-[#231F20] mb-1">
                   <span>GI-Tagged Mithila Makhana</span>
-                  <span className="text-[#8B3E3E]">28% (₹1.38L)</span>
+                  <span className="text-[#8C201C]">28% (₹1.38L)</span>
                 </div>
-                <div className="w-full bg-[#FCE9D6] rounded-full h-2.5">
-                  <div className="bg-[#F7A77A] h-2.5 rounded-full" style={{ width: "28%" }} />
+                <div className="w-full bg-[#FFF9F3] rounded-full h-2.5">
+                  <div className="bg-[#E07A4A] h-2.5 rounded-full" style={{ width: "28%" }} />
                 </div>
               </div>
 
               <div>
-                <div className="flex justify-between font-bold text-[#333333] mb-1">
+                <div className="flex justify-between font-bold text-[#231F20] mb-1">
                   <span>Curated Heritage 3-Jar Gift Boxes</span>
-                  <span className="text-[#8B3E3E]">18% (₹88.5k)</span>
+                  <span className="text-[#8C201C]">18% (₹88.5k)</span>
                 </div>
-                <div className="w-full bg-[#FCE9D6] rounded-full h-2.5">
-                  <div className="bg-[#733232] h-2.5 rounded-full" style={{ width: "18%" }} />
+                <div className="w-full bg-[#FFF9F3] rounded-full h-2.5">
+                  <div className="bg-[#6B1815] h-2.5 rounded-full" style={{ width: "18%" }} />
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#FCE9D6] p-4 rounded-2xl border border-[rgba(51,51,51,0.10)] space-y-1">
-              <span className="font-bold text-xs text-[#8B3E3E] flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#F7A77A]" />
+            <div className="bg-[#FFF9F3] p-4 rounded-2xl border border-[rgba(51,51,51,0.10)] space-y-1">
+              <span className="font-bold text-xs text-[#8C201C] flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#E07A4A]" />
                 Low Stock Alert
               </span>
-              <p className="text-[11px] text-[#333333] font-medium">
+              <p className="text-[11px] text-[#231F20] font-medium">
                 Only 12 jars left of <strong>Bihari Oal Jimikand Achar (400g)</strong>. Next batch unlocks from sun-curing on Friday.
               </p>
             </div>
@@ -385,7 +385,7 @@ export default function AdminDashboardPage() {
         <div className="bg-[#FFFFFF] rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs overflow-hidden">
           <div className="p-6 border-b border-[rgba(51,51,51,0.10)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h3 className="font-serif text-lg font-bold text-[#333333]">
+              <h3 className="font-serif text-lg font-bold text-[#231F20]">
                 Recent Customer Orders
               </h3>
               <span className="text-xs text-[#555555] font-medium">
@@ -394,8 +394,8 @@ export default function AdminDashboardPage() {
             </div>
 
             <div className="flex items-center gap-2">
-              <button className="text-xs bg-[#FCE9D6] text-[#333333] font-bold px-3.5 py-2 rounded-xl flex items-center gap-1.5 border border-[rgba(51,51,51,0.10)]">
-                <Filter className="w-3.5 h-3.5 text-[#8B3E3E]" />
+              <button className="text-xs bg-[#FFF9F3] text-[#231F20] font-bold px-3.5 py-2 rounded-xl flex items-center gap-1.5 border border-[rgba(51,51,51,0.10)]">
+                <Filter className="w-3.5 h-3.5 text-[#8C201C]" />
                 <span>Filter</span>
               </button>
             </div>
@@ -403,7 +403,7 @@ export default function AdminDashboardPage() {
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-[#FCE9D6] text-[#8B3E3E] font-bold border-b border-[rgba(51,51,51,0.10)] uppercase text-[10px] tracking-wider">
+              <thead className="bg-[#FFF9F3] text-[#8C201C] font-bold border-b border-[rgba(51,51,51,0.10)] uppercase text-[10px] tracking-wider">
                 <tr>
                   <th className="py-3.5 px-6">Order ID</th>
                   <th className="py-3.5 px-6">Customer</th>
@@ -415,21 +415,21 @@ export default function AdminDashboardPage() {
               </thead>
               <tbody className="divide-y divide-[rgba(51,51,51,0.08)]">
                 {recentOrders.map((ord) => (
-                  <tr key={ord.id} className="hover:bg-[#FCE9D6]/30 transition-colors">
-                    <td className="py-4 px-6 font-bold text-[#8B3E3E]">
+                  <tr key={ord.id} className="hover:bg-[#FFF9F3]/30 transition-colors">
+                    <td className="py-4 px-6 font-bold text-[#8C201C]">
                       {ord.id}
                       <span className="block text-[10px] font-medium text-[#777777]">
                         {ord.date}
                       </span>
                     </td>
                     <td className="py-4 px-6">
-                      <span className="font-bold text-[#333333] block">{ord.customer}</span>
+                      <span className="font-bold text-[#231F20] block">{ord.customer}</span>
                       <span className="text-[#555555] text-[11px] font-medium">{ord.city}</span>
                     </td>
-                    <td className="py-4 px-6 text-[#333333] font-medium max-w-xs truncate">
+                    <td className="py-4 px-6 text-[#231F20] font-medium max-w-xs truncate">
                       {ord.items}
                     </td>
-                    <td className="py-4 px-6 font-bold text-[#333333] text-sm">
+                    <td className="py-4 px-6 font-bold text-[#231F20] text-sm">
                       ₹{ord.total}
                       <span className="block text-[10px] font-medium text-[#777777]">
                         {ord.payment}
@@ -441,7 +441,7 @@ export default function AdminDashboardPage() {
                           ord.status === "Delivered"
                             ? "bg-emerald-100 text-emerald-800"
                             : ord.status === "Shipped"
-                            ? "bg-[#F7A77A] text-[#333333]"
+                            ? "bg-[#E07A4A] text-[#231F20]"
                             : "bg-amber-100 text-amber-800"
                         }`}
                       >
@@ -449,7 +449,7 @@ export default function AdminDashboardPage() {
                       </span>
                     </td>
                     <td className="py-4 px-6 text-right">
-                      <button className="bg-[#8B3E3E] hover:bg-[#733232] text-[#FFFFFF] text-xs font-bold px-3.5 py-1.5 rounded-lg transition-colors shadow-2xs">
+                      <button className="bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] text-xs font-bold px-3.5 py-1.5 rounded-lg transition-colors shadow-2xs">
                         View
                       </button>
                     </td>
@@ -463,3 +463,4 @@ export default function AdminDashboardPage() {
     </div>
   );
 }
+

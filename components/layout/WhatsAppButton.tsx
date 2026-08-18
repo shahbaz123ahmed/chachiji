@@ -15,19 +15,19 @@ export default function WhatsAppButton() {
           <div className="flex items-center justify-between border-b border-[#EBD7C5] pb-2 mb-2">
             <div className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#8B3E3E]">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#8C201C]">
                 Chachiji Support
               </span>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-[#777777] hover:text-[#8B3E3E] p-0.5"
+              className="text-[#777777] hover:text-[#8C201C] p-0.5"
               aria-label="Close message"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
-          <p className="text-xs text-[#333333] leading-relaxed mb-3">
+          <p className="text-xs text-[#231F20] leading-relaxed mb-3">
             Namaste! 🙏 Need help choosing authentic pickles or placing a bulk order? Chat with our kitchen in Vaishali.
           </p>
           <a
@@ -45,7 +45,7 @@ export default function WhatsAppButton() {
       {/* Floating Action Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group relative flex items-center justify-center w-13 h-13 rounded-full bg-[#8B3E3E] text-[#FCE9D6] hover:text-white shadow-xl hover:shadow-2xl border border-[#733232] transition-all duration-300 hover:scale-105 active:scale-95"
+        className="group relative flex items-center justify-center w-13 h-13 rounded-full bg-[#8C201C] text-[#FFF9F3] hover:text-white shadow-xl hover:shadow-2xl border border-[#6B1815] transition-all duration-300 hover:scale-105 active:scale-95"
         aria-label="Contact on WhatsApp"
       >
         <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -57,3 +57,4 @@ export default function WhatsAppButton() {
     </div>
   );
 }
+

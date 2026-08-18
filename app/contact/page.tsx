@@ -42,10 +42,10 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B3E3E]">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
             Connect With Our Kitchen
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#333333] mt-1 mb-3">
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#231F20] mt-1 mb-3">
             We&apos;d Love to Hear From You
           </h1>
           <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
@@ -57,15 +57,15 @@ export default function ContactPage() {
           {/* Left: Contact Info Cards */}
           <div className="lg:col-span-5 space-y-6">
             {/* Kitchen Address Card */}
-            <div className="bg-[#FCE9D6] p-6 sm:p-7 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-xs space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#8B3E3E] block">
+            <div className="bg-[#FFF9F3] p-6 sm:p-7 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-xs space-y-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#8C201C] block">
                 Direct Kitchen Facility
               </span>
 
               <div className="flex items-start gap-3 text-xs">
-                <MapPin className="w-5 h-5 text-[#8B3E3E] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#8C201C] shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
-                  <strong className="text-[#333333] font-bold block text-sm">
+                  <strong className="text-[#231F20] font-bold block text-sm">
                     Chachiji&apos;s Homemade Cuisine
                   </strong>
                   <p className="text-[#555555] font-medium leading-relaxed">
@@ -79,28 +79,28 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-center gap-3 text-xs pt-2 border-t border-[rgba(51,51,51,0.10)]">
-                <Phone className="w-4 h-4 text-[#8B3E3E] shrink-0" />
-                <a href="tel:+918860488004" className="text-[#333333] font-bold hover:text-[#8B3E3E]">
+                <Phone className="w-4 h-4 text-[#8C201C] shrink-0" />
+                <a href="tel:+918860488004" className="text-[#231F20] font-bold hover:text-[#8C201C]">
                   {BRAND_INFO.phone}
                 </a>
               </div>
 
               <div className="flex items-center gap-3 text-xs">
-                <Mail className="w-4 h-4 text-[#8B3E3E] shrink-0" />
-                <a href={`mailto:${BRAND_INFO.email}`} className="text-[#333333] font-bold hover:text-[#8B3E3E]">
+                <Mail className="w-4 h-4 text-[#8C201C] shrink-0" />
+                <a href={`mailto:${BRAND_INFO.email}`} className="text-[#231F20] font-bold hover:text-[#8C201C]">
                   {BRAND_INFO.email}
                 </a>
               </div>
 
               <div className="flex items-center gap-3 text-xs">
-                <Clock className="w-4 h-4 text-[#8B3E3E] shrink-0" />
+                <Clock className="w-4 h-4 text-[#8C201C] shrink-0" />
                 <span className="text-[#555555] font-medium">Mon - Sat: 9:00 AM to 7:00 PM IST</span>
               </div>
             </div>
 
             {/* WhatsApp Card */}
             <div className="bg-[#FFFFFF] p-6 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#8B3E3E] block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#8C201C] block">
                 Instant WhatsApp Assistance
               </span>
               <p className="text-xs text-[#555555] font-medium leading-relaxed">
@@ -110,9 +110,9 @@ export default function ContactPage() {
                 href={BRAND_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#8B3E3E] hover:bg-[#733232] text-[#FFFFFF] font-bold text-xs px-6 py-3 rounded-xl transition-all shadow-sm w-full justify-center"
+                className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs px-6 py-3 rounded-xl transition-all shadow-sm w-full justify-center"
               >
-                <MessageCircle className="w-4 h-4 text-[#F7A77A]" />
+                <MessageCircle className="w-4 h-4 text-[#E07A4A]" />
                 <span>Chat with us on WhatsApp</span>
               </a>
             </div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
 
           {/* Right: Contact Form */}
           <div className="lg:col-span-7 bg-[#FFFFFF] p-6 sm:p-10 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-sm">
-            <h3 className="font-serif text-2xl font-bold text-[#333333] mb-2">
+            <h3 className="font-serif text-2xl font-bold text-[#231F20] mb-2">
               Send a Note to Our Kitchen
             </h3>
             <p className="text-xs text-[#555555] font-medium mb-6">
@@ -128,8 +128,8 @@ export default function ContactPage() {
             </p>
 
             {isSubmitted ? (
-              <div className="bg-[#FCE9D6] border border-[#F7A77A] rounded-2xl p-6 text-center text-[#8B3E3E] space-y-2">
-                <CheckCircle2 className="w-8 h-8 mx-auto text-[#8B3E3E]" />
+              <div className="bg-[#FFF9F3] border border-[#E07A4A] rounded-2xl p-6 text-center text-[#8C201C] space-y-2">
+                <CheckCircle2 className="w-8 h-8 mx-auto text-[#8C201C]" />
                 <h4 className="font-serif text-lg font-bold">Dhanyawad! Message Sent.</h4>
                 <p className="text-xs text-[#555555] font-medium">
                   We have received your message and will reach out promptly via email or phone.
@@ -139,7 +139,7 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-[#333333] mb-1">
+                    <label className="block text-xs font-bold text-[#231F20] mb-1">
                       Your Name *
                     </label>
                     <input
@@ -148,12 +148,12 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Ramesh Sharma"
-                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#333333] mb-1">
+                    <label className="block text-xs font-bold text-[#231F20] mb-1">
                       Email Address *
                     </label>
                     <input
@@ -162,14 +162,14 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. ramesh@example.com"
-                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-[#333333] mb-1">
+                    <label className="block text-xs font-bold text-[#231F20] mb-1">
                       Phone Number (Optional)
                     </label>
                     <input
@@ -177,18 +177,18 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="e.g. +91 98765 43210"
-                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#333333] mb-1">
+                    <label className="block text-xs font-bold text-[#231F20] mb-1">
                       Subject
                     </label>
                     <select
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#333333] font-bold focus:outline-none focus:border-[#8B3E3E]"
+                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#231F20] font-bold focus:outline-none focus:border-[#8C201C]"
                     >
                       <option>Order Inquiry</option>
                       <option>Bulk / Corporate Gifting</option>
@@ -200,7 +200,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#333333] mb-1">
+                  <label className="block text-xs font-bold text-[#231F20] mb-1">
                     Your Message *
                   </label>
                   <textarea
@@ -209,13 +209,13 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="How can we assist you today? Feel free to mention any specific questions..."
-                    className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl p-3 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                    className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl p-3 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#8B3E3E] hover:bg-[#733232] text-[#FFFFFF] font-bold text-xs sm:text-sm py-4 rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
+                  className="w-full bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs sm:text-sm py-4 rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
                 >
                   <Send className="w-4 h-4 text-[#FFFFFF]" />
                   <span>Send Message to Kitchen</span>
@@ -228,3 +228,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

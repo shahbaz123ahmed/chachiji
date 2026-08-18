@@ -6,21 +6,22 @@
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Chachiji Exact Design Tokens — 100% Solid & Crisp */
-  --chachiji-red: #8B3E3E;
-  --chachiji-red-hover: #733232;
-  --chachiji-peach: #F7A77A;
-  --chachiji-peach-hover: #E89565;
-  --chachiji-cream: #FCE9D6;
-  --chachiji-text: #333333;
+  --chachiji-red: #8C201C;
+  --chachiji-red-hover: #6B1815;
+  --chachiji-peach: #E07A4A;
+  --chachiji-peach-hover: #C96635;
+  --chachiji-cream: #FFF9F3;
+  --chachiji-text: #231F20;
   --chachiji-white: #FFFFFF;
   --chachiji-border: rgba(51, 51, 51, 0.10);
-  --star-gold: #E5A93C;
+  --chachiji-divider: #EFE7DD;
+  --star-gold: #F3A83B;
 
   /* Semantic shortcuts */
-  --primary: #8B3E3E;
-  --secondary: #F7A77A;
-  --cream: #FCE9D6;
-  --charcoal: #333333;
+  --primary: #8C201C;
+  --secondary: #E07A4A;
+  --cream: #FFF9F3;
+  --charcoal: #231F20;
   --white: #FFFFFF;
   --card-border: rgba(51, 51, 51, 0.10);
 }
@@ -29,15 +30,15 @@
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
   
-  --color-primary: #8B3E3E;
-  --color-primary-hover: #733232;
-  --color-secondary: #F7A77A;
-  --color-secondary-hover: #E89565;
-  --color-cream: #FCE9D6;
-  --color-charcoal: #333333;
+  --color-primary: #8C201C;
+  --color-primary-hover: #6B1815;
+  --color-secondary: #E07A4A;
+  --color-secondary-hover: #C96635;
+  --color-cream: #FFF9F3;
+  --color-charcoal: #231F20;
   --color-white: #FFFFFF;
   --color-card-border: rgba(51, 51, 51, 0.10);
-  --color-star-gold: #E5A93C;
+  --color-star-gold: #F3A83B;
 }
 
 * {
@@ -46,8 +47,8 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: #FFFFFF;
-  color: #333333;
+  background-color: #FFF9F3;
+  color: #231F20;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -64,20 +65,21 @@ h1, h2, h3, .font-serif, .serif-heading {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FCE9D6;
+  background: #FFF9F3;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8B3E3E;
+  background: #8C201C;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #733232;
+  background: #6B1815;
 }
 
 /* Smooth Focus Rings */
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid #8B3E3E;
+  outline: 2px solid #8C201C;
   outline-offset: 2px;
 }
+

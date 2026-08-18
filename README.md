@@ -80,3 +80,16 @@ npm run start
 - **Kitchen Address**: Ground Floor, Hajipur Muzaffarpur Highway (NH 22), Nr. Sheet Basant Petrol Pump, Gorhia Chaman, Mile Stone: 23/7, Vaishali, Bihar - 844114, India
 - **WhatsApp / Phone**: +91 88604 88004
 - **Email**: info@chachiji.in
+
+
+
+
+
+
+The color palette used in this e-commerce UI design consists of the following primary brand colors, hex codes, and functional applications:
+| Color Role | Color Name | Hex Code | Visual Application in Design |
+|---|---|---|---|
+| Primary Accent | Deep Maroon / Crimson | #883E36 | Top announcement bar, logo, primary buttons (Shop Now, Add to Cart), top navigation, and sidebar background in the admin panel. |
+| Secondary Accent | Terracotta / Warm Coral | #F7A77A | Accent elements, hover states, secondary highlights, and promotional banners. |
+| Background / Neutral Light | Soft Cream / Warm Off-White | #FCE9D6 | Main background container, hero section background, and subtle callout boxes. |
+| Dark Neutral / Typography | Charcoal Black | #333333 | Primary text, headings, body copy, icons, and administrative structural borders. |

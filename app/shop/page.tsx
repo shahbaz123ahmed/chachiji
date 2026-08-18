@@ -81,10 +81,10 @@ function ShopContent() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Page Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B3E3E]">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
             The Complete Pantry
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#333333] mt-1.5 mb-3">
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#231F20] mt-1.5 mb-3">
             Handcrafted Flavours of Bihar
           </h1>
           <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
@@ -93,28 +93,28 @@ function ShopContent() {
         </div>
 
         {/* Controls Bar */}
-        <div className="bg-[#FCE9D6] p-4 rounded-2xl border border-[rgba(51,51,51,0.10)] shadow-xs mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="bg-[#FFF9F3] p-4 rounded-2xl border border-[rgba(51,51,51,0.10)] shadow-xs mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Search inside shop */}
           <div className="relative w-full md:w-80">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8B3E3E]" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8C201C]" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search products or ingredients..."
-              className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.15)] focus:border-[#8B3E3E] rounded-xl pl-10 pr-8 py-2.5 text-xs text-[#333333] font-semibold placeholder:text-[#777777] focus:outline-none shadow-2xs"
+              className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.15)] focus:border-[#8C201C] rounded-xl pl-10 pr-8 py-2.5 text-xs text-[#231F20] font-semibold placeholder:text-[#777777] focus:outline-none shadow-2xs"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#777777] hover:text-[#8B3E3E]"
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#777777] hover:text-[#8C201C]"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
             )}
           </div>
 
-          {/* Category Tabs (Desktop) - Solid #8B3E3E active vs Solid White */}
+          {/* Category Tabs (Desktop) - Solid #8C201C active vs Solid White */}
           <div className="hidden lg:flex items-center gap-2">
             {categories.map((cat) => (
               <button
@@ -122,8 +122,8 @@ function ShopContent() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`text-xs font-bold px-4 py-2.5 rounded-xl transition-all ${
                   selectedCategory === cat.id
-                    ? "bg-[#8B3E3E] text-[#FFFFFF] shadow-sm"
-                    : "bg-[#FFFFFF] text-[#333333] border border-[rgba(51,51,51,0.12)] hover:border-[#8B3E3E]"
+                    ? "bg-[#8C201C] text-[#FFFFFF] shadow-sm"
+                    : "bg-[#FFFFFF] text-[#231F20] border border-[rgba(51,51,51,0.12)] hover:border-[#8C201C]"
                 }`}
               >
                 {cat.name}
@@ -135,25 +135,25 @@ function ShopContent() {
           <div className="flex items-center justify-between w-full md:w-auto gap-3">
             <button
               onClick={() => setIsMobileFilterOpen(true)}
-              className="lg:hidden flex items-center gap-1.5 bg-[#FFFFFF] border border-[rgba(51,51,51,0.15)] px-3.5 py-2.5 rounded-xl text-xs font-bold text-[#333333]"
+              className="lg:hidden flex items-center gap-1.5 bg-[#FFFFFF] border border-[rgba(51,51,51,0.15)] px-3.5 py-2.5 rounded-xl text-xs font-bold text-[#231F20]"
             >
-              <SlidersHorizontal className="w-3.5 h-3.5 text-[#8B3E3E]" />
+              <SlidersHorizontal className="w-3.5 h-3.5 text-[#8C201C]" />
               <span>Filters</span>
               {hasActiveFilters && (
-                <span className="w-2 h-2 rounded-full bg-[#8B3E3E]" />
+                <span className="w-2 h-2 rounded-full bg-[#8C201C]" />
               )}
             </button>
 
             <div className="flex items-center gap-2">
-              <span className="text-xs text-[#333333] font-bold hidden sm:inline flex items-center gap-1">
-                <ArrowUpDown className="w-3 h-3 text-[#8B3E3E]" />
+              <span className="text-xs text-[#231F20] font-bold hidden sm:inline flex items-center gap-1">
+                <ArrowUpDown className="w-3 h-3 text-[#8C201C]" />
                 Sort:
               </span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
                 aria-label="Sort products"
-                className="bg-[#FFFFFF] border border-[rgba(51,51,51,0.15)] rounded-xl px-3 py-2 text-xs font-bold text-[#333333] focus:outline-none focus:border-[#8B3E3E]"
+                className="bg-[#FFFFFF] border border-[rgba(51,51,51,0.15)] rounded-xl px-3 py-2 text-xs font-bold text-[#231F20] focus:outline-none focus:border-[#8C201C]"
               >
                 <option value="bestsellers">Bestsellers First</option>
                 <option value="price-low">Price: Low to High</option>
@@ -169,7 +169,7 @@ function ShopContent() {
           <div className="flex flex-wrap items-center gap-2 mb-6 text-xs">
             <span className="text-[#555555] font-bold">Active filters:</span>
             {selectedCategory !== "all" && (
-              <span className="inline-flex items-center gap-1 bg-[#8B3E3E] text-[#FFFFFF] font-bold px-3 py-1 rounded-lg shadow-2xs">
+              <span className="inline-flex items-center gap-1 bg-[#8C201C] text-[#FFFFFF] font-bold px-3 py-1 rounded-lg shadow-2xs">
                 Category: {categories.find((c) => c.id === selectedCategory)?.name}
                 <button onClick={() => setSelectedCategory("all")}>
                   <X className="w-3.5 h-3.5 ml-1" />
@@ -177,7 +177,7 @@ function ShopContent() {
               </span>
             )}
             {selectedSpice !== "all" && (
-              <span className="inline-flex items-center gap-1 bg-[#8B3E3E] text-[#FFFFFF] font-bold px-3 py-1 rounded-lg shadow-2xs">
+              <span className="inline-flex items-center gap-1 bg-[#8C201C] text-[#FFFFFF] font-bold px-3 py-1 rounded-lg shadow-2xs">
                 Spice: {selectedSpice}
                 <button onClick={() => setSelectedSpice("all")}>
                   <X className="w-3.5 h-3.5 ml-1" />
@@ -185,7 +185,7 @@ function ShopContent() {
               </span>
             )}
             {searchQuery && (
-              <span className="inline-flex items-center gap-1 bg-[#8B3E3E] text-[#FFFFFF] font-bold px-3 py-1 rounded-lg shadow-2xs">
+              <span className="inline-flex items-center gap-1 bg-[#8C201C] text-[#FFFFFF] font-bold px-3 py-1 rounded-lg shadow-2xs">
                 Query: &quot;{searchQuery}&quot;
                 <button onClick={() => setSearchQuery("")}>
                   <X className="w-3.5 h-3.5 ml-1" />
@@ -194,7 +194,7 @@ function ShopContent() {
             )}
             <button
               onClick={clearAllFilters}
-              className="text-xs text-[#8B3E3E] hover:underline ml-2 font-bold"
+              className="text-xs text-[#8C201C] hover:underline ml-2 font-bold"
             >
               Clear all
             </button>
@@ -206,13 +206,13 @@ function ShopContent() {
           {/* Desktop Sidebar Filters */}
           <div className="hidden lg:block space-y-6 bg-[#FFFFFF] p-6 rounded-2xl border-2 border-[rgba(51,51,51,0.10)] h-fit shadow-xs">
             <div className="flex items-center justify-between border-b border-[rgba(51,51,51,0.10)] pb-3">
-              <h3 className="font-serif text-lg font-bold text-[#333333]">
+              <h3 className="font-serif text-lg font-bold text-[#231F20]">
                 Filter Flavours
               </h3>
               {hasActiveFilters && (
                 <button
                   onClick={clearAllFilters}
-                  className="text-xs text-[#8B3E3E] hover:underline font-bold"
+                  className="text-xs text-[#8C201C] hover:underline font-bold"
                 >
                   Reset
                 </button>
@@ -221,7 +221,7 @@ function ShopContent() {
 
             {/* Category Filter */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#8B3E3E] mb-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#8C201C] mb-3">
                 Category
               </h4>
               <div className="space-y-1.5">
@@ -231,8 +231,8 @@ function ShopContent() {
                     onClick={() => setSelectedCategory(cat.id)}
                     className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-colors flex items-center justify-between ${
                       selectedCategory === cat.id
-                        ? "bg-[#8B3E3E] text-[#FFFFFF]"
-                        : "text-[#333333] hover:bg-[#FCE9D6]"
+                        ? "bg-[#8C201C] text-[#FFFFFF]"
+                        : "text-[#231F20] hover:bg-[#FFF9F3]"
                     }`}
                   >
                     <span>{cat.name}</span>
@@ -248,7 +248,7 @@ function ShopContent() {
 
             {/* Spice Level Filter */}
             <div className="pt-4 border-t border-[rgba(51,51,51,0.10)]">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#8B3E3E] mb-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#8C201C] mb-3">
                 Spice Intensity
               </h4>
               <div className="space-y-1.5">
@@ -258,8 +258,8 @@ function ShopContent() {
                     onClick={() => setSelectedSpice(lvl)}
                     className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-colors ${
                       selectedSpice === lvl
-                        ? "bg-[#8B3E3E] text-[#FFFFFF]"
-                        : "text-[#333333] hover:bg-[#FCE9D6]"
+                        ? "bg-[#8C201C] text-[#FFFFFF]"
+                        : "text-[#231F20] hover:bg-[#FFF9F3]"
                     }`}
                   >
                     {lvl === "all" ? "All Spice Levels" : lvl}
@@ -269,9 +269,9 @@ function ShopContent() {
             </div>
 
             {/* Craftsmanship Assurance Box */}
-            <div className="bg-[#FCE9D6] text-[#333333] p-4 rounded-xl text-xs space-y-2 border border-[rgba(51,51,51,0.08)]">
-              <span className="font-serif font-bold text-sm text-[#8B3E3E] flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#F7A77A]" />
+            <div className="bg-[#FFF9F3] text-[#231F20] p-4 rounded-xl text-xs space-y-2 border border-[rgba(51,51,51,0.08)]">
+              <span className="font-serif font-bold text-sm text-[#8C201C] flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#E07A4A]" />
                 Pure Quality Promise
               </span>
               <p className="text-[11px] text-[#555555] font-medium leading-relaxed">
@@ -293,8 +293,8 @@ function ShopContent() {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-16 bg-[#FCE9D6] rounded-3xl border border-[rgba(51,51,51,0.10)] p-8 shadow-xs">
-                <p className="font-serif text-2xl font-bold text-[#333333] mb-2">
+              <div className="text-center py-16 bg-[#FFF9F3] rounded-3xl border border-[rgba(51,51,51,0.10)] p-8 shadow-xs">
+                <p className="font-serif text-2xl font-bold text-[#231F20] mb-2">
                   No matching flavours found
                 </p>
                 <p className="text-xs text-[#555555] font-medium mb-6">
@@ -302,7 +302,7 @@ function ShopContent() {
                 </p>
                 <button
                   onClick={clearAllFilters}
-                  className="bg-[#8B3E3E] text-[#FFFFFF] text-xs font-bold py-3 px-6 rounded-xl hover:bg-[#733232] transition-colors shadow-md"
+                  className="bg-[#8C201C] text-[#FFFFFF] text-xs font-bold py-3 px-6 rounded-xl hover:bg-[#6B1815] transition-colors shadow-md"
                 >
                   Clear All Filters
                 </button>
@@ -322,12 +322,12 @@ function ShopContent() {
           <div className="relative w-4/5 max-w-xs bg-[#FFFFFF] h-full ml-auto shadow-2xl flex flex-col justify-between p-6 border-l border-[rgba(51,51,51,0.10)]">
             <div>
               <div className="flex items-center justify-between border-b border-[rgba(51,51,51,0.10)] pb-4 mb-6">
-                <h3 className="font-serif text-lg font-bold text-[#333333]">
+                <h3 className="font-serif text-lg font-bold text-[#231F20]">
                   Filter Flavours
                 </h3>
                 <button
                   onClick={() => setIsMobileFilterOpen(false)}
-                  className="p-1 text-[#333333] hover:text-[#8B3E3E]"
+                  className="p-1 text-[#231F20] hover:text-[#8C201C]"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -335,7 +335,7 @@ function ShopContent() {
 
               {/* Category */}
               <div className="mb-6">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#8B3E3E] mb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#8C201C] mb-2">
                   Category
                 </h4>
                 <div className="space-y-1">
@@ -345,8 +345,8 @@ function ShopContent() {
                       onClick={() => setSelectedCategory(cat.id)}
                       className={`w-full text-left px-3 py-2 rounded-lg text-xs font-bold ${
                         selectedCategory === cat.id
-                          ? "bg-[#8B3E3E] text-[#FFFFFF]"
-                          : "text-[#333333] hover:bg-[#FCE9D6]"
+                          ? "bg-[#8C201C] text-[#FFFFFF]"
+                          : "text-[#231F20] hover:bg-[#FFF9F3]"
                       }`}
                     >
                       {cat.name}
@@ -357,7 +357,7 @@ function ShopContent() {
 
               {/* Spice */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#8B3E3E] mb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#8C201C] mb-2">
                   Spice Intensity
                 </h4>
                 <div className="space-y-1">
@@ -367,8 +367,8 @@ function ShopContent() {
                       onClick={() => setSelectedSpice(lvl)}
                       className={`w-full text-left px-3 py-2 rounded-lg text-xs font-bold ${
                         selectedSpice === lvl
-                          ? "bg-[#8B3E3E] text-[#FFFFFF]"
-                          : "text-[#333333] hover:bg-[#FCE9D6]"
+                          ? "bg-[#8C201C] text-[#FFFFFF]"
+                          : "text-[#231F20] hover:bg-[#FFF9F3]"
                       }`}
                     >
                       {lvl === "all" ? "All Spice Levels" : lvl}
@@ -380,7 +380,7 @@ function ShopContent() {
 
             <button
               onClick={() => setIsMobileFilterOpen(false)}
-              className="w-full bg-[#8B3E3E] text-[#FFFFFF] font-bold text-xs py-3.5 rounded-xl shadow-md"
+              className="w-full bg-[#8C201C] text-[#FFFFFF] font-bold text-xs py-3.5 rounded-xl shadow-md"
             >
               Apply Filters ({filteredProducts.length} results)
             </button>
@@ -395,7 +395,7 @@ export default function ShopPage() {
   return (
     <Suspense
       fallback={
-        <div className="bg-[#FFFFFF] min-h-screen py-20 text-center font-serif text-lg text-[#8B3E3E]">
+        <div className="bg-[#FFFFFF] min-h-screen py-20 text-center font-serif text-lg text-[#8C201C]">
           Loading Pantry...
         </div>
       }
@@ -404,3 +404,4 @@ export default function ShopPage() {
     </Suspense>
   );
 }
+

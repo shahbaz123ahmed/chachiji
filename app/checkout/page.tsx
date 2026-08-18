@@ -61,8 +61,8 @@ export default function CheckoutPage() {
   if (cart.length === 0) {
     return (
       <div className="bg-[#FFFFFF] min-h-screen py-20 text-center">
-        <div className="max-w-md mx-auto bg-[#FCE9D6] p-8 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-sm">
-          <h2 className="font-serif text-2xl font-bold text-[#333333] mb-2">
+        <div className="max-w-md mx-auto bg-[#FFF9F3] p-8 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-sm">
+          <h2 className="font-serif text-2xl font-bold text-[#231F20] mb-2">
             No items in checkout
           </h2>
           <p className="text-xs text-[#555555] font-medium mb-6">
@@ -70,7 +70,7 @@ export default function CheckoutPage() {
           </p>
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 bg-[#8B3E3E] text-[#FFFFFF] text-xs font-bold px-6 py-3.5 rounded-xl shadow-md"
+            className="inline-flex items-center gap-2 bg-[#8C201C] text-[#FFFFFF] text-xs font-bold px-6 py-3.5 rounded-xl shadow-md"
           >
             <span>Explore Shop</span>
           </Link>
@@ -85,17 +85,17 @@ export default function CheckoutPage() {
         {/* Checkout Header / Stepper */}
         <div className="border-b border-[rgba(51,51,51,0.10)] pb-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B3E3E]">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
               Distraction-Free
             </span>
-            <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#333333] mt-0.5">
+            <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#231F20] mt-0.5">
               Secure Checkout
             </h1>
           </div>
-          <div className="flex items-center gap-2 text-xs font-bold text-[#333333]">
-            <span className="text-[#8B3E3E]">Cart</span>
+          <div className="flex items-center gap-2 text-xs font-bold text-[#231F20]">
+            <span className="text-[#8C201C]">Cart</span>
             <ChevronRight className="w-3.5 h-3.5 text-[#777777]" />
-            <span className="text-[#8B3E3E]">Shipping &amp; Details</span>
+            <span className="text-[#8C201C]">Shipping &amp; Details</span>
             <ChevronRight className="w-3.5 h-3.5 text-[#777777]" />
             <span className="text-[#777777]">Payment</span>
           </div>
@@ -108,8 +108,8 @@ export default function CheckoutPage() {
               {/* 1. Contact Information */}
               <div className="bg-[#FFFFFF] p-6 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs space-y-4">
                 <div className="flex items-center justify-between border-b border-[rgba(51,51,51,0.08)] pb-3">
-                  <h3 className="font-serif text-lg font-bold text-[#333333] flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-[#8B3E3E] text-[#FFFFFF] text-xs flex items-center justify-center font-sans font-bold">
+                  <h3 className="font-serif text-lg font-bold text-[#231F20] flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-[#8C201C] text-[#FFFFFF] text-xs flex items-center justify-center font-sans font-bold">
                       1
                     </span>
                     <span>Contact Information</span>
@@ -118,7 +118,7 @@ export default function CheckoutPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#333333] mb-1">
+                  <label className="block text-xs font-bold text-[#231F20] mb-1">
                     Email Address or Phone Number
                   </label>
                   <input
@@ -127,7 +127,7 @@ export default function CheckoutPage() {
                     name="emailOrPhone"
                     value={formData.emailOrPhone}
                     onChange={handleInputChange}
-                    className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                    className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                   />
                 </div>
               </div>
@@ -135,21 +135,21 @@ export default function CheckoutPage() {
               {/* 2. Shipping Address */}
               <div className="bg-[#FFFFFF] p-6 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs space-y-4">
                 <div className="flex items-center justify-between border-b border-[rgba(51,51,51,0.08)] pb-3">
-                  <h3 className="font-serif text-lg font-bold text-[#333333] flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-[#8B3E3E] text-[#FFFFFF] text-xs flex items-center justify-center font-sans font-bold">
+                  <h3 className="font-serif text-lg font-bold text-[#231F20] flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-[#8C201C] text-[#FFFFFF] text-xs flex items-center justify-center font-sans font-bold">
                       2
                     </span>
                     <span>Shipping Address</span>
                   </h3>
-                  <span className="text-[11px] text-[#8B3E3E] font-bold flex items-center gap-1">
-                    <Truck className="w-3.5 h-3.5 text-[#8B3E3E]" />
+                  <span className="text-[11px] text-[#8C201C] font-bold flex items-center gap-1">
+                    <Truck className="w-3.5 h-3.5 text-[#8C201C]" />
                     Safe Glass Delivery
                   </span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-bold text-[#333333] mb-1">
+                    <label className="block text-xs font-bold text-[#231F20] mb-1">
                       First Name
                     </label>
                     <input
@@ -158,11 +158,11 @@ export default function CheckoutPage() {
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-[#333333] mb-1">
+                    <label className="block text-xs font-bold text-[#231F20] mb-1">
                       Last Name
                     </label>
                     <input
@@ -171,13 +171,13 @@ export default function CheckoutPage() {
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#333333] mb-1">
+                  <label className="block text-xs font-bold text-[#231F20] mb-1">
                     Street Address &amp; House/Flat No.
                   </label>
                   <input
@@ -186,13 +186,13 @@ export default function CheckoutPage() {
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
-                    className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                    className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                   />
                 </div>
 
                 <div className="grid grid-cols-3 gap-3">
                   <div>
-                    <label className="block text-xs font-bold text-[#333333] mb-1">
+                    <label className="block text-xs font-bold text-[#231F20] mb-1">
                       City
                     </label>
                     <input
@@ -201,18 +201,18 @@ export default function CheckoutPage() {
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
-                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-[#333333] mb-1">
+                    <label className="block text-xs font-bold text-[#231F20] mb-1">
                       State
                     </label>
                     <select
                       name="state"
                       value={formData.state}
                       onChange={handleInputChange}
-                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#333333] font-bold focus:outline-none focus:border-[#8B3E3E]"
+                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#231F20] font-bold focus:outline-none focus:border-[#8C201C]"
                     >
                       <option value="Bihar">Bihar</option>
                       <option value="Delhi">Delhi NCR</option>
@@ -227,7 +227,7 @@ export default function CheckoutPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-[#333333] mb-1">
+                    <label className="block text-xs font-bold text-[#231F20] mb-1">
                       PIN Code
                     </label>
                     <input
@@ -237,13 +237,13 @@ export default function CheckoutPage() {
                       name="pincode"
                       value={formData.pincode}
                       onChange={handleInputChange}
-                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#333333] font-bold focus:outline-none focus:border-[#8B3E3E]"
+                      className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3 py-2 text-xs text-[#231F20] font-bold focus:outline-none focus:border-[#8C201C]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#333333] mb-1">
+                  <label className="block text-xs font-bold text-[#231F20] mb-1">
                     Phone Number (for Delivery Agent)
                   </label>
                   <input
@@ -252,7 +252,7 @@ export default function CheckoutPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#333333] font-semibold focus:outline-none focus:border-[#8B3E3E]"
+                    className="w-full bg-[#FFFFFF] border border-[rgba(51,51,51,0.18)] rounded-xl px-3.5 py-2.5 text-xs text-[#231F20] font-semibold focus:outline-none focus:border-[#8C201C]"
                   />
                 </div>
               </div>
@@ -260,14 +260,14 @@ export default function CheckoutPage() {
               {/* 3. Payment Method */}
               <div className="bg-[#FFFFFF] p-6 rounded-3xl border-2 border-[rgba(51,51,51,0.10)] shadow-xs space-y-4">
                 <div className="flex items-center justify-between border-b border-[rgba(51,51,51,0.08)] pb-3">
-                  <h3 className="font-serif text-lg font-bold text-[#333333] flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-[#8B3E3E] text-[#FFFFFF] text-xs flex items-center justify-center font-sans font-bold">
+                  <h3 className="font-serif text-lg font-bold text-[#231F20] flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-[#8C201C] text-[#FFFFFF] text-xs flex items-center justify-center font-sans font-bold">
                       3
                     </span>
                     <span>Payment Method</span>
                   </h3>
                   <span className="text-[11px] text-[#555555] font-semibold flex items-center gap-1">
-                    <Lock className="w-3.5 h-3.5 text-[#8B3E3E]" />
+                    <Lock className="w-3.5 h-3.5 text-[#8C201C]" />
                     256-bit Encrypted
                   </span>
                 </div>
@@ -277,7 +277,7 @@ export default function CheckoutPage() {
                   <label
                     className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
                       formData.paymentMethod === "cod"
-                        ? "border-[#8B3E3E] bg-[#FCE9D6] shadow-xs"
+                        ? "border-[#8C201C] bg-[#FFF9F3] shadow-xs"
                         : "border-[rgba(51,51,51,0.15)] bg-[#FFFFFF]"
                     }`}
                   >
@@ -288,10 +288,10 @@ export default function CheckoutPage() {
                         value="cod"
                         checked={formData.paymentMethod === "cod"}
                         onChange={handleInputChange}
-                        className="accent-[#8B3E3E] w-4 h-4"
+                        className="accent-[#8C201C] w-4 h-4"
                       />
                       <div>
-                        <span className="font-bold text-[#333333] block text-sm">
+                        <span className="font-bold text-[#231F20] block text-sm">
                           Cash on Delivery (COD)
                         </span>
                         <span className="text-[11px] text-[#555555] font-medium">
@@ -299,14 +299,14 @@ export default function CheckoutPage() {
                         </span>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-[#8B3E3E]">Available</span>
+                    <span className="text-xs font-bold text-[#8C201C]">Available</span>
                   </label>
 
                   {/* UPI */}
                   <label
                     className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
                       formData.paymentMethod === "upi"
-                        ? "border-[#8B3E3E] bg-[#FCE9D6] shadow-xs"
+                        ? "border-[#8C201C] bg-[#FFF9F3] shadow-xs"
                         : "border-[rgba(51,51,51,0.15)] bg-[#FFFFFF]"
                     }`}
                   >
@@ -317,10 +317,10 @@ export default function CheckoutPage() {
                         value="upi"
                         checked={formData.paymentMethod === "upi"}
                         onChange={handleInputChange}
-                        className="accent-[#8B3E3E] w-4 h-4"
+                        className="accent-[#8C201C] w-4 h-4"
                       />
                       <div>
-                        <span className="font-bold text-[#333333] block text-sm">
+                        <span className="font-bold text-[#231F20] block text-sm">
                           UPI Instant (GPay / PhonePe / Paytm / QR)
                         </span>
                         <span className="text-[11px] text-[#555555] font-medium">
@@ -328,7 +328,7 @@ export default function CheckoutPage() {
                         </span>
                       </div>
                     </div>
-                    <span className="bg-[#F7A77A] text-[#333333] text-[10px] font-bold px-2 py-0.5 rounded-md shadow-2xs">
+                    <span className="bg-[#E07A4A] text-[#231F20] text-[10px] font-bold px-2 py-0.5 rounded-md shadow-2xs">
                       Fastest
                     </span>
                   </label>
@@ -337,7 +337,7 @@ export default function CheckoutPage() {
                   <label
                     className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
                       formData.paymentMethod === "card"
-                        ? "border-[#8B3E3E] bg-[#FCE9D6] shadow-xs"
+                        ? "border-[#8C201C] bg-[#FFF9F3] shadow-xs"
                         : "border-[rgba(51,51,51,0.15)] bg-[#FFFFFF]"
                     }`}
                   >
@@ -348,10 +348,10 @@ export default function CheckoutPage() {
                         value="card"
                         checked={formData.paymentMethod === "card"}
                         onChange={handleInputChange}
-                        className="accent-[#8B3E3E] w-4 h-4"
+                        className="accent-[#8C201C] w-4 h-4"
                       />
                       <div>
-                        <span className="font-bold text-[#333333] block text-sm">
+                        <span className="font-bold text-[#231F20] block text-sm">
                           Credit / Debit Cards &amp; NetBanking
                         </span>
                         <span className="text-[11px] text-[#555555] font-medium">
@@ -359,7 +359,7 @@ export default function CheckoutPage() {
                         </span>
                       </div>
                     </div>
-                    <CreditCard className="w-5 h-5 text-[#8B3E3E]" />
+                    <CreditCard className="w-5 h-5 text-[#8C201C]" />
                   </label>
                 </div>
               </div>
@@ -367,8 +367,8 @@ export default function CheckoutPage() {
 
             {/* Right: Order Review & Submit */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-[#FCE9D6] p-6 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-sm space-y-5">
-                <h3 className="font-serif text-xl font-bold text-[#333333] border-b border-[rgba(51,51,51,0.10)] pb-3">
+              <div className="bg-[#FFF9F3] p-6 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-sm space-y-5">
+                <h3 className="font-serif text-xl font-bold text-[#231F20] border-b border-[rgba(51,51,51,0.10)] pb-3">
                   Your Order ({cart.length} items)
                 </h3>
 
@@ -387,7 +387,7 @@ export default function CheckoutPage() {
                           />
                         </div>
                         <div>
-                          <h4 className="font-serif font-bold text-[#333333] line-clamp-1">
+                          <h4 className="font-serif font-bold text-[#231F20] line-clamp-1">
                             {item.name}
                           </h4>
                           <span className="text-[11px] text-[#555555] font-medium">
@@ -395,7 +395,7 @@ export default function CheckoutPage() {
                           </span>
                         </div>
                       </div>
-                      <span className="font-bold text-[#8B3E3E] text-sm">
+                      <span className="font-bold text-[#8C201C] text-sm">
                         ₹{item.price * item.quantity}
                       </span>
                     </div>
@@ -406,25 +406,25 @@ export default function CheckoutPage() {
                 <div className="space-y-2 text-xs text-[#555555] font-medium border-t border-[rgba(51,51,51,0.10)] pt-3">
                   <div className="flex justify-between">
                     <span>Subtotal</span>
-                    <span className="font-bold text-[#333333]">₹{subtotal}</span>
+                    <span className="font-bold text-[#231F20]">₹{subtotal}</span>
                   </div>
                   {discountAmount > 0 && (
-                    <div className="flex justify-between text-[#8B3E3E] font-bold">
+                    <div className="flex justify-between text-[#8C201C] font-bold">
                       <span>Applied Discount</span>
                       <span>-₹{discountAmount}</span>
                     </div>
                   )}
                   <div className="flex justify-between">
                     <span>Shipping</span>
-                    <span className="font-bold text-[#333333]">
+                    <span className="font-bold text-[#231F20]">
                       {shippingFee === 0 ? (
-                        <span className="text-[#8B3E3E] font-bold">FREE</span>
+                        <span className="text-[#8C201C] font-bold">FREE</span>
                       ) : (
                         `₹${shippingFee}`
                       )}
                     </span>
                   </div>
-                  <div className="flex justify-between text-base font-bold text-[#8B3E3E] pt-2 border-t border-[rgba(51,51,51,0.10)]">
+                  <div className="flex justify-between text-base font-bold text-[#8C201C] pt-2 border-t border-[rgba(51,51,51,0.10)]">
                     <span>Total Amount</span>
                     <span className="font-serif text-2xl font-bold">₹{totalAmount}</span>
                   </div>
@@ -434,7 +434,7 @@ export default function CheckoutPage() {
                 <button
                   type="submit"
                   disabled={isProcessing}
-                  className="w-full bg-[#8B3E3E] hover:bg-[#733232] disabled:bg-[#8B3E3E]/60 text-[#FFFFFF] font-bold text-xs sm:text-sm py-4 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 active:scale-95"
+                  className="w-full bg-[#8C201C] hover:bg-[#6B1815] disabled:bg-[#8C201C]/60 text-[#FFFFFF] font-bold text-xs sm:text-sm py-4 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 active:scale-95"
                 >
                   {isProcessing ? (
                     <span>Securing Your Flavour Order...</span>
@@ -448,7 +448,7 @@ export default function CheckoutPage() {
 
                 <div className="text-[11px] text-[#555555] font-medium text-center space-y-1 pt-1">
                   <p className="flex items-center justify-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#8B3E3E]" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#8C201C]" />
                     <span>Safe transit guaranteed • Glass replacement warranty</span>
                   </p>
                 </div>
@@ -460,3 +460,4 @@ export default function CheckoutPage() {
     </div>
   );
 }
+
