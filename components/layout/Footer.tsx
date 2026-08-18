@@ -27,7 +27,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#8C201C] text-[#FFFFFF] border-t-2 border-[#6B1815] relative overflow-hidden">
+    <footer className="bg-[#FFF9F3] text-[#231F20] border-t border-[#EFE7DD] relative overflow-hidden">
       {/* 16. Promotional / Newsletter Strip - Solid #6B1815 background with #E07A4A CTA */}
       <div className="border-b border-[#6B1815] bg-[#6B1815] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
@@ -58,7 +58,7 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
                   required
-                  className="flex-1 bg-[#8C201C] border-2 border-[#FFF9F3] focus:border-[#E07A4A] rounded-xl px-4 py-3 text-xs text-[#FFFFFF] placeholder:text-[#FFF9F3] font-medium focus:outline-none"
+                  className="flex-1 bg-[#FFFFFF] border-2 border-[#EFE7DD] focus:border-[#8C201C] rounded-xl px-4 py-3 text-xs text-[#231F20] placeholder:text-[#999999] font-medium focus:outline-none"
                 />
                 <button
                   type="submit"
@@ -79,18 +79,18 @@ export default function Footer() {
           {/* Brand Info & Address */}
           <div className="lg:col-span-2 space-y-4">
             <div>
-              <span className="font-serif text-3xl font-bold tracking-tight text-[#FFFFFF]">
+              <span className="font-serif text-3xl font-bold tracking-tight text-[#8C201C]">
                 CHACHIJI
               </span>
               <span className="block text-[10px] uppercase tracking-[0.25em] text-[#E07A4A] font-bold mt-0.5">
                 Homemade Cuisine
               </span>
             </div>
-            <p className="text-xs text-[#FFF9F3] leading-relaxed max-w-sm font-medium">
+            <p className="text-xs text-[#555555] leading-relaxed max-w-sm font-medium">
               Handcrafting traditional Indian culinary treasures in small batches. Sun-cured in ceramic martabans with pure wood-pressed mustard oil and harvested from the sacred wetlands of Mithila, Bihar.
             </p>
 
-            <div className="space-y-2.5 pt-2 text-xs text-[#FFF9F3]">
+            <div className="space-y-2.5 pt-2 text-xs text-[#555555]">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#E07A4A] shrink-0 mt-0.5" />
                 <span className="leading-relaxed font-medium">
@@ -117,7 +117,7 @@ export default function Footer() {
                 href={BRAND_INFO.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#6B1815] hover:bg-[#E07A4A] hover:text-[#231F20] flex items-center justify-center text-[#FFFFFF] transition-all shadow-xs"
+                className="w-8 h-8 rounded-full bg-[#8C201C] hover:bg-[#E07A4A] hover:text-[#231F20] flex items-center justify-center text-[#FFFFFF] transition-all shadow-xs"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="w-4 h-4" />
@@ -126,7 +126,7 @@ export default function Footer() {
                 href={BRAND_INFO.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#6B1815] hover:bg-[#E07A4A] hover:text-[#231F20] flex items-center justify-center text-[#FFFFFF] transition-all shadow-xs"
+                className="w-8 h-8 rounded-full bg-[#8C201C] hover:bg-[#E07A4A] hover:text-[#231F20] flex items-center justify-center text-[#FFFFFF] transition-all shadow-xs"
                 aria-label="Facebook"
               >
                 <FacebookIcon className="w-4 h-4" />
@@ -135,7 +135,7 @@ export default function Footer() {
                 href={BRAND_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#6B1815] hover:bg-[#25D366] hover:text-white flex items-center justify-center text-[#FFFFFF] transition-all shadow-xs"
+                className="w-8 h-8 rounded-full bg-[#8C201C] hover:bg-[#25D366] hover:text-white flex items-center justify-center text-[#FFFFFF] transition-all shadow-xs"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -148,7 +148,7 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-[#E07A4A]">
               Shop Flavours
             </h4>
-            <ul className="space-y-2 text-xs text-[#FFFFFF]">
+            <ul className="space-y-2 text-xs text-[#444444]">
               <li>
                 <Link href="/shop" className="hover:text-[#E07A4A] transition-colors">
                   All Products
@@ -187,7 +187,7 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-[#E07A4A]">
               Our Heritage
             </h4>
-            <ul className="space-y-2 text-xs text-[#FFFFFF]">
+            <ul className="space-y-2 text-xs text-[#444444]">
               <li>
                 <Link href="/about" className="hover:text-[#E07A4A] transition-colors">
                   Our Story &amp; Roots
@@ -221,7 +221,7 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-[#E07A4A]">
               Help &amp; Policies
             </h4>
-            <ul className="space-y-2 text-xs text-[#FFFFFF]">
+            <ul className="space-y-2 text-xs text-[#444444]">
               <li>
                 <Link href="/track-order" className="hover:text-[#E07A4A] transition-colors">
                   Track Your Order
@@ -258,8 +258,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#6B1815] bg-[#6B1815] py-6 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FFF9F3]">
+      <div className="border-t border-[#EFE7DD] bg-[#EFE7DD] py-6 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#555555]">
           <p>© {new Date().getFullYear()} Chachiji&apos;s Homemade Cuisine. All rights reserved.</p>
           <p className="flex items-center gap-1 font-medium">
             <span>Crafted with devotion in Vaishali &amp; Mithila, Bihar</span>
