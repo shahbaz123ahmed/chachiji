@@ -33,133 +33,153 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FFFFFF]">
-      {/* 1. HERO SECTION - Warm, Solid, Rich Cream (#FCE9D6) */}
-      <section className="relative min-h-[85vh] lg:min-h-[90vh] bg-[#FCE9D6] text-[#333333] flex items-center border-b border-[rgba(51,51,51,0.10)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 max-w-2xl">
-            {/* Header Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[rgba(51,51,51,0.12)] text-[#8B3E3E] text-xs font-bold px-4 py-1.5 rounded-full mb-6 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-[#F7A77A]" />
-              <span>Small-Batch • Sun-Cured • Vaishali, Bihar</span>
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#8B3E3E] leading-[1.08] mb-6">
-              Crafted by Heart. <br />
-              <span className="italic font-normal text-[#333333]">
-                Rooted in Tradition.
-              </span>
-            </h1>
-
-            {/* Supporting Text */}
-            <p className="text-base sm:text-lg text-[#333333] font-medium leading-relaxed mb-8 max-w-xl">
-              Authentic handcrafted flavours from the heart of India. Prepared in small batches using wood cold-pressed mustard oil, pure GI-tagged Mithila makhana, and heirloom recipes.
-            </p>
-
-            {/* CTAs - Solid #8B3E3E and Solid Vibrant #F7A77A */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
-              <Link
-                href="/shop"
-                className="inline-flex items-center justify-center gap-2.5 bg-[#8B3E3E] hover:bg-[#733232] text-[#FFFFFF] font-bold text-sm px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0"
-              >
-                <span>Shop Our Flavours</span>
-                <ArrowRight className="w-4 h-4 text-[#FFFFFF]" />
-              </Link>
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 bg-[#F7A77A] hover:bg-[#E89565] text-[#333333] font-bold text-sm px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5"
-              >
-                <span>Discover Our Story</span>
-              </Link>
-            </div>
-
-            {/* Highlight Metric Pills */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-[rgba(51,51,51,0.12)] text-xs sm:text-sm">
-              <div>
-                <span className="block font-serif text-2xl sm:text-3xl font-bold text-[#8B3E3E]">
-                  100%
-                </span>
-                <span className="text-[#555555] text-[11px] sm:text-xs font-semibold">
-                  Sun-Cured &amp; Natural
-                </span>
+      {/* 1. HERO SECTION - Exact Reference Design with /heros1.png */}
+      <section className="relative bg-[#F5ECE0] text-[#333333] border-b border-[rgba(51,51,51,0.10)] overflow-hidden">
+        {/* Background Image Layer for Wide Desktops & Tablets */}
+        <div className="relative min-h-[580px] lg:min-h-[640px] xl:min-h-[680px] flex flex-col justify-between">
+          {/* Main Hero Container */}
+          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 lg:pt-16 pb-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            {/* Left Content Column */}
+            <div className="lg:col-span-6 max-w-xl">
+              {/* Pill Badge */}
+              <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[rgba(51,51,51,0.12)] text-[#333333] text-xs font-semibold px-3.5 py-1.5 rounded-full mb-5 sm:mb-6 shadow-2xs">
+                <span className="text-[#F7A77A] text-sm leading-none font-bold">✱</span>
+                <span>Small-Batch • Sun-Cured • Vaishali, Bihar</span>
               </div>
-              <div>
-                <span className="block font-serif text-2xl sm:text-3xl font-bold text-[#8B3E3E]">
-                  Zero
+
+              {/* Main Headline */}
+              <h1 className="font-serif tracking-tight leading-[1.06] mb-5">
+                <span className="text-4xl sm:text-6xl lg:text-6xl xl:text-7xl font-bold text-[#8B3E3E] block">
+                  Crafted by Heart.
                 </span>
-                <span className="text-[#555555] text-[11px] sm:text-xs font-semibold">
-                  Synthetic Additives
+                <span className="text-4xl sm:text-6xl lg:text-6xl xl:text-7xl italic font-normal text-[#333333] block mt-1 sm:mt-2">
+                  Rooted in Tradition.
                 </span>
-              </div>
-              <div>
-                <span className="block font-serif text-2xl sm:text-3xl font-bold text-[#8B3E3E]">
-                  GI-Tag
-                </span>
-                <span className="text-[#555555] text-[11px] sm:text-xs font-semibold">
-                  Mithila Wetland Origin
-                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-xs sm:text-sm md:text-base text-[#333333] font-medium leading-relaxed mb-7 sm:mb-8 max-w-lg">
+                Authentic handcrafted flavours from the heart of India. Prepared in small batches using wood cold-pressed mustard oil, pure GI-tagged Mithila makhana, and heirloom recipes.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-4">
+                <Link
+                  href="/shop"
+                  className="inline-flex items-center justify-center gap-2 bg-[#8B3E3E] hover:bg-[#733232] text-[#FFFFFF] font-bold text-xs sm:text-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
+                >
+                  <span>Shop Our Flavours</span>
+                  <ArrowRight className="w-4 h-4 text-[#FFFFFF]" />
+                </Link>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center justify-center bg-[#F7A77A] hover:bg-[#E89565] text-[#333333] font-bold text-xs sm:text-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-xs hover:shadow-md transition-all active:scale-95"
+                >
+                  <span>Discover Our Story</span>
+                </Link>
               </div>
             </div>
-          </div>
 
-          {/* Right Hero Image Card */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-2xl border-4 border-[#FFFFFF] bg-white">
-              <Image
-                src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1200&q=85"
-                alt="Chachiji Handcrafted Indian Pickles and Makhana"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#333333]/70 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#FFFFFF] border border-[rgba(51,51,51,0.10)] shadow-lg">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-[#8B3E3E] block mb-0.5">
-                  Authentic Vaishali Kitchen
-                </span>
-                <p className="font-serif text-base font-bold text-[#333333]">
-                  14-Day Sun-Cured In Ceramic Martabans
-                </p>
+            {/* Right Studio Product Presentation */}
+            <div className="lg:col-span-6 relative flex flex-col items-center lg:items-end justify-center">
+              <div className="relative w-full aspect-4/3 sm:aspect-16/10 lg:aspect-4/3 max-w-lg lg:max-w-none">
+                <Image
+                  src="/heros1.png"
+                  alt="Chachiji Mix Pickle, Mango Pickle, Masala Chana and Mithila Makhana"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-contain lg:object-right object-center drop-shadow-md"
+                />
+              </div>
+
+              {/* Pagination Dots (as shown in reference) */}
+              <div className="flex items-center gap-1.5 mt-2 lg:mt-0 lg:mr-8">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#8B3E3E] transition-all" />
+                <span className="w-2 h-2 rounded-full bg-[#E5BFA8] transition-all" />
+                <span className="w-2 h-2 rounded-full bg-[#E5BFA8] transition-all" />
+                <span className="w-2 h-2 rounded-full bg-[#E5BFA8] transition-all" />
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* 2. TRUST STRIP - Solid White Background */}
-      <section className="bg-[#FFFFFF] border-b border-[rgba(51,51,51,0.10)] py-6 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
-            <div className="flex items-center justify-center gap-2 p-2">
-              <Sun className="w-5 h-5 text-[#8B3E3E] shrink-0" />
-              <span className="text-xs font-bold text-[#333333]">
-                Sun-Cured in Martabans
-              </span>
-            </div>
-            <div className="flex items-center justify-center gap-2 p-2">
-              <Droplets className="w-5 h-5 text-[#8B3E3E] shrink-0" />
-              <span className="text-xs font-bold text-[#333333]">
-                Wood Cold-Pressed Oil
-              </span>
-            </div>
-            <div className="flex items-center justify-center gap-2 p-2">
-              <Award className="w-5 h-5 text-[#8B3E3E] shrink-0" />
-              <span className="text-xs font-bold text-[#333333]">
-                GI-Tagged Mithila Makhana
-              </span>
-            </div>
-            <div className="flex items-center justify-center gap-2 p-2">
-              <ShieldCheck className="w-5 h-5 text-[#8B3E3E] shrink-0" />
-              <span className="text-xs font-bold text-[#333333]">
-                Zero Preservatives
-              </span>
-            </div>
-            <div className="col-span-2 md:col-span-1 flex items-center justify-center gap-2 p-2">
-              <Truck className="w-5 h-5 text-[#8B3E3E] shrink-0" />
-              <span className="text-xs font-bold text-[#333333]">
-                Free Shipping &gt; ₹599
-              </span>
+          {/* Integrated 5-Pillar Bottom Trust Strip */}
+          <div className="border-t border-[rgba(51,51,51,0.10)] bg-[#F5ECE0]/80 pt-5 pb-6 px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 items-center">
+              {/* 1. 100% Sun-Cured & Natural */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/80 border border-[rgba(51,51,51,0.08)] flex items-center justify-center shrink-0 text-[#8B3E3E] shadow-2xs">
+                  <Sun className="w-5 h-5 text-[#8B3E3E]" />
+                </div>
+                <div>
+                  <span className="font-serif text-base sm:text-lg font-bold text-[#8B3E3E] block leading-tight">
+                    100%
+                  </span>
+                  <span className="text-[11px] text-[#555555] font-semibold block leading-tight">
+                    Sun-Cured &amp; Natural
+                  </span>
+                </div>
+              </div>
+
+              {/* 2. Zero Synthetic Additives */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/80 border border-[rgba(51,51,51,0.08)] flex items-center justify-center shrink-0 text-[#8B3E3E] shadow-2xs">
+                  <ShieldCheck className="w-5 h-5 text-[#8B3E3E]" />
+                </div>
+                <div>
+                  <span className="font-serif text-base sm:text-lg font-bold text-[#8B3E3E] block leading-tight">
+                    Zero
+                  </span>
+                  <span className="text-[11px] text-[#555555] font-semibold block leading-tight">
+                    Synthetic Additives
+                  </span>
+                </div>
+              </div>
+
+              {/* 3. GI-Tag Mithila Wetland Origin */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/80 border border-[rgba(51,51,51,0.08)] flex items-center justify-center shrink-0 text-[#8B3E3E] shadow-2xs">
+                  <Award className="w-5 h-5 text-[#8B3E3E]" />
+                </div>
+                <div>
+                  <span className="font-serif text-base sm:text-lg font-bold text-[#8B3E3E] block leading-tight">
+                    GI-Tag
+                  </span>
+                  <span className="text-[11px] text-[#555555] font-semibold block leading-tight">
+                    Mithila Wetland Origin
+                  </span>
+                </div>
+              </div>
+
+              {/* 4. Premium Ingredients */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/80 border border-[rgba(51,51,51,0.08)] flex items-center justify-center shrink-0 text-[#8B3E3E] shadow-2xs">
+                  <CheckCircle2 className="w-5 h-5 text-[#8B3E3E]" />
+                </div>
+                <div>
+                  <span className="font-serif text-base sm:text-lg font-bold text-[#8B3E3E] block leading-tight">
+                    Premium
+                  </span>
+                  <span className="text-[11px] text-[#555555] font-semibold block leading-tight">
+                    Ingredients
+                  </span>
+                </div>
+              </div>
+
+              {/* 5. Made with Love In Small Batches */}
+              <div className="col-span-2 sm:col-span-1 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/80 border border-[rgba(51,51,51,0.08)] flex items-center justify-center shrink-0 text-[#8B3E3E] shadow-2xs">
+                  <Heart className="w-5 h-5 text-[#8B3E3E]" />
+                </div>
+                <div>
+                  <span className="font-serif text-base sm:text-lg font-bold text-[#8B3E3E] block leading-tight">
+                    Made with Love
+                  </span>
+                  <span className="text-[11px] text-[#555555] font-semibold block leading-tight">
+                    In Small Batches
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
