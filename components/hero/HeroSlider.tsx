@@ -87,8 +87,8 @@ export default function HeroSlider() {
             onClick={() => setCurrent(i)}
             aria-label={`Go to slide ${i + 1}`}
             className={`rounded-full transition-all duration-300 ${i === current
-                ? 'w-3 h-3 bg-[#8C201C] scale-110'
-                : 'w-2 h-2 bg-[#EFE7DD] hover:bg-[#C96635]'
+              ? 'w-3 h-3 bg-[#8C201C] scale-110'
+              : 'w-2 h-2 bg-[#EFE7DD] hover:bg-[#C96635]'
               }`}
           />
         ))}

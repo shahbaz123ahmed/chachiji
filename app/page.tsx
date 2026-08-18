@@ -38,11 +38,11 @@ export default function HomePage() {
       {/* HERO SECTION */}
       <section className="w-full bg-[#FFF9F3] text-[#231F20] border-b border-[#EFE7DD] overflow-hidden">
         {/* 2-column layout */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5">
           <div className="flex flex-col lg:flex-row items-stretch gap-0 min-h-[300px] sm:min-h-[320px] lg:min-h-[360px]">
 
             {/* LEFT: Text */}
-            <div className="lg:flex-[0_0_42%] py-10 sm:py-12 lg:py-14 flex flex-col justify-center pr-0 lg:pr-10">
+            <div className="lg:flex-[0_0_42%] py-10 sm:py-12 lg:py-20 flex flex-col justify-center pr-0 lg:pr-10">
               <Reveal direction="up" delay={100}>
                 <h1 className="font-serif tracking-tight leading-[1.06] mb-4">
                   <span className="block text-5xl sm:text-6xl lg:text-7xl font-bold text-[#8C201C]">
