@@ -75,8 +75,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-[#FFFFFF] text-[#231F20] antialiased">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        className="min-h-screen flex flex-col bg-[#FFF9F3] text-[#231F20] antialiased"
+        suppressHydrationWarning
+      >
         <CartProvider>
           <WishlistProvider>
             <SearchProvider>

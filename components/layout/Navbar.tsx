@@ -81,9 +81,8 @@ export default function Navbar() {
 
       {/* 12. Main Navbar - Solid White, Crisp Typography & Contrasting CTAs */}
       <header
-        className={`sticky top-0 z-40 w-full bg-[#FFFFFF] transition-shadow duration-200 border-b border-[rgba(51,51,51,0.10)] ${
-          isScrolled ? "shadow-md py-3" : "py-4"
-        }`}
+        className={`sticky top-0 z-40 w-full bg-[#FFFFFF] transition-shadow duration-200 border-b border-[rgba(51,51,51,0.10)] ${isScrolled ? "shadow-md py-3" : "py-4"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Mobile Menu Button */}
@@ -124,11 +123,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-semibold tracking-wide transition-colors relative py-1 ${
-                    isActive
+                  className={`text-sm font-semibold tracking-wide transition-colors relative py-1 ${isActive
                       ? "text-[#8C201C] font-bold"
                       : "text-[#231F20] hover:text-[#8C201C]"
-                  }`}
+                    }`}
                 >
                   {link.label}
                   {isActive && (
