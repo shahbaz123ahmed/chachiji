@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12 min-h-[420px]">
             {/* Left Column: Text (Animates from Left) */}
-            <div className="flex-1 max-w-xl text-left">
+            <div className="flex-1 max-w-lg text-left">
               <Reveal direction="right" delay={100}>
                 <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 shadow-2xs">
                   Our Roots in Vaishali, Bihar
@@ -59,10 +59,10 @@ export default function AboutPage() {
               </Reveal>
             </div>
 
-            {/* Right Column: Transparent about.png (Animates from Right) */}
-            <div className="flex-1 relative flex items-center justify-center lg:justify-end w-full">
+            {/* Right Column: Transparent about.png (Animates from Right - Enlarged) */}
+            <div className="flex-1 lg:flex-[1.2] relative flex items-center justify-center lg:justify-end w-full">
               <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl h-[320px] sm:h-[380px] lg:h-[440px]">
+                <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
                   <Image
                     src="/about-hero.png"
                     alt="Chachiji Traditional Sil-Batta, Pickles & Makhana Heritage"
@@ -70,7 +70,7 @@ export default function AboutPage() {
                     priority
                     quality={100}
                     unoptimized
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 60vw"
                     style={{ objectFit: "contain", objectPosition: "center right" }}
                     className="select-none pointer-events-none"
                   />
