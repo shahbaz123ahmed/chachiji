@@ -208,10 +208,10 @@ export default function AboutPage() {
           {/* Right Column: Transparent Image (Animates from Right - Merged Background) */}
           <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end w-full">
             <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[380px] sm:h-[460px] lg:h-[520px] xl:h-[560px]">
                 <Image
-                  src="/taste-tradition.png"
-                  alt="Taste the Tradition: Hand-Ground Spices and Natural Sun Curing"
+                  src="/our-v2.png"
+                  alt="Traditional Grandmother and Child Grinding Heirloom Spices on Stone Sil-Batta"
                   fill
                   priority
                   quality={100}
