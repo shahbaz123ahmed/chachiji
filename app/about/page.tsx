@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Story — Handcrafted Culinary Heritage of Bihar & Mithila",
+  title: "About US — Handcrafted Culinary Heritage of Bihar & Mithila",
   description:
     "Learn about Chachiji's Homemade Cuisine. Heirloom recipes from Vaishali, Bihar, wood cold-pressed mustard oil, sun-curing in earthen martabans, and sacred Mithila wetland makhana.",
 };

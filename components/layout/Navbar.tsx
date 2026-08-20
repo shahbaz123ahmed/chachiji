@@ -48,7 +48,7 @@ export default function Navbar() {
     { label: "Achar", href: "/shop/achar" },
     { label: "Mithila Makhana", href: "/shop/makhana" },
     { label: "Gift Bundles", href: "/shop/bundles" },
-    { label: "Our Story", href: "/about" },
+    { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
 

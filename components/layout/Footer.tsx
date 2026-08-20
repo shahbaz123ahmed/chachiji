@@ -190,7 +190,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs text-[#444444]">
               <li>
                 <Link href="/about" className="hover:text-[#E07A4A] transition-colors">
-                  Our Story &amp; Roots
+                  About Us &amp; Roots
                 </Link>
               </li>
               <li>
