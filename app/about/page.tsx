@@ -64,14 +64,15 @@ export default function AboutPage() {
               <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl h-[320px] sm:h-[380px] lg:h-[440px]">
                   <Image
-                    src="/about.png"
+                    src="/about-hero.png"
                     alt="Chachiji Traditional Sil-Batta, Pickles & Makhana Heritage"
                     fill
                     priority
                     quality={100}
+                    unoptimized
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     style={{ objectFit: "contain", objectPosition: "center right" }}
-                    className="select-none pointer-events-none drop-shadow-2xl"
+                    className="select-none pointer-events-none"
                   />
                 </div>
               </Reveal>
