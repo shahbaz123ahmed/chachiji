@@ -229,9 +229,28 @@ export default function AboutPage() {
       {/* Chapter 3: The Mithila Wetland Connection - Solid Cream Section */}
       <section id="mithila" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Text (Animates from Left) */}
-          <div className="order-2 lg:order-1">
-            <Reveal direction="right" delay={150}>
+          {/* Left Column: Transparent Makhana Image (Animates from Left) */}
+          <div className="order-1 lg:order-1 flex items-center justify-center lg:justify-start w-full">
+            <Reveal direction="right" delay={150} className="w-full flex justify-center lg:justify-start">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
+                <Image
+                  src="/mithila-clean.png"
+                  alt="GI-Tagged Mithila Makhana and Spiced Roasted Fox Nuts"
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  style={{ objectFit: "contain", objectPosition: "center" }}
+                  className="select-none pointer-events-none"
+                />
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column: Text (Animates from Right) */}
+          <div className="order-2 lg:order-2">
+            <Reveal direction="left" delay={200}>
               <div className="space-y-5">
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
                   Mithila Sacred Waters
@@ -253,25 +272,6 @@ export default function AboutPage() {
                     GI Registered Origin
                   </span>
                 </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Right Column: Transparent Makhana Image (Animates from Right - Enlarged) */}
-          <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end w-full">
-            <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
-                <Image
-                  src="/mithila-clean.png"
-                  alt="GI-Tagged Mithila Makhana and Spiced Roasted Fox Nuts"
-                  fill
-                  priority
-                  quality={100}
-                  unoptimized
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  style={{ objectFit: "contain", objectPosition: "center" }}
-                  className="select-none pointer-events-none"
-                />
               </div>
             </Reveal>
           </div>
