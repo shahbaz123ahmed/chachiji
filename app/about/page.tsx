@@ -115,44 +115,53 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 2: The Mithila Wetland Connection - Solid Cream Section */}
-      <section id="mithila" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[rgba(51,51,51,0.10)]">
+      <section id="mithila" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="space-y-5 order-2 lg:order-1">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
-              Mithila Sacred Waters
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#231F20]">
-              GI-Tagged Mithila Makhana
-            </h2>
-            <p className="text-xs sm:text-sm text-[#231F20] font-medium leading-relaxed">
-              Mithila produces over 85% of the world&apos;s Fox Nuts. The freshwater wetlands of Darbhanga, Madhubani, and Sitamarhi provide the pristine mineral-rich environment where the prickly water lily (*Euryale Ferox*) flourishes.
-            </p>
-            <p className="text-xs sm:text-sm text-[#231F20] font-medium leading-relaxed">
-              Every morning at dawn, indigenous Mallah community harvesters dive deep into the calm waters to gather the seeds from the muddy lakebeds. We work directly with these artisan farming clusters, paying fair prices and selecting only the top Grade A+ jumbo white blooms.
-            </p>
-            <div className="flex flex-wrap gap-2 text-xs">
-              <span className="bg-[#FFFFFF] border border-[rgba(51,51,51,0.10)] px-3 py-1.5 rounded-xl font-bold text-[#8C201C] shadow-2xs">
-                Direct Farmer Partnership
-              </span>
-              <span className="bg-[#FFFFFF] border border-[rgba(51,51,51,0.10)] px-3 py-1.5 rounded-xl font-bold text-[#8C201C] shadow-2xs">
-                GI Registered Origin
-              </span>
-            </div>
+          {/* Left Column: Text (Animates from Left) */}
+          <div className="order-2 lg:order-1">
+            <Reveal direction="right" delay={150}>
+              <div className="space-y-5">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
+                  Mithila Sacred Waters
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20]">
+                  GI-Tagged Mithila Makhana
+                </h2>
+                <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
+                  Mithila produces over 85% of the world&apos;s Fox Nuts. The freshwater wetlands of Darbhanga, Madhubani, and Sitamarhi provide the pristine mineral-rich environment where the prickly water lily (*Euryale Ferox*) flourishes.
+                </p>
+                <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
+                  Every morning at dawn, indigenous Mallah community harvesters dive deep into the calm waters to gather the seeds from the muddy lakebeds. We work directly with these artisan farming clusters, paying fair prices and selecting only the top Grade A+ jumbo white blooms.
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs pt-1">
+                  <span className="bg-[#FFFFFF] border border-[#EFE7DD] px-3.5 py-1.5 rounded-xl font-bold text-[#8C201C] shadow-2xs">
+                    Direct Farmer Partnership
+                  </span>
+                  <span className="bg-[#FFFFFF] border border-[#EFE7DD] px-3.5 py-1.5 rounded-xl font-bold text-[#8C201C] shadow-2xs">
+                    GI Registered Origin
+                  </span>
+                </div>
+              </div>
+            </Reveal>
           </div>
 
-          {/* Transparent Makhana Image Merged with Background */}
-          <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[440px] order-1 lg:order-2 flex items-center justify-center">
-            <Image
-              src="/mithila-clean.png"
-              alt="GI-Tagged Mithila Makhana and Spiced Roasted Fox Nuts"
-              fill
-              priority
-              quality={100}
-              unoptimized
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              style={{ objectFit: "contain", objectPosition: "center" }}
-              className="select-none pointer-events-none"
-            />
+          {/* Right Column: Transparent Makhana Image (Animates from Right - Enlarged) */}
+          <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end w-full">
+            <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
+                <Image
+                  src="/mithila-clean.png"
+                  alt="GI-Tagged Mithila Makhana and Spiced Roasted Fox Nuts"
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  style={{ objectFit: "contain", objectPosition: "center" }}
+                  className="select-none pointer-events-none"
+                />
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
