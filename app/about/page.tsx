@@ -82,12 +82,12 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 1: Our Commitment - Solid Soft Cream Background */}
-      <section className="pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <section className="py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left: Transparent Commitment Image (Animates from Left - Ultra-HD & Enlarged) */}
           <div className="flex items-center justify-center lg:justify-start w-full">
             <Reveal direction="right" delay={150} className="w-full flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl h-[380px] sm:h-[480px] lg:h-[540px] xl:h-[580px]">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl h-[340px] sm:h-[420px] lg:h-[480px] xl:h-[520px]">
                 <Image
                   src="/commitment-v3.png"
                   alt="Chachiji Artisans grinding spices on traditional sil-batta and handpicking Mithila makhana"
@@ -104,9 +104,9 @@ export default function AboutPage() {
           </div>
 
           {/* Right: Content (Animates from Right) */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-5">
             <Reveal direction="left" delay={200}>
-              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3 shadow-2xs">
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-2 shadow-2xs">
                 Our Commitment
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
@@ -115,33 +115,33 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal direction="left" delay={350}>
-              <p className="text-sm sm:text-base text-[#555555] font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
                 At Chachiji’s Homemade Cuisine, we don’t just sell food; we share a piece of our heritage. Our commitment is built on two pillars of authentic Indian tradition: the artisanal craft of hand-ground pickles and the sustainable procurement of Mithila’s finest Makhana.
               </p>
             </Reveal>
 
             <Reveal direction="left" delay={500}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-                <div className="bg-[#FFFFFF] p-4.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-1">
-                  <span className="font-serif text-sm font-bold text-[#8C201C] block">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                <div className="bg-[#FFFFFF] p-3.5 sm:p-4 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                  <span className="font-serif text-xs sm:text-sm font-bold text-[#8C201C] block">
                     1. Artisanal Hand-Ground Pickles
                   </span>
-                  <p className="text-xs text-[#555555] font-medium leading-relaxed">
+                  <p className="text-[11px] sm:text-xs text-[#555555] font-medium leading-relaxed">
                     Whole spices stone-crushed on traditional sil-batta and sun-cured in porcelain martabans with pure cold-pressed oil.
                   </p>
                 </div>
 
-                <div className="bg-[#FFFFFF] p-4.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-1">
-                  <span className="font-serif text-sm font-bold text-[#8C201C] block">
+                <div className="bg-[#FFFFFF] p-3.5 sm:p-4 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                  <span className="font-serif text-xs sm:text-sm font-bold text-[#8C201C] block">
                     2. Sustainable Mithila Makhana
                   </span>
-                  <p className="text-xs text-[#555555] font-medium leading-relaxed">
+                  <p className="text-[11px] sm:text-xs text-[#555555] font-medium leading-relaxed">
                     Direct ethical partnerships with indigenous harvesting families in Bihar&apos;s freshwater wetlands for Grade A+ jumbo blooms.
                   </p>
                 </div>
               </div>
 
-              <div className="bg-[#FFFFFF] p-4 rounded-2xl border border-[#EFE7DD] text-xs text-[#8C201C] font-serif italic font-bold shadow-2xs mt-4">
+              <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] text-xs text-[#8C201C] font-serif italic font-bold shadow-2xs mt-3">
                 &quot;If it cannot be prepared with the same purity we feed our own children, it will never leave our kitchen.&quot;
               </div>
             </Reveal>
@@ -150,12 +150,12 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 2: Taste the Tradition - Solid Soft Cream Background */}
-      <section className="pt-4 sm:pt-8 pb-14 sm:pb-20 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <section className="py-3 sm:py-5 lg:py-6 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           {/* Left Column: Text & 3 Pillars (Compact Width - 5/12 cols) */}
-          <div className="space-y-4 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
+          <div className="space-y-3.5 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
             <Reveal direction="right" delay={100}>
-              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-2 shadow-2xs">
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1.5 shadow-2xs">
                 Taste the Tradition
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
@@ -171,9 +171,9 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal direction="right" delay={400}>
-              <div className="space-y-2.5 pt-1">
+              <div className="space-y-2 pt-0.5">
                 {/* Pillar 1 */}
-                <div className="bg-[#FFFFFF] p-3.5 sm:p-4 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
                     Hand-Blended Excellence
                   </h3>
@@ -183,7 +183,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Pillar 2 */}
-                <div className="bg-[#FFFFFF] p-3.5 sm:p-4 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
                     A Living Legacy
                   </h3>
@@ -193,7 +193,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Pillar 3 */}
-                <div className="bg-[#FFFFFF] p-3.5 sm:p-4 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
                     Patience &amp; Love
                   </h3>
@@ -208,7 +208,7 @@ export default function AboutPage() {
           {/* Right Column: Transparent Image (Massively Enlarged - 7/12 cols) */}
           <div className="order-1 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
             <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
-              <div className="relative w-full h-[420px] sm:h-[540px] lg:h-[660px] xl:h-[740px]">
+              <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[660px]">
                 <Image
                   src="/our-v3.png"
                   alt="Traditional Grandmother and Child Grinding Heirloom Spices on Stone Sil-Batta"
@@ -218,7 +218,7 @@ export default function AboutPage() {
                   unoptimized
                   sizes="(max-width: 1024px) 100vw, 75vw"
                   style={{ objectFit: "contain", objectPosition: "center right" }}
-                  className="select-none pointer-events-none transform lg:scale-105"
+                  className="select-none pointer-events-none"
                 />
               </div>
             </Reveal>
@@ -227,7 +227,7 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 3: The Mithila Wetland Connection - Solid Cream Section */}
-      <section id="mithila" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
+      <section id="mithila" className="py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column: Transparent Makhana Image (Animates from Left) */}
           <div className="order-1 lg:order-1 flex items-center justify-center lg:justify-start w-full">
