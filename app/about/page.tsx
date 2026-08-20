@@ -149,7 +149,84 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Chapter 2: The Mithila Wetland Connection - Solid Cream Section */}
+      {/* Chapter 2: Taste the Tradition - Solid Soft Cream Background */}
+      <section className="pt-6 sm:pt-10 pb-14 sm:pb-20 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Left Column: Text & 3 Pillars (Animates from Left) */}
+          <div className="space-y-6 order-2 lg:order-1">
+            <Reveal direction="right" delay={100}>
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3 shadow-2xs">
+                Taste the Tradition
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
+                Crafted by Heart, <br />
+                <span className="italic font-normal text-[#8C201C]">Ground by Hand.</span>
+              </h2>
+            </Reveal>
+
+            <Reveal direction="right" delay={250}>
+              <p className="text-sm sm:text-base text-[#555555] font-medium leading-relaxed">
+                We believe that the soul of a perfect pickle lies in the purity of its ingredients. In a world of mass production, we choose the path of patience.
+              </p>
+            </Reveal>
+
+            <Reveal direction="right" delay={400}>
+              <div className="space-y-3.5 pt-1">
+                {/* Pillar 1 */}
+                <div className="bg-[#FFFFFF] p-4.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-1">
+                  <h3 className="font-serif text-sm font-bold text-[#8C201C]">
+                    Hand-Blended Excellence
+                  </h3>
+                  <p className="text-xs text-[#555555] font-medium leading-relaxed">
+                    Every jar features our signature spice blends, roasted and ground in-house. This ensures a depth of aroma and a bold flavor profile that pre-packaged alternatives can never replicate.
+                  </p>
+                </div>
+
+                {/* Pillar 2 */}
+                <div className="bg-[#FFFFFF] p-4.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-1">
+                  <h3 className="font-serif text-sm font-bold text-[#8C201C]">
+                    A Living Legacy
+                  </h3>
+                  <p className="text-xs text-[#555555] font-medium leading-relaxed">
+                    We aren&apos;t just preparing recipes; we are preserving a legacy of authentic flavors passed down through generations.
+                  </p>
+                </div>
+
+                {/* Pillar 3 */}
+                <div className="bg-[#FFFFFF] p-4.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-1">
+                  <h3 className="font-serif text-sm font-bold text-[#8C201C]">
+                    Patience &amp; Love
+                  </h3>
+                  <p className="text-xs text-[#555555] font-medium leading-relaxed">
+                    Our pickles are cured naturally, allowing time to develop the complex tang and texture that define true homemade cuisine.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column: Transparent Image (Animates from Right - Merged Background) */}
+          <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end w-full">
+            <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
+                <Image
+                  src="/taste-tradition.png"
+                  alt="Taste the Tradition: Hand-Ground Spices and Natural Sun Curing"
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  style={{ objectFit: "contain", objectPosition: "center" }}
+                  className="select-none pointer-events-none"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Chapter 3: The Mithila Wetland Connection - Solid Cream Section */}
       <section id="mithila" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column: Text (Animates from Left) */}
