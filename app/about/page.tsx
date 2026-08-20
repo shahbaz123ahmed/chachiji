@@ -25,24 +25,24 @@ export default function AboutPage() {
   return (
     <div className="bg-[#FFFFFF] min-h-screen">
       {/* Hero: 2-Column with Cream Background & Directional Animations */}
-      <section className="relative bg-[#FFF9F3] text-[#231F20] py-14 sm:py-20 lg:py-24 border-b border-[#EFE7DD] overflow-hidden">
+      <section className="relative bg-[#FFF9F3] text-[#231F20] pt-3 sm:pt-4 lg:pt-6 pb-8 sm:pb-12 border-b border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12 min-h-[420px]">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 min-h-[380px]">
             {/* Left Column: Text (Animates from Left) */}
             <div className="flex-1 max-w-lg text-left">
               <Reveal direction="right" delay={100}>
-                <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 shadow-2xs">
+                <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3 shadow-2xs">
                   Our Roots in Vaishali, Bihar
                 </span>
               </Reveal>
               <Reveal direction="right" delay={250}>
-                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-5">
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-4">
                   <span className="block text-[#8C201C]">Crafted by Heart.</span>
                   <span className="block italic font-normal text-[#231F20] mt-1">Ground by Hand.</span>
                 </h1>
               </Reveal>
               <Reveal direction="right" delay={400}>
-                <p className="text-sm sm:text-base text-[#555555] font-medium leading-relaxed mb-8">
+                <p className="text-sm sm:text-base text-[#555555] font-medium leading-relaxed mb-6">
                   Chachiji was born from an unwavering devotion to the authentic, unadulterated tastes of home — where every achar is cured under open sunshine and every makhana is harvested from sacred wetlands.
                 </p>
               </Reveal>
@@ -64,7 +64,7 @@ export default function AboutPage() {
               <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
                   <Image
-                    src="/about-hero.png"
+                    src="/about-hero-v2.png"
                     alt="Chachiji Traditional Sil-Batta, Pickles & Makhana Heritage"
                     fill
                     priority
