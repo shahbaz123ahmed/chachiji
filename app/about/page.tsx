@@ -25,32 +25,32 @@ export default function AboutPage() {
   return (
     <div className="bg-[#FFFFFF] min-h-screen">
       {/* Hero: 2-Column with Cream Background & Directional Animations */}
-      <section className="relative bg-[#FFF9F3] text-[#231F20] py-2 sm:py-3 lg:py-4 border-b border-[#EFE7DD] overflow-hidden">
+      <section className="relative bg-[#FFF9F3] text-[#231F20] py-1 sm:py-1.5 lg:py-2 border-b border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 min-h-[340px]">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 min-h-[320px]">
             {/* Left Column: Text (Animates from Left) */}
             <div className="flex-1 max-w-lg text-left">
-              <Reveal direction="right" delay={100}>
+              <Reveal direction="right" delay={80}>
                 <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-2 shadow-2xs">
                   Our Roots in Vaishali, Bihar
                 </span>
               </Reveal>
-              <Reveal direction="right" delay={250}>
-                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.08] mb-3">
+              <Reveal direction="right" delay={180}>
+                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.08] mb-2.5">
                   <span className="block text-[#8C201C]">Crafted by Heart.</span>
                   <span className="block italic font-normal text-[#231F20] mt-0.5">Ground by Hand.</span>
                 </h1>
               </Reveal>
-              <Reveal direction="right" delay={400}>
-                <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed mb-4">
+              <Reveal direction="right" delay={280}>
+                <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed mb-3.5">
                   Chachiji was born from an unwavering devotion to the authentic, unadulterated tastes of home — where every achar is cured under open sunshine and every makhana is harvested from sacred wetlands.
                 </p>
               </Reveal>
-              <Reveal direction="right" delay={550}>
+              <Reveal direction="right" delay={380}>
                 <div className="flex flex-wrap items-center gap-3">
                   <Link
                     href="/shop"
-                    className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
+                    className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
                   >
                     <span>Explore Our Heritage Jars</span>
                     <ArrowRight className="w-4 h-4" />
@@ -61,7 +61,7 @@ export default function AboutPage() {
 
             {/* Right Column: Transparent about.png (Animates from Right - Enlarged) */}
             <div className="flex-1 lg:flex-[1.2] relative flex items-center justify-center lg:justify-end w-full">
-              <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
+              <Reveal direction="left" delay={120} className="w-full flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[500px]">
                   <Image
                     src="/about-hero-v2.png"
@@ -82,11 +82,11 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 1: Our Commitment - Solid Soft Cream Background */}
-      <section className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+      <section className="py-1 sm:py-1.5 lg:py-2 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
           {/* Left: Transparent Commitment Image (Animates from Left - Ultra-HD & Enlarged) */}
           <div className="flex items-center justify-center lg:justify-start w-full">
-            <Reveal direction="right" delay={150} className="w-full flex justify-center lg:justify-start">
+            <Reveal direction="right" delay={120} className="w-full flex justify-center lg:justify-start">
               <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[500px]">
                 <Image
                   src="/commitment-v3.png"
@@ -104,9 +104,9 @@ export default function AboutPage() {
           </div>
 
           {/* Right: Content (Animates from Right) */}
-          <div className="space-y-3.5">
-            <Reveal direction="left" delay={200}>
-              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1.5 shadow-2xs">
+          <div className="space-y-3">
+            <Reveal direction="left" delay={80}>
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
                 Our Commitment
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
@@ -114,14 +114,14 @@ export default function AboutPage() {
               </h2>
             </Reveal>
 
-            <Reveal direction="left" delay={350}>
+            <Reveal direction="left" delay={200}>
               <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
                 At Chachiji’s Homemade Cuisine, we don’t just sell food; we share a piece of our heritage. Our commitment is built on two pillars of authentic Indian tradition: the artisanal craft of hand-ground pickles and the sustainable procurement of Mithila’s finest Makhana.
               </p>
             </Reveal>
 
-            <Reveal direction="left" delay={500}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <Reveal direction="left" delay={320}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-0.5">
                 <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <span className="font-serif text-xs sm:text-sm font-bold text-[#8C201C] block">
                     1. Artisanal Hand-Ground Pickles
@@ -141,7 +141,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] text-xs text-[#8C201C] font-serif italic font-bold shadow-2xs mt-2.5">
+              <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] text-xs text-[#8C201C] font-serif italic font-bold shadow-2xs mt-2">
                 &quot;If it cannot be prepared with the same purity we feed our own children, it will never leave our kitchen.&quot;
               </div>
             </Reveal>
@@ -150,11 +150,11 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 2: Taste the Tradition - Solid Soft Cream Background */}
-      <section className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+      <section className="py-1 sm:py-1.5 lg:py-2 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           {/* Left Column: Text & 3 Pillars (Compact Width - 5/12 cols) */}
-          <div className="space-y-3 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
-            <Reveal direction="right" delay={100}>
+          <div className="space-y-2.5 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
+            <Reveal direction="right" delay={80}>
               <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
                 Taste the Tradition
               </span>
@@ -164,14 +164,14 @@ export default function AboutPage() {
               </h2>
             </Reveal>
 
-            <Reveal direction="right" delay={250}>
+            <Reveal direction="right" delay={200}>
               <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
                 We believe that the soul of a perfect pickle lies in the purity of its ingredients. In a world of mass production, we choose the path of patience.
               </p>
             </Reveal>
 
-            <Reveal direction="right" delay={400}>
-              <div className="space-y-2 pt-0.5">
+            <Reveal direction="right" delay={320}>
+              <div className="space-y-1.5 pt-0.5">
                 {/* Pillar 1 */}
                 <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
@@ -207,7 +207,7 @@ export default function AboutPage() {
 
           {/* Right Column: Transparent Image (Massively Enlarged - 7/12 cols) */}
           <div className="order-1 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
-            <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
+            <Reveal direction="left" delay={120} className="w-full flex justify-center lg:justify-end">
               <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[580px] xl:h-[640px]">
                 <Image
                   src="/our-v3.png"
@@ -227,11 +227,11 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 3: The Mithila Wetland Connection - Solid Cream Section */}
-      <section id="mithila" className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
+      <section id="mithila" className="py-1 sm:py-1.5 lg:py-2 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column: Transparent Makhana Image (Animates from Left) */}
           <div className="order-1 lg:order-1 flex items-center justify-center lg:justify-start w-full">
-            <Reveal direction="right" delay={150} className="w-full flex justify-center lg:justify-start">
+            <Reveal direction="right" delay={120} className="w-full flex justify-center lg:justify-start">
               <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[500px]">
                 <Image
                   src="/mithila-clean.png"
@@ -250,8 +250,8 @@ export default function AboutPage() {
 
           {/* Right Column: Text (Animates from Right) */}
           <div className="order-2 lg:order-2">
-            <Reveal direction="left" delay={200}>
-              <div className="space-y-4">
+            <Reveal direction="left" delay={80}>
+              <div className="space-y-3.5">
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
                   Mithila Sacred Waters
                 </span>
@@ -279,12 +279,12 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 4: Our Promise to You - Solid Soft Cream Background */}
-      <section className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+      <section className="py-1 sm:py-1.5 lg:py-2 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           {/* Left Column: Text & Promises (Animates from Left - 5/12 cols) */}
-          <div className="space-y-3.5 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
-            <Reveal direction="right" delay={100}>
-              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1.5 shadow-2xs">
+          <div className="space-y-3 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
+            <Reveal direction="right" delay={80}>
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
                 Our Promise to You
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
@@ -293,18 +293,18 @@ export default function AboutPage() {
               </h2>
             </Reveal>
 
-            <Reveal direction="right" delay={250}>
+            <Reveal direction="right" delay={200}>
               <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
                 Whether it is the spicy kick of our hand-ground pickles or the guilt-free crunch of our sun-dried Makhana, we promise uncompromising quality.
               </p>
-              <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed mt-2.5">
+              <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed mt-2">
                 At Chachiji’s, we bring you the warmth of a traditional kitchen, where every ingredient is chosen with care and every product is delivered with integrity.
               </p>
             </Reveal>
 
-            <Reveal direction="right" delay={400}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+            <Reveal direction="right" delay={320}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-0.5">
+                <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
                     Chosen with Care
                   </h3>
@@ -313,7 +313,7 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
                     Delivered with Integrity
                   </h3>
@@ -327,7 +327,7 @@ export default function AboutPage() {
 
           {/* Right Column: Transparent Promise Image (Massively Enlarged - 7/12 cols) */}
           <div className="order-1 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
-            <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
+            <Reveal direction="left" delay={120} className="w-full flex justify-center lg:justify-end">
               <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[580px] xl:h-[640px]">
                 <Image
                   src="/promise-clean.png"

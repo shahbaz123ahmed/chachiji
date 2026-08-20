@@ -37,7 +37,7 @@ export default function Reveal({
           setVisible(false);
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
     );
 
     observer.observe(el);
@@ -45,10 +45,10 @@ export default function Reveal({
   }, [once]);
 
   const transforms: Record<string, string> = {
-    up:    'translateY(22px)',
-    down:  'translateY(-22px)',
-    left:  'translateX(22px)',
-    right: 'translateX(-22px)',
+    up:    'translateY(36px)',
+    down:  'translateY(-36px)',
+    left:  'translateX(44px)',
+    right: 'translateX(-44px)',
     fade:  'none',
   };
 
@@ -58,8 +58,8 @@ export default function Reveal({
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translate(0,0)' : transforms[direction],
-        transition: `opacity 1.5s cubic-bezier(0.22,1,0.36,1), transform 1.5s cubic-bezier(0.22,1,0.36,1)`,
+        transform: visible ? 'translate3d(0,0,0)' : transforms[direction],
+        transition: `opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1), transform 0.95s cubic-bezier(0.16, 1, 0.3, 1)`,
         transitionDelay: `${delay}ms`,
         willChange: 'opacity, transform',
       }}
