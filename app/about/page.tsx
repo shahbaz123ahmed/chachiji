@@ -13,6 +13,7 @@ import {
   FileCheck2,
 } from "lucide-react";
 import { BRAND_INFO } from "@/data/brandInfo";
+import Reveal from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: "About US — Handcrafted Culinary Heritage of Bihar & Mithila",
@@ -23,31 +24,59 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="bg-[#FFFFFF] min-h-screen">
-      {/* Hero */}
-      <section className="relative text-[#FFFFFF] py-24 sm:py-32 overflow-hidden bg-[#231F20]">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1600&q=80"
-            alt="About Chachiji Heritage"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center drop-shadow-md">
-          <span className="inline-block bg-[#E07A4A] text-[#231F20] text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full mb-4 shadow-sm">
-            Our Roots in Vaishali, Bihar
-          </span>
-          <h1 className="font-serif text-4xl sm:text-6xl font-bold leading-tight mb-6">
-            Crafted by Heart. <br />
-            <span className="italic font-normal text-[#FFF9F3]">
-              Ground by Hand.
-            </span>
-          </h1>
-          <p className="text-sm sm:text-base text-[#FFF9F3] font-medium leading-relaxed max-w-2xl mx-auto">
-            Chachiji was born from an unwavering devotion to the authentic, unadulterated tastes of home — where every achar is cured under open sunshine and every makhana is harvested from sacred wetlands.
-          </p>
+      {/* Hero: 2-Column with Cream Background & Directional Animations */}
+      <section className="relative bg-[#FFF9F3] text-[#231F20] py-14 sm:py-20 lg:py-24 border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12 min-h-[420px]">
+            {/* Left Column: Text (Animates from Left) */}
+            <div className="flex-1 max-w-xl text-left">
+              <Reveal direction="right" delay={100}>
+                <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 shadow-2xs">
+                  Our Roots in Vaishali, Bihar
+                </span>
+              </Reveal>
+              <Reveal direction="right" delay={250}>
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-5">
+                  <span className="block text-[#8C201C]">Crafted by Heart.</span>
+                  <span className="block italic font-normal text-[#231F20] mt-1">Ground by Hand.</span>
+                </h1>
+              </Reveal>
+              <Reveal direction="right" delay={400}>
+                <p className="text-sm sm:text-base text-[#555555] font-medium leading-relaxed mb-8">
+                  Chachiji was born from an unwavering devotion to the authentic, unadulterated tastes of home — where every achar is cured under open sunshine and every makhana is harvested from sacred wetlands.
+                </p>
+              </Reveal>
+              <Reveal direction="right" delay={550}>
+                <div className="flex flex-wrap items-center gap-3.5">
+                  <Link
+                    href="/shop"
+                    className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs sm:text-sm px-7 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
+                  >
+                    <span>Explore Our Heritage Jars</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Right Column: Transparent about.png (Animates from Right) */}
+            <div className="flex-1 relative flex items-center justify-center lg:justify-end w-full">
+              <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
+                <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl h-[320px] sm:h-[380px] lg:h-[440px]">
+                  <Image
+                    src="/about.png"
+                    alt="Chachiji Traditional Sil-Batta, Pickles & Makhana Heritage"
+                    fill
+                    priority
+                    quality={100}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    style={{ objectFit: "contain", objectPosition: "center right" }}
+                    className="select-none pointer-events-none drop-shadow-2xl"
+                  />
+                </div>
+              </Reveal>
+            </div>
+          </div>
         </div>
       </section>
 
