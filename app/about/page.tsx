@@ -8,7 +8,11 @@ import {
   Droplets,
   ShieldCheck,
   ArrowRight,
+  Award,
+  CheckCircle2,
+  FileCheck2,
 } from "lucide-react";
+import { BRAND_INFO } from "@/data/brandInfo";
 
 export const metadata: Metadata = {
   title: "About US — Handcrafted Culinary Heritage of Bihar & Mithila",
@@ -176,6 +180,69 @@ export default function AboutPage() {
             <p className="text-xs text-[#555555] font-medium leading-relaxed">
               Prepared and packed by experienced rural women artisans in Vaishali, supporting dignified heritage livelihoods.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Official Licensing & Food Safety Compliance Strip */}
+      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-t border-[#EFE7DD]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
+              Government of India Certified
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#231F20] mt-1 mb-2">
+              Official Food Licensing &amp; Compliance
+            </h2>
+            <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
+              Every jar is produced in an FSSAI-compliant, certified kitchen under strict hygiene and temperature-monitored conditions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* FSSAI License Card */}
+            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-3xl border border-[#EFE7DD] shadow-sm flex items-start gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#FFF9F3] border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-7 h-7 text-[#8C201C]" />
+              </div>
+              <div className="space-y-1.5 flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-bold uppercase tracking-widest bg-[#8C201C] text-[#FFFFFF] px-2.5 py-0.5 rounded">
+                    Food Safety
+                  </span>
+                  <span className="text-xs text-[#777777] font-semibold">FSSAI Central / State</span>
+                </div>
+                <h3 className="font-serif text-xl font-bold text-[#231F20]">FSSAI License Number</h3>
+                <div className="bg-[#FFF9F3] border border-[#EFE7DD] px-3.5 py-2 rounded-xl text-base sm:text-lg font-mono font-bold text-[#8C201C] tracking-wider w-fit">
+                  {BRAND_INFO.fssaiNumber}
+                </div>
+                <p className="text-xs text-[#555555] font-medium leading-relaxed pt-1">
+                  Certified for hygienic manufacturing, processing, and domestic distribution of traditional pickles and GI-tagged makhana.
+                </p>
+              </div>
+            </div>
+
+            {/* GST Registration Card */}
+            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-3xl border border-[#EFE7DD] shadow-sm flex items-start gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#FFF9F3] border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                <FileCheck2 className="w-7 h-7 text-[#8C201C]" />
+              </div>
+              <div className="space-y-1.5 flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-bold uppercase tracking-widest bg-[#E07A4A] text-[#231F20] px-2.5 py-0.5 rounded shadow-2xs">
+                    Registered Enterprise
+                  </span>
+                  <span className="text-xs text-[#777777] font-semibold">Govt. of Bihar / India</span>
+                </div>
+                <h3 className="font-serif text-xl font-bold text-[#231F20]">GST Identification Number</h3>
+                <div className="bg-[#FFF9F3] border border-[#EFE7DD] px-3.5 py-2 rounded-xl text-base sm:text-lg font-mono font-bold text-[#231F20] tracking-wider w-fit">
+                  {BRAND_INFO.gstNumber}
+                </div>
+                <p className="text-xs text-[#555555] font-medium leading-relaxed pt-1">
+                  Legally registered manufacturing kitchen facility located at Hajipur-Muzaffarpur Highway (NH 22), Vaishali, Bihar - 844114.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

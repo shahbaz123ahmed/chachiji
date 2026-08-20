@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Sparkles,
   CheckCircle2,
+  ShieldCheck,
 } from "lucide-react";
 import { InstagramIcon, FacebookIcon } from "@/components/ui/Icons";
 
@@ -109,6 +110,17 @@ export default function Footer() {
                   {BRAND_INFO.email}
                 </a>
               </div>
+            </div>
+
+            {/* FSSAI & GST Badges */}
+            <div className="pt-2 flex flex-wrap items-center gap-2 text-[11px] text-[#555555] font-semibold">
+              <span className="bg-[#FFFFFF] border border-[#EFE7DD] px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-2xs">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#8C201C]" />
+                <span>FSSAI Lic: <strong className="text-[#8C201C]">{BRAND_INFO.fssaiNumber}</strong></span>
+              </span>
+              <span className="bg-[#FFFFFF] border border-[#EFE7DD] px-3 py-1.5 rounded-xl shadow-2xs">
+                GSTIN: <strong>{BRAND_INFO.gstNumber}</strong>
+              </span>
             </div>
 
             {/* Social Icons */}
@@ -258,12 +270,16 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#EFE7DD] bg-[#EFE7DD] py-6 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#555555]">
+      <div className="border-t border-[#EFE7DD] bg-[#EFE7DD] py-5 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[#555555]">
           <p>© {new Date().getFullYear()} Chachiji&apos;s Homemade Cuisine. All rights reserved.</p>
-          <p className="flex items-center gap-1 font-medium">
-            <span>Crafted with devotion in Vaishali &amp; Mithila, Bihar</span>
-          </p>
+          <div className="flex flex-wrap items-center gap-2.5 font-medium text-[11px] sm:text-xs">
+            <span>FSSAI Lic. No: <strong className="text-[#8C201C]">{BRAND_INFO.fssaiNumber}</strong></span>
+            <span>•</span>
+            <span>GSTIN: <strong>{BRAND_INFO.gstNumber}</strong></span>
+            <span>•</span>
+            <span>Vaishali, Bihar</span>
+          </div>
         </div>
       </div>
     </footer>

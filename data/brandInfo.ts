@@ -19,6 +19,8 @@ export const BRAND_INFO = {
     pincode: "844114",
     country: "India",
   },
+  fssaiNumber: "10426999000206",
+  gstNumber: "10AEYPJ2255C3ZQ",
   socials: {
     instagram: "https://instagram.com/chachiji.in",
     facebook: "https://facebook.com/chachiji.in",
