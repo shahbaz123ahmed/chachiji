@@ -82,20 +82,20 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 1: Our Commitment - Solid Soft Cream Background */}
-      <section className="py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+      <section className="pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          {/* Left: Transparent Commitment Image (Animates from Left - Enlarged) */}
+          {/* Left: Transparent Commitment Image (Animates from Left - Ultra-HD & Enlarged) */}
           <div className="flex items-center justify-center lg:justify-start w-full">
             <Reveal direction="right" delay={150} className="w-full flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl h-[380px] sm:h-[480px] lg:h-[540px] xl:h-[580px]">
                 <Image
-                  src="/commitment-v2.png"
+                  src="/commitment-v3.png"
                   alt="Chachiji Artisans grinding spices on traditional sil-batta and handpicking Mithila makhana"
                   fill
                   priority
                   quality={100}
                   unoptimized
-                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  sizes="(max-width: 1024px) 100vw, 65vw"
                   style={{ objectFit: "contain", objectPosition: "center left" }}
                   className="select-none pointer-events-none"
                 />
