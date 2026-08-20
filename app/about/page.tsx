@@ -140,13 +140,18 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative aspect-4/3 rounded-3xl overflow-hidden shadow-xl border-4 border-[#FFFFFF] order-1 lg:order-2 bg-white">
+          {/* Transparent Makhana Image Merged with Background */}
+          <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[440px] order-1 lg:order-2 flex items-center justify-center">
             <Image
-              src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=1000&q=80"
-              alt="Makhana wetlands harvesting in Mithila Bihar"
+              src="/mithila-clean.png"
+              alt="GI-Tagged Mithila Makhana and Spiced Roasted Fox Nuts"
               fill
+              priority
+              quality={100}
+              unoptimized
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              style={{ objectFit: "contain", objectPosition: "center" }}
+              className="select-none pointer-events-none"
             />
           </div>
         </div>
