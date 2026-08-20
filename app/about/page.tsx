@@ -278,7 +278,75 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Chapter 4: Four Pillars of Authenticity - Solid White Canvas */}
+      {/* Chapter 4: Our Promise to You - Solid Soft Cream Background */}
+      <section className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          {/* Left Column: Text & Promises (Animates from Left - 5/12 cols) */}
+          <div className="space-y-3.5 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
+            <Reveal direction="right" delay={100}>
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1.5 shadow-2xs">
+                Our Promise to You
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
+                Uncompromising Quality. <br />
+                <span className="italic font-normal text-[#8C201C]">Delivered with Integrity.</span>
+              </h2>
+            </Reveal>
+
+            <Reveal direction="right" delay={250}>
+              <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
+                Whether it is the spicy kick of our hand-ground pickles or the guilt-free crunch of our sun-dried Makhana, we promise uncompromising quality.
+              </p>
+              <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed mt-2.5">
+                At Chachiji’s, we bring you the warmth of a traditional kitchen, where every ingredient is chosen with care and every product is delivered with integrity.
+              </p>
+            </Reveal>
+
+            <Reveal direction="right" delay={400}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                  <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
+                    Chosen with Care
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-[#555555] font-medium leading-relaxed">
+                    100% pure cold-pressed oils, hand-picked Mithila makhana, and heirloom whole spices with zero shortcuts.
+                  </p>
+                </div>
+
+                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                  <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
+                    Delivered with Integrity
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-[#555555] font-medium leading-relaxed">
+                    Packed fresh in food-grade glass jars and delivered straight from our kitchen in Vaishali to your family.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column: Transparent Promise Image (Massively Enlarged - 7/12 cols) */}
+          <div className="order-1 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
+            <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
+              <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[580px] xl:h-[640px]">
+                <Image
+                  src="/promise-clean.png"
+                  alt="Chachiji's Homemade Cuisine — Our Promise to You 3-Generation Family Gathering"
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 75vw"
+                  style={{ objectFit: "contain", objectPosition: "center right" }}
+                  className="select-none pointer-events-none"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Chapter 5: Four Pillars of Authenticity - Solid White Canvas */}
       <section id="process" className="py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-6">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
