@@ -205,18 +205,18 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          {/* Right Column: Transparent Image (Animates from Right - Merged Background) */}
+          {/* Right Column: Transparent Image (Animates from Right - Ultra-HD & Max Enlarged) */}
           <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end w-full">
             <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[380px] sm:h-[460px] lg:h-[520px] xl:h-[560px]">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl xl:max-w-4xl h-[400px] sm:h-[500px] lg:h-[580px] xl:h-[640px]">
                 <Image
-                  src="/our-v2.png"
+                  src="/our-v3.png"
                   alt="Traditional Grandmother and Child Grinding Heirloom Spices on Stone Sil-Batta"
                   fill
                   priority
                   quality={100}
                   unoptimized
-                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  sizes="(max-width: 1024px) 100vw, 70vw"
                   style={{ objectFit: "contain", objectPosition: "center" }}
                   className="select-none pointer-events-none"
                 />
