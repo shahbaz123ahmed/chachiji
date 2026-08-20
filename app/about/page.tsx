@@ -25,32 +25,32 @@ export default function AboutPage() {
   return (
     <div className="bg-[#FFFFFF] min-h-screen">
       {/* Hero: 2-Column with Cream Background & Directional Animations */}
-      <section className="relative bg-[#FFF9F3] text-[#231F20] pt-3 sm:pt-4 lg:pt-6 pb-8 sm:pb-12 border-b border-[#EFE7DD] overflow-hidden">
+      <section className="relative bg-[#FFF9F3] text-[#231F20] py-2 sm:py-3 lg:py-4 border-b border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 min-h-[380px]">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 min-h-[340px]">
             {/* Left Column: Text (Animates from Left) */}
             <div className="flex-1 max-w-lg text-left">
               <Reveal direction="right" delay={100}>
-                <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3 shadow-2xs">
+                <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-2 shadow-2xs">
                   Our Roots in Vaishali, Bihar
                 </span>
               </Reveal>
               <Reveal direction="right" delay={250}>
-                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-4">
+                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.08] mb-3">
                   <span className="block text-[#8C201C]">Crafted by Heart.</span>
-                  <span className="block italic font-normal text-[#231F20] mt-1">Ground by Hand.</span>
+                  <span className="block italic font-normal text-[#231F20] mt-0.5">Ground by Hand.</span>
                 </h1>
               </Reveal>
               <Reveal direction="right" delay={400}>
-                <p className="text-sm sm:text-base text-[#555555] font-medium leading-relaxed mb-6">
+                <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed mb-4">
                   Chachiji was born from an unwavering devotion to the authentic, unadulterated tastes of home — where every achar is cured under open sunshine and every makhana is harvested from sacred wetlands.
                 </p>
               </Reveal>
               <Reveal direction="right" delay={550}>
-                <div className="flex flex-wrap items-center gap-3.5">
+                <div className="flex flex-wrap items-center gap-3">
                   <Link
                     href="/shop"
-                    className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs sm:text-sm px-7 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
+                    className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
                   >
                     <span>Explore Our Heritage Jars</span>
                     <ArrowRight className="w-4 h-4" />
@@ -62,7 +62,7 @@ export default function AboutPage() {
             {/* Right Column: Transparent about.png (Animates from Right - Enlarged) */}
             <div className="flex-1 lg:flex-[1.2] relative flex items-center justify-center lg:justify-end w-full">
               <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
+                <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[500px]">
                   <Image
                     src="/about-hero-v2.png"
                     alt="Chachiji Traditional Sil-Batta, Pickles & Makhana Heritage"
@@ -82,12 +82,12 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 1: Our Commitment - Solid Soft Cream Background */}
-      <section className="py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <section className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
           {/* Left: Transparent Commitment Image (Animates from Left - Ultra-HD & Enlarged) */}
           <div className="flex items-center justify-center lg:justify-start w-full">
             <Reveal direction="right" delay={150} className="w-full flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl h-[340px] sm:h-[420px] lg:h-[480px] xl:h-[520px]">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[500px]">
                 <Image
                   src="/commitment-v3.png"
                   alt="Chachiji Artisans grinding spices on traditional sil-batta and handpicking Mithila makhana"
@@ -104,9 +104,9 @@ export default function AboutPage() {
           </div>
 
           {/* Right: Content (Animates from Right) */}
-          <div className="space-y-4 sm:space-y-5">
+          <div className="space-y-3.5">
             <Reveal direction="left" delay={200}>
-              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-2 shadow-2xs">
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1.5 shadow-2xs">
                 Our Commitment
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
@@ -121,8 +121,8 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal direction="left" delay={500}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
-                <div className="bg-[#FFFFFF] p-3.5 sm:p-4 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <span className="font-serif text-xs sm:text-sm font-bold text-[#8C201C] block">
                     1. Artisanal Hand-Ground Pickles
                   </span>
@@ -131,7 +131,7 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <div className="bg-[#FFFFFF] p-3.5 sm:p-4 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <span className="font-serif text-xs sm:text-sm font-bold text-[#8C201C] block">
                     2. Sustainable Mithila Makhana
                   </span>
@@ -141,7 +141,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] text-xs text-[#8C201C] font-serif italic font-bold shadow-2xs mt-3">
+              <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] text-xs text-[#8C201C] font-serif italic font-bold shadow-2xs mt-2.5">
                 &quot;If it cannot be prepared with the same purity we feed our own children, it will never leave our kitchen.&quot;
               </div>
             </Reveal>
@@ -150,12 +150,12 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 2: Taste the Tradition - Solid Soft Cream Background */}
-      <section className="py-3 sm:py-5 lg:py-6 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+      <section className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           {/* Left Column: Text & 3 Pillars (Compact Width - 5/12 cols) */}
-          <div className="space-y-3.5 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
+          <div className="space-y-3 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
             <Reveal direction="right" delay={100}>
-              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1.5 shadow-2xs">
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
                 Taste the Tradition
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
@@ -173,7 +173,7 @@ export default function AboutPage() {
             <Reveal direction="right" delay={400}>
               <div className="space-y-2 pt-0.5">
                 {/* Pillar 1 */}
-                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
                     Hand-Blended Excellence
                   </h3>
@@ -183,7 +183,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Pillar 2 */}
-                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
                     A Living Legacy
                   </h3>
@@ -193,7 +193,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Pillar 3 */}
-                <div className="bg-[#FFFFFF] p-3 sm:p-3.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
                   <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
                     Patience &amp; Love
                   </h3>
@@ -208,7 +208,7 @@ export default function AboutPage() {
           {/* Right Column: Transparent Image (Massively Enlarged - 7/12 cols) */}
           <div className="order-1 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
             <Reveal direction="left" delay={200} className="w-full flex justify-center lg:justify-end">
-              <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[660px]">
+              <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[580px] xl:h-[640px]">
                 <Image
                   src="/our-v3.png"
                   alt="Traditional Grandmother and Child Grinding Heirloom Spices on Stone Sil-Batta"
@@ -227,12 +227,12 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 3: The Mithila Wetland Connection - Solid Cream Section */}
-      <section id="mithila" className="py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section id="mithila" className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column: Transparent Makhana Image (Animates from Left) */}
           <div className="order-1 lg:order-1 flex items-center justify-center lg:justify-start w-full">
             <Reveal direction="right" delay={150} className="w-full flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px]">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[500px]">
                 <Image
                   src="/mithila-clean.png"
                   alt="GI-Tagged Mithila Makhana and Spiced Roasted Fox Nuts"
@@ -251,7 +251,7 @@ export default function AboutPage() {
           {/* Right Column: Text (Animates from Right) */}
           <div className="order-2 lg:order-2">
             <Reveal direction="left" delay={200}>
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
                   Mithila Sacred Waters
                 </span>
@@ -264,7 +264,7 @@ export default function AboutPage() {
                 <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
                   Every morning at dawn, indigenous Mallah community harvesters dive deep into the calm waters to gather the seeds from the muddy lakebeds. We work directly with these artisan farming clusters, paying fair prices and selecting only the top Grade A+ jumbo white blooms.
                 </p>
-                <div className="flex flex-wrap gap-2 text-xs pt-1">
+                <div className="flex flex-wrap gap-2 text-xs pt-0.5">
                   <span className="bg-[#FFFFFF] border border-[#EFE7DD] px-3.5 py-1.5 rounded-xl font-bold text-[#8C201C] shadow-2xs">
                     Direct Farmer Partnership
                   </span>
@@ -278,23 +278,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Chapter 3: Four Pillars of Authenticity - Solid White Canvas */}
-      <section id="process" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-14">
+      {/* Chapter 4: Four Pillars of Authenticity - Solid White Canvas */}
+      <section id="process" className="py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-6">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
             Artisan Principles
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#231F20] mt-1">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#231F20] mt-1">
             Our 4 Sacred Kitchen Commitments
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-[#FFF9F3] p-6 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-xs space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#8C201C] text-[#FFFFFF] flex items-center justify-center">
-              <Sun className="w-6 h-6 text-[#E07A4A]" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="bg-[#FFF9F3] p-5 rounded-3xl border border-[#EFE7DD] shadow-xs space-y-2.5">
+            <div className="w-10 h-10 rounded-2xl bg-[#8C201C] text-[#FFFFFF] flex items-center justify-center">
+              <Sun className="w-5 h-5 text-[#E07A4A]" />
             </div>
-            <h3 className="font-serif text-lg font-bold text-[#231F20]">
+            <h3 className="font-serif text-base font-bold text-[#231F20]">
               100% Sun-Cured
             </h3>
             <p className="text-xs text-[#555555] font-medium leading-relaxed">
@@ -302,11 +302,11 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-[#FFF9F3] p-6 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-xs space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#8C201C] text-[#FFFFFF] flex items-center justify-center">
-              <Droplets className="w-6 h-6 text-[#E07A4A]" />
+          <div className="bg-[#FFF9F3] p-5 rounded-3xl border border-[#EFE7DD] shadow-xs space-y-2.5">
+            <div className="w-10 h-10 rounded-2xl bg-[#8C201C] text-[#FFFFFF] flex items-center justify-center">
+              <Droplets className="w-5 h-5 text-[#E07A4A]" />
             </div>
-            <h3 className="font-serif text-lg font-bold text-[#231F20]">
+            <h3 className="font-serif text-base font-bold text-[#231F20]">
               Wood Cold-Pressed Oil
             </h3>
             <p className="text-xs text-[#555555] font-medium leading-relaxed">
@@ -314,11 +314,11 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-[#FFF9F3] p-6 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-xs space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#8C201C] text-[#FFFFFF] flex items-center justify-center">
-              <ShieldCheck className="w-6 h-6 text-[#E07A4A]" />
+          <div className="bg-[#FFF9F3] p-5 rounded-3xl border border-[#EFE7DD] shadow-xs space-y-2.5">
+            <div className="w-10 h-10 rounded-2xl bg-[#8C201C] text-[#FFFFFF] flex items-center justify-center">
+              <ShieldCheck className="w-5 h-5 text-[#E07A4A]" />
             </div>
-            <h3 className="font-serif text-lg font-bold text-[#231F20]">
+            <h3 className="font-serif text-base font-bold text-[#231F20]">
               Zero Chemical Additives
             </h3>
             <p className="text-xs text-[#555555] font-medium leading-relaxed">
@@ -326,11 +326,11 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-[#FFF9F3] p-6 rounded-3xl border border-[rgba(51,51,51,0.10)] shadow-xs space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#8C201C] text-[#FFFFFF] flex items-center justify-center">
-              <Heart className="w-6 h-6 text-[#E07A4A]" />
+          <div className="bg-[#FFF9F3] p-5 rounded-3xl border border-[#EFE7DD] shadow-xs space-y-2.5">
+            <div className="w-10 h-10 rounded-2xl bg-[#8C201C] text-[#FFFFFF] flex items-center justify-center">
+              <Heart className="w-5 h-5 text-[#E07A4A]" />
             </div>
-            <h3 className="font-serif text-lg font-bold text-[#231F20]">
+            <h3 className="font-serif text-base font-bold text-[#231F20]">
               Local Artisan Empowerment
             </h3>
             <p className="text-xs text-[#555555] font-medium leading-relaxed">
@@ -341,13 +341,13 @@ export default function AboutPage() {
       </section>
 
       {/* Official Licensing & Food Safety Compliance Strip */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-t border-[#EFE7DD]">
+      <section className="py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-t border-[#EFE7DD]">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="text-center max-w-2xl mx-auto mb-6">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
               Government of India Certified
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#231F20] mt-1 mb-2">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#231F20] mt-1 mb-1.5">
               Official Food Licensing &amp; Compliance
             </h2>
             <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
@@ -355,46 +355,46 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {/* FSSAI License Card */}
-            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-3xl border border-[#EFE7DD] shadow-sm flex items-start gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-[#FFF9F3] border border-[#EFE7DD] flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-7 h-7 text-[#8C201C]" />
+            <div className="bg-[#FFFFFF] p-5 sm:p-6 rounded-3xl border border-[#EFE7DD] shadow-sm flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#FFF9F3] border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-6 h-6 text-[#8C201C]" />
               </div>
-              <div className="space-y-1.5 flex-1">
+              <div className="space-y-1 flex-1">
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest bg-[#8C201C] text-[#FFFFFF] px-2.5 py-0.5 rounded">
                     Food Safety
                   </span>
                   <span className="text-xs text-[#777777] font-semibold">FSSAI Central / State</span>
                 </div>
-                <h3 className="font-serif text-xl font-bold text-[#231F20]">FSSAI License Number</h3>
-                <div className="bg-[#FFF9F3] border border-[#EFE7DD] px-3.5 py-2 rounded-xl text-base sm:text-lg font-mono font-bold text-[#8C201C] tracking-wider w-fit">
+                <h3 className="font-serif text-lg font-bold text-[#231F20]">FSSAI License Number</h3>
+                <div className="bg-[#FFF9F3] border border-[#EFE7DD] px-3 py-1.5 rounded-xl text-base font-mono font-bold text-[#8C201C] tracking-wider w-fit">
                   {BRAND_INFO.fssaiNumber}
                 </div>
-                <p className="text-xs text-[#555555] font-medium leading-relaxed pt-1">
+                <p className="text-xs text-[#555555] font-medium leading-relaxed pt-0.5">
                   Certified for hygienic manufacturing, processing, and domestic distribution of traditional pickles and GI-tagged makhana.
                 </p>
               </div>
             </div>
 
             {/* GST Registration Card */}
-            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-3xl border border-[#EFE7DD] shadow-sm flex items-start gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-[#FFF9F3] border border-[#EFE7DD] flex items-center justify-center shrink-0">
-                <FileCheck2 className="w-7 h-7 text-[#8C201C]" />
+            <div className="bg-[#FFFFFF] p-5 sm:p-6 rounded-3xl border border-[#EFE7DD] shadow-sm flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#FFF9F3] border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                <FileCheck2 className="w-6 h-6 text-[#8C201C]" />
               </div>
-              <div className="space-y-1.5 flex-1">
+              <div className="space-y-1 flex-1">
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest bg-[#E07A4A] text-[#231F20] px-2.5 py-0.5 rounded shadow-2xs">
                     Registered Enterprise
                   </span>
                   <span className="text-xs text-[#777777] font-semibold">Govt. of Bihar / India</span>
                 </div>
-                <h3 className="font-serif text-xl font-bold text-[#231F20]">GST Identification Number</h3>
-                <div className="bg-[#FFF9F3] border border-[#EFE7DD] px-3.5 py-2 rounded-xl text-base sm:text-lg font-mono font-bold text-[#231F20] tracking-wider w-fit">
+                <h3 className="font-serif text-lg font-bold text-[#231F20]">GST Identification Number</h3>
+                <div className="bg-[#FFF9F3] border border-[#EFE7DD] px-3 py-1.5 rounded-xl text-base font-mono font-bold text-[#231F20] tracking-wider w-fit">
                   {BRAND_INFO.gstNumber}
                 </div>
-                <p className="text-xs text-[#555555] font-medium leading-relaxed pt-1">
+                <p className="text-xs text-[#555555] font-medium leading-relaxed pt-0.5">
                   Legally registered manufacturing kitchen facility located at Hajipur-Muzaffarpur Highway (NH 22), Vaishali, Bihar - 844114.
                 </p>
               </div>
