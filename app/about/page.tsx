@@ -81,35 +81,70 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Chapter 1: The Hearth of Vaishali */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="relative aspect-4/3 rounded-3xl overflow-hidden shadow-xl border-2 border-[rgba(51,51,51,0.10)] bg-white">
-            <Image
-              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1000&q=80"
-              alt="Artisan sun curing pickles in porcelain martabans"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
+      {/* Chapter 1: Our Commitment - Solid Soft Cream Background */}
+      <section className="py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Left: Transparent Commitment Image (Animates from Left) */}
+          <div className="flex items-center justify-center lg:justify-start w-full">
+            <Reveal direction="right" delay={150} className="w-full flex justify-center lg:justify-start">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[340px] sm:h-[420px] lg:h-[480px]">
+                <Image
+                  src="/commitment-clean.png"
+                  alt="Chachiji Artisans grinding spices on traditional sil-batta and handpicking Mithila makhana"
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  style={{ objectFit: "contain", objectPosition: "center left" }}
+                  className="select-none pointer-events-none"
+                />
+              </div>
+            </Reveal>
           </div>
 
-          <div className="space-y-5">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
-              The Beginning
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#231F20]">
-              The Nostalgia of Grandmother&apos;s Rooftop
-            </h2>
-            <p className="text-xs sm:text-sm text-[#231F20] font-medium leading-relaxed">
-              Growing up in Bihar, summer was synonymous with rooftop ceramic martabans (*mrittika-bhanda*) covered in pure muslin cloth. The aroma of freshly crushed yellow mustard seeds, whole roasted fennel, and pungent wood-pressed mustard oil filled the breeze.
-            </p>
-            <p className="text-xs sm:text-sm text-[#231F20] font-medium leading-relaxed">
-              In an era dominated by mass-produced factory pickles laden with acetic acid and synthetic preservatives, Chachiji was founded with a single pledge: <strong>to never take shortcuts with tradition</strong>.
-            </p>
-            <div className="bg-[#FFF9F3] p-4 rounded-2xl border border-[rgba(51,51,51,0.10)] text-xs text-[#8C201C] font-serif italic font-bold shadow-2xs">
-              &quot;If it cannot be prepared with the same purity we feed our own children, it will never leave our kitchen.&quot;
-            </div>
+          {/* Right: Content (Animates from Right) */}
+          <div className="space-y-6">
+            <Reveal direction="left" delay={200}>
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3 shadow-2xs">
+                Our Commitment
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
+                A Sacred Pledge to Pure Indian Heritage
+              </h2>
+            </Reveal>
+
+            <Reveal direction="left" delay={350}>
+              <p className="text-sm sm:text-base text-[#555555] font-medium leading-relaxed">
+                At Chachiji’s Homemade Cuisine, we don’t just sell food; we share a piece of our heritage. Our commitment is built on two pillars of authentic Indian tradition: the artisanal craft of hand-ground pickles and the sustainable procurement of Mithila’s finest Makhana.
+              </p>
+            </Reveal>
+
+            <Reveal direction="left" delay={500}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                <div className="bg-[#FFFFFF] p-4.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-1">
+                  <span className="font-serif text-sm font-bold text-[#8C201C] block">
+                    1. Artisanal Hand-Ground Pickles
+                  </span>
+                  <p className="text-xs text-[#555555] font-medium leading-relaxed">
+                    Whole spices stone-crushed on traditional sil-batta and sun-cured in porcelain martabans with pure cold-pressed oil.
+                  </p>
+                </div>
+
+                <div className="bg-[#FFFFFF] p-4.5 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-1">
+                  <span className="font-serif text-sm font-bold text-[#8C201C] block">
+                    2. Sustainable Mithila Makhana
+                  </span>
+                  <p className="text-xs text-[#555555] font-medium leading-relaxed">
+                    Direct ethical partnerships with indigenous harvesting families in Bihar&apos;s freshwater wetlands for Grade A+ jumbo blooms.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-[#FFFFFF] p-4 rounded-2xl border border-[#EFE7DD] text-xs text-[#8C201C] font-serif italic font-bold shadow-2xs mt-4">
+                &quot;If it cannot be prepared with the same purity we feed our own children, it will never leave our kitchen.&quot;
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
