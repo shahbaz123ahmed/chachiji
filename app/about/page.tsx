@@ -23,19 +23,19 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="bg-[#FFFFFF] min-h-screen">
-      {/* Hero - Solid #8C201C */}
-      <section className="relative bg-[#8C201C] text-[#FFFFFF] py-20 sm:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      {/* Hero */}
+      <section className="relative text-[#FFFFFF] py-24 sm:py-32 overflow-hidden bg-[#231F20]">
+        <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1600&q=80"
-            alt="Traditional Indian Spice Martabans"
+            alt="About Chachiji Heritage"
             fill
             priority
             sizes="100vw"
             className="object-cover"
           />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center drop-shadow-md">
           <span className="inline-block bg-[#E07A4A] text-[#231F20] text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full mb-4 shadow-sm">
             Our Roots in Vaishali, Bihar
           </span>
