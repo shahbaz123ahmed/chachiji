@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 interface RevealProps {
   children: React.ReactNode;
   delay?: number;        // ms delay before animation starts
+  duration?: number;     // duration in seconds (default 1.25s)
   direction?: 'up' | 'down' | 'left' | 'right' | 'fade';
   className?: string;
-  once?: boolean;        // animate only once (default true)
+  once?: boolean;        // animate only once (default false)
 }
 
 /**
@@ -17,9 +18,10 @@ interface RevealProps {
 export default function Reveal({
   children,
   delay = 0,
+  duration = 1.25,
   direction = 'up',
   className = '',
-  once = true,
+  once = false,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -37,7 +39,7 @@ export default function Reveal({
           setVisible(false);
         }
       },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
     );
 
     observer.observe(el);
@@ -45,10 +47,10 @@ export default function Reveal({
   }, [once]);
 
   const transforms: Record<string, string> = {
-    up:    'translateY(36px)',
-    down:  'translateY(-36px)',
-    left:  'translateX(44px)',
-    right: 'translateX(-44px)',
+    up:    'translateY(40px)',
+    down:  'translateY(-40px)',
+    left:  'translateX(50px)',
+    right: 'translateX(-50px)',
     fade:  'none',
   };
 
@@ -59,8 +61,10 @@ export default function Reveal({
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translate3d(0,0,0)' : transforms[direction],
-        transition: `opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1), transform 0.95s cubic-bezier(0.16, 1, 0.3, 1)`,
-        transitionDelay: `${delay}ms`,
+        transitionProperty: 'opacity, transform',
+        transitionDuration: visible ? `${duration}s` : '0.35s',
+        transitionTimingFunction: visible ? 'cubic-bezier(0.22, 1, 0.36, 1)' : 'ease-out',
+        transitionDelay: visible ? `${delay}ms` : '0ms',
         willChange: 'opacity, transform',
       }}
     >

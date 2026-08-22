@@ -1,0 +1,77 @@
+[
+  {
+    "id": "makhana",
+    "slug": "makhana",
+    "name": "Mithila Makhana",
+    "hindiName": "Chachiji's Natural Makhana",
+    "headline": "Light, Crunchy & Sourced from Sacred Mithila Wetlands",
+    "tagline": "Light, crunchy and naturally delicious.",
+    "description": "Harvested directly from pristine lotus ponds across Mithila, Bihar. Our Grade A+ jumbo fox nuts are naturally popped and roasted in pure A2 Desi Cow Ghee with organic rock salts and herbal spices.",
+    "heroImage": "/makh1-clean.png",
+    "seoTitle": "Authentic Mithila Makhana Online | Raw & Ghee-Roasted Fox Nuts - Chachiji",
+    "seoDescription": "Order GI-Tagged Mithila Makhana online from Chachiji. Jumbo grade raw and A2 cow ghee roasted flavours. Protein-rich, gluten-free traditional Indian superfood.",
+    "highlights": [
+      "GI-Tagged Mithila Regional Sourcing",
+      "Jumbo Grade A+ 6-Suta+ Sorted Kernels",
+      "Roasted in Pure A2 Desi Ghee (0% Palm Oil)",
+      "High Protein",
+      "Gluten-Free & Low Calorie"
+    ],
+    "heroImages": [
+      "/makh1-clean.png",
+      "/uploads/1787382763401_1787313567400_h4.png"
+    ],
+    "imagePosition": "right",
+    "textAlign": "left",
+    "hideText": false
+  },
+  {
+    "id": "achaar",
+    "slug": "achaar",
+    "name": "Achar",
+    "hindiName": "Chachiji;s Natural Achar ",
+    "headline": "",
+    "tagline": "Authentic & Handcrafted.",
+    "description": "",
+    "heroImage": "/uploads/1787381099811_1787296812886_achaar_clean.png",
+    "seoTitle": "Achaar Online - Chachiji",
+    "seoDescription": "Buy authentic Achaar online from Chachiji.",
+    "highlights": [
+      "100% Handcrafted",
+      "Zero Preservatives",
+      "Authentic Heritage"
+    ],
+    "heroImages": [
+      "/uploads/1787381099811_1787296812886_achaar_clean.png",
+      "/uploads/1787382794733_1787313071470_1787312612446_slide5.png"
+    ],
+    "imagePosition": "right",
+    "textAlign": "left",
+    "hideText": false
+  },
+  {
+    "id": "diwali-offer",
+    "slug": "diwali-offer",
+    "name": "Offers",
+    "hindiName": "",
+    "headline": "Light Up Your Home With Up to 50% Off!",
+    "tagline": "Authentic & Handcrafted.",
+    "description": "Brighten your celebrations with our grand Diwali sale! Enjoy up to 50% off on top products, special festive bundles, and free gifts with every purchase. Light up your home and save big today!",
+    "heroImage": "/uploads/1787380913713_41818ad6_18b4_4f25_9ebc_fd0b1668af75_removebg_preview.png",
+    "heroImages": [
+      "/uploads/1787380913713_41818ad6_18b4_4f25_9ebc_fd0b1668af75_removebg_preview.png",
+      "/uploads/1787391127709_multi.png",
+      "/uploads/1787392412246_multi2.png"
+    ],
+    "imagePosition": "right",
+    "textAlign": "left",
+    "hideText": false,
+    "seoTitle": "Diwali Offer Online - Chachiji",
+    "seoDescription": "Buy authentic Diwali Offer online from Chachiji.",
+    "highlights": [
+      "100% Handcrafted",
+      "Zero Preservatives",
+      "Authentic Heritage"
+    ]
+  }
+]

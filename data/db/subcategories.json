@@ -1,0 +1,60 @@
+[
+  {
+    "id": "sub_1787379141121",
+    "categoryId": "achaar",
+    "name": "Carrot",
+    "slug": "fgfdhthdh",
+    "description": "fgdfhdfhdfhfdhdfh",
+    "imagePosition": "left",
+    "textAlign": "right",
+    "heroImages": [
+      "/uploads/1787382642470_1787305016818_chatgpt_image_aug_21_2026_03_05_40_pm_removebg_preview.png",
+      "/uploads/1787388783695_1787306653010_61b214bb_84ce_4989_905c_7dc411122c83_removebg_preview.png"
+    ],
+    "highlights": [],
+    "hindiName": "",
+    "headline": "dfhdfhddhdfh",
+    "heroImage": "/uploads/1787382642470_1787305016818_chatgpt_image_aug_21_2026_03_05_40_pm_removebg_preview.png"
+  },
+  {
+    "id": "sub_1787382019460",
+    "categoryId": "makhana",
+    "name": "Natura Mithila makhana",
+    "slug": "natura-mithila-makhana",
+    "hindiName": "",
+    "headline": "Natural Makhana In Indian Tradition",
+    "description": "The Ancient Indian Superfood: Crunch Your Way to Better Health.",
+    "heroImage": "/uploads/1787382158388_1787303102805_chatgpt_image_aug_21_2026_02_23_44_pm.png",
+    "heroImages": [
+      "/uploads/1787382158388_1787303102805_chatgpt_image_aug_21_2026_02_23_44_pm.png"
+    ],
+    "imagePosition": "right",
+    "textAlign": "left",
+    "highlights": [
+      "100% Handcrafted",
+      "Zero Preservatives",
+      "Authentic Heritage"
+    ]
+  },
+  {
+    "id": "sub_1787383200787",
+    "categoryId": "achaar",
+    "name": "Radish ",
+    "slug": "radish",
+    "hindiName": "",
+    "headline": "dgdsgsdg",
+    "description": "dfdgdfbgdfbfxbfxb",
+    "heroImage": "/uploads/1787383187241_1787383072030_1787306653010_61b214bb_84ce_4989_905c_7dc411122c83_removebg_preview.png",
+    "heroImages": [
+      "/uploads/1787383187241_1787383072030_1787306653010_61b214bb_84ce_4989_905c_7dc411122c83_removebg_preview.png",
+      "/uploads/1787388643663_1787306656339_79c1291b_e49b_445a_b8f9_f4cc52862c91_.png"
+    ],
+    "imagePosition": "right",
+    "textAlign": "left",
+    "highlights": [
+      "100% Handcrafted",
+      "Zero Preservatives",
+      "Authentic Heritage"
+    ]
+  }
+]

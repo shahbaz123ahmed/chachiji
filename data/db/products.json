@@ -1,0 +1,404 @@
+[
+  {
+    "id": "prod_1787310165152",
+    "slug": "mixed-makhana",
+    "name": "Mixed Makhana ",
+    "hindiName": "",
+    "category": "makhana",
+    "subCategory": "",
+    "tagline": "Every Size, the Same Natural Crunch",
+    "shortDescription": "A carefully selected assortment of naturally light and crunchy makhana in mixed sizes. Ideal for roasting, everyday snacking or preparing traditional favourites such as curries and kheer, it delivers wholesome versatility in every handful.",
+    "description": "A carefully selected assortment of naturally light and crunchy makhana in mixed sizes. Ideal for roasting, everyday snacking or preparing traditional favourites such as curries and kheer, it delivers wholesome versatility in every handful.",
+    "price": 225,
+    "mrp": 300,
+    "discountPercentage": 25,
+    "weight": "100gm",
+    "rating": 5,
+    "reviewCount": 1,
+    "images": [
+      "/uploads/1787310029427_77f2b2bb_b41c_42a6_89c9_57c4a84e23da_removebg_preview.png",
+      "/uploads/1787310262875__abfd6022_11ac_4067_a3ef_dfacb804333c_.png"
+    ],
+    "variants": [
+      {
+        "id": "v1",
+        "weight": "100gm",
+        "price": 225,
+        "mrp": 300,
+        "inStock": true
+      }
+    ],
+    "badges": [
+      "Assorted Sizes • Naturally Crunchy"
+    ],
+    "isBestseller": false,
+    "isFeatured": true,
+    "isNew": false,
+    "inStock": true,
+    "stockCount": 8,
+    "ingredients": [
+      "100% Mixed-Size Makhana (Fox Nuts)"
+    ],
+    "spiceLevel": "Medium",
+    "shelfLife": "12 Months from MFD",
+    "oilUsed": "",
+    "curingProcess": "",
+    "harvestOrigin": "",
+    "nutritionPer100g": {
+      "energyKcal": 350,
+      "proteinG": 9.7,
+      "carbsG": 76.9,
+      "fatG": 0.1,
+      "sodiumMg": 3
+    },
+    "pairings": [],
+    "storageInstructions": "Store in a cool, dry place.",
+    "whyYouWillLoveIt": [],
+    "faqs": []
+  },
+  {
+    "id": "prod_1787309254557",
+    "slug": "premium-mithila-makhana",
+    "name": "Premium Mithila Makhana",
+    "hindiName": "",
+    "category": "makhana",
+    "subCategory": "",
+    "tagline": "Authentic Mithila Goodness in Every Crunch",
+    "shortDescription": "Carefully selected from the heart of Mithila, these premium makhana offer a naturally light texture and satisfying crunch. Perfect for roasting, guilt-free snacking or adding to traditional recipes, they bring authentic regional quality to your everyday meals.",
+    "description": "Carefully selected from the heart of Mithila, these premium makhana offer a naturally light texture and satisfying crunch. Perfect for roasting, guilt-free snacking or adding to traditional recipes, they bring authentic regional quality to your everyday meals.",
+    "price": 282,
+    "mrp": 310,
+    "discountPercentage": 9,
+    "weight": "100gm",
+    "rating": 5,
+    "reviewCount": 1,
+    "images": [
+      "/uploads/1787309010857_386591e0_0184_4ead_9bc9_3d4767408807_removebg_preview.png",
+      "/uploads/1787309246196_360_f_897177256_gnrw1bd55718cxzq9abe8lee8zorcxhy.jpg"
+    ],
+    "variants": [
+      {
+        "id": "v1",
+        "weight": "100gm",
+        "price": 282,
+        "mrp": 310,
+        "inStock": true
+      }
+    ],
+    "badges": [
+      "Authentic Mithila Origin • Premium Quality"
+    ],
+    "isBestseller": false,
+    "isFeatured": true,
+    "isNew": false,
+    "inStock": true,
+    "stockCount": 50,
+    "ingredients": [
+      "100% Premium Mithila Makhana (Fox Nuts)"
+    ],
+    "spiceLevel": "Medium",
+    "shelfLife": "12 Months from MFD",
+    "oilUsed": "",
+    "curingProcess": "",
+    "harvestOrigin": "",
+    "nutritionPer100g": {
+      "energyKcal": 350,
+      "proteinG": 9.7,
+      "carbsG": 76.9,
+      "fatG": 0.1,
+      "sodiumMg": 3
+    },
+    "pairings": [],
+    "storageInstructions": "Store in a cool, dry place.",
+    "whyYouWillLoveIt": [],
+    "faqs": []
+  },
+  {
+    "id": "prod_1787307557558",
+    "slug": "radish-pickle-with-black-mustard",
+    "name": "# Radish Pickle (with Black Mustard)",
+    "hindiName": "",
+    "category": "achaar",
+    "subCategory": "",
+    "tagline": "Earthy, Tangy and Traditionally Mustard-Rich",
+    "shortDescription": "Crisp radish pieces infused with the bold aroma of black mustard oil and a traditional blend of Indian spices. Its earthy, tangy and mildly spicy flavour makes it a delicious accompaniment to parathas, dal-chawal, khichdi and everyday meals.",
+    "description": "Crisp radish pieces infused with the bold aroma of black mustard oil and a traditional blend of Indian spices. Its earthy, tangy and mildly spicy flavour makes it a delicious accompaniment to parathas, dal-chawal, khichdi and everyday meals.",
+    "price": 400,
+    "mrp": 470,
+    "discountPercentage": 15,
+    "weight": "250",
+    "rating": 5,
+    "reviewCount": 1,
+    "images": [
+      "/uploads/1787307364091_9ab924d8_2003_4adc_a80b_c23bc2fbb21f_removebg_preview.png",
+      "/uploads/1787307367914__52c0f2c3_aa53_44a5_8a23_3cb5715e60a8_.png"
+    ],
+    "variants": [
+      {
+        "id": "v1",
+        "weight": "250",
+        "price": 400,
+        "mrp": 470,
+        "inStock": true
+      }
+    ],
+    "badges": [
+      "Traditional Mustard Recipe • Tangy & Crunchy"
+    ],
+    "isBestseller": true,
+    "isFeatured": true,
+    "isNew": false,
+    "inStock": true,
+    "stockCount": 12,
+    "ingredients": [
+      "Radish",
+      "Black Mustard Oil",
+      "Black Mustard Seeds",
+      "Fennel Seeds"
+    ],
+    "spiceLevel": "Medium",
+    "shelfLife": "12 Months from MFD",
+    "oilUsed": "",
+    "curingProcess": "",
+    "harvestOrigin": "",
+    "nutritionPer100g": {
+      "energyKcal": 350,
+      "proteinG": 9.7,
+      "carbsG": 76.9,
+      "fatG": 0.1,
+      "sodiumMg": 3
+    },
+    "pairings": [],
+    "storageInstructions": "Store in a cool, dry place.",
+    "whyYouWillLoveIt": [],
+    "faqs": []
+  },
+  {
+    "id": "prod_1787306759013",
+    "slug": "green-chili-bharwa-details",
+    "name": "Green Chili Bharwa   details",
+    "hindiName": "",
+    "category": "achaar",
+    "subCategory": "",
+    "tagline": "Fresh Heat, Stuffed with Tradition",
+    "shortDescription": "Whole green chillies generously filled with an aromatic blend of traditional Indian spices and matured in mustard oil. Every bite delivers a delicious balance of bold heat, tanginess and rich homemade flavour—perfect with parathas, dal-chawal and everyday meals.",
+    "description": "Whole green chillies generously filled with an aromatic blend of traditional Indian spices and matured in mustard oil. Every bite delivers a delicious balance of bold heat, tanginess and rich homemade flavour—perfect with parathas, dal-chawal and everyday meals.",
+    "price": 250,
+    "mrp": 320,
+    "discountPercentage": 22,
+    "weight": "400g",
+    "rating": 5,
+    "reviewCount": 1,
+    "images": [
+      "/uploads/1787306653010_61b214bb_84ce_4989_905c_7dc411122c83_removebg_preview.png",
+      "/uploads/1787306656339__79c1291b_e49b_445a_b8f9_f4cc52862c91_.png"
+    ],
+    "variants": [
+      {
+        "id": "v1",
+        "weight": "400g",
+        "price": 250,
+        "mrp": 320,
+        "inStock": true
+      }
+    ],
+    "badges": [
+      "Traditional Stuffed Recipe • Tangy & Spicy"
+    ],
+    "isBestseller": false,
+    "isFeatured": true,
+    "isNew": false,
+    "inStock": true,
+    "stockCount": 13,
+    "ingredients": [
+      "Green Chillies",
+      "Mustard Oil",
+      "Mustard Seeds"
+    ],
+    "spiceLevel": "Medium",
+    "shelfLife": "12 Months from MFD",
+    "oilUsed": "",
+    "curingProcess": "",
+    "harvestOrigin": "",
+    "nutritionPer100g": {
+      "energyKcal": 350,
+      "proteinG": 9.7,
+      "carbsG": 76.9,
+      "fatG": 0.1,
+      "sodiumMg": 3
+    },
+    "pairings": [],
+    "storageInstructions": "Store in a cool, dry place.",
+    "whyYouWillLoveIt": [],
+    "faqs": []
+  },
+  {
+    "id": "prod_1787304951670",
+    "slug": "chachiji-s-lal-mirch-bharwa-achar",
+    "name": "Chachiji's Lal Mirch Bharwa Achar",
+    "hindiName": "",
+    "category": "achaar",
+    "subCategory": "",
+    "tagline": "Bold Heat, Stuffed with Tradition",
+    "shortDescription": "A traditional Indian pickle made with whole red chillies generously filled with an aromatic blend of handpicked spices. Matured in mustard oil for a bold, tangy and deeply satisfying flavour, it pairs perfectly with parathas, dal-chawal and everyday meals.",
+    "description": "A traditional Indian pickle made with whole red chillies generously filled with an aromatic blend of handpicked spices. Matured in mustard oil for a bold, tangy and deeply satisfying flavour, it pairs perfectly with parathas, dal-chawal and everyday meals.",
+    "price": 400,
+    "mrp": 452,
+    "discountPercentage": 12,
+    "weight": "250g",
+    "rating": 5,
+    "reviewCount": 1,
+    "images": [
+      "/uploads/1787305418987_chatgpt_image_aug_21_2026_03_05_40_pm_removebg_preview.png",
+      "/uploads/1787305424124__5a8e6820_6fec_4af7_889c_65214ec5cd14_.png",
+      "/uploads/1787305456325_d0420c57_774a_4b56_a90e_138081cf6b37.png"
+    ],
+    "variants": [
+      {
+        "id": "v1",
+        "weight": "250g",
+        "price": 400,
+        "mrp": 452,
+        "inStock": true
+      }
+    ],
+    "badges": [
+      "Handcrafted"
+    ],
+    "isBestseller": false,
+    "isFeatured": true,
+    "isNew": false,
+    "inStock": true,
+    "stockCount": 10,
+    "ingredients": [],
+    "spiceLevel": "Medium",
+    "shelfLife": "12 Months from MFD",
+    "oilUsed": "",
+    "curingProcess": "",
+    "harvestOrigin": "",
+    "nutritionPer100g": {
+      "energyKcal": 350,
+      "proteinG": 9.7,
+      "carbsG": 76.9,
+      "fatG": 0.1,
+      "sodiumMg": 3
+    },
+    "pairings": [],
+    "storageInstructions": "Store in a cool, dry place.",
+    "whyYouWillLoveIt": [],
+    "faqs": []
+  },
+  {
+    "id": "prod_1787304540260",
+    "slug": "5-suta-15-18mm-pack",
+    "name": "5+ Suta (15-18mm) Pack",
+    "hindiName": "",
+    "category": "makhana",
+    "subCategory": "",
+    "tagline": "Extra Large, Exceptionally Crunchy",
+    "shortDescription": "Indulge in the superior quality of carefully selected 5+ Suta Pokhra Makhana. With an impressive 15–18 mm size, airy texture and satisfying crunch, these extra-large fox nuts are ideal for premium snacking, roasting and traditional recipes.",
+    "description": "Indulge in the superior quality of carefully selected 5+ Suta Pokhra Makhana. With an impressive 15–18 mm size, airy texture and satisfying crunch, these extra-large fox nuts are ideal for premium snacking, roasting and traditional recipes.",
+    "price": 282,
+    "mrp": 300,
+    "discountPercentage": 6,
+    "weight": "100g",
+    "rating": 5,
+    "reviewCount": 1,
+    "images": [
+      "/uploads/1787304579879_chatgpt_image_aug_21_2026_02_23_44_pm.png"
+    ],
+    "variants": [
+      {
+        "id": "v1",
+        "weight": "100g",
+        "price": 282,
+        "mrp": 300,
+        "inStock": true
+      }
+    ],
+    "badges": [
+      "Premium 5+ Suta • Extra Large 15–18 mm"
+    ],
+    "isBestseller": true,
+    "isFeatured": true,
+    "isNew": false,
+    "inStock": true,
+    "stockCount": 512,
+    "ingredients": [
+      "100% Premium Pokhra Makhana (Fox Nuts)"
+    ],
+    "spiceLevel": "Medium",
+    "shelfLife": "12 Months from MFD",
+    "oilUsed": "",
+    "curingProcess": "",
+    "harvestOrigin": "",
+    "nutritionPer100g": {
+      "energyKcal": 350,
+      "proteinG": 9.7,
+      "carbsG": 76.9,
+      "fatG": 0.1,
+      "sodiumMg": 3
+    },
+    "pairings": [],
+    "storageInstructions": "Store in a cool, dry place.",
+    "whyYouWillLoveIt": [],
+    "faqs": []
+  },
+  {
+    "id": "prod_1787302516985",
+    "slug": "premium-4-suta-pokhra-makhana",
+    "name": "Premium 4+ Suta Pokhra Makhana",
+    "hindiName": "",
+    "category": "makhana",
+    "subCategory": "",
+    "tagline": "Bigger Size, Superior Crunch",
+    "shortDescription": "Experience the premium quality of carefully selected 4+ Suta Pokhra Makhana. Known for its large 12–15 mm size, light texture and satisfying crunch, it is perfect for roasting, everyday snacking or adding to your favourite recipes.",
+    "description": "Experience the premium quality of carefully selected 4+ Suta Pokhra Makhana. Known for its large 12–15 mm size, light texture and satisfying crunch, it is perfect for roasting, everyday snacking or adding to your favourite recipes.",
+    "price": 249,
+    "mrp": 300,
+    "discountPercentage": 17,
+    "weight": "100",
+    "rating": 5,
+    "reviewCount": 1,
+    "images": [
+      "/uploads/1787302483781_chatgpt_image_aug_21_2026_02_23_35_pm.png",
+      "/uploads/1787303102805_chatgpt_image_aug_21_2026_02_23_44_pm.png"
+    ],
+    "variants": [
+      {
+        "id": "v1",
+        "weight": "100",
+        "price": 249,
+        "mrp": 300,
+        "inStock": true
+      }
+    ],
+    "badges": [
+      "Premium 4+ Suta • Large 12–15 mm"
+    ],
+    "isBestseller": false,
+    "isFeatured": true,
+    "isNew": false,
+    "inStock": true,
+    "stockCount": 10,
+    "ingredients": [
+      "100% Premium Pokhra Makhana (Fox Nuts)"
+    ],
+    "spiceLevel": "Medium",
+    "shelfLife": "12 Months from MFD",
+    "oilUsed": "",
+    "curingProcess": "",
+    "harvestOrigin": "",
+    "nutritionPer100g": {
+      "energyKcal": 350,
+      "proteinG": 9.7,
+      "carbsG": 76.9,
+      "fatG": 0.1,
+      "sodiumMg": 3
+    },
+    "pairings": [],
+    "storageInstructions": "Store in a cool, dry place.",
+    "whyYouWillLoveIt": [],
+    "faqs": []
+  }
+]

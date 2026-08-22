@@ -1,7 +1,7 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { PRODUCTS } from "@/data/products";
+import { getProducts } from "@/lib/db";
 import ProductClientView from "@/components/product/ProductClientView";
 
 interface ProductPageProps {
@@ -11,7 +11,8 @@ interface ProductPageProps {
 }
 
 export async function generateStaticParams() {
-  return PRODUCTS.map((p) => ({
+  const products = getProducts();
+  return products.map((p) => ({
     slug: p.slug,
   }));
 }
@@ -20,7 +21,8 @@ export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const products = getProducts();
+  const product = products.find((p) => p.slug === slug);
   if (!product) return { title: "Product Not Found" };
 
   return {
@@ -31,7 +33,7 @@ export async function generateMetadata({
       description: product.shortDescription,
       images: [
         {
-          url: product.images[0],
+          url: product.images[0] || "/slide1.png",
           width: 800,
           height: 800,
           alt: product.name,
@@ -43,15 +45,16 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const products = getProducts();
+  const product = products.find((p) => p.slug === slug);
 
   if (!product) {
     notFound();
   }
 
-  const relatedProducts = PRODUCTS.filter(
-    (p) => p.id !== product.id && p.category === product.category
-  ).slice(0, 3);
+  const relatedProducts = products
+    .filter((p) => p.id !== product.id && p.category === product.category)
+    .slice(0, 3);
 
   // Schema.org Product JSON-LD
   const jsonLd = {

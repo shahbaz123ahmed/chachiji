@@ -3,10 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { PRODUCTS } from "@/data/products";
 import { CUSTOMER_REVIEWS } from "@/data/reviews";
 import ProductCard from "@/components/product/ProductCard";
 import { useCart } from "@/context/CartContext";
+import { Product, HeroConfig } from "@/types/ecommerce";
 import {
   Sparkles,
   ArrowRight,
@@ -24,273 +24,532 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/Icons";
-import HeroSlider from "@/components/hero/HeroSlider";
+import HeroSection from "@/components/hero/HeroSection";
 import Reveal from "@/components/ui/Reveal";
+import AutoHoverImage from "@/components/ui/AutoHoverImage";
 
 export default function HomePage() {
   const { addToCart } = useCart();
+  const [activeBentoIndex, setActiveBentoIndex] = React.useState(0);
+  const [dynamicProducts, setDynamicProducts] = React.useState<Product[]>([]);
 
-  const bestsellerProducts = PRODUCTS.filter((p) => p.isBestseller).slice(0, 4);
-  const bundleProducts = PRODUCTS.filter((p) => p.category === "bundles");
+  const [heroConfig, setHeroConfig] = React.useState<HeroConfig>({
+    slides: [
+      {
+        id: "slide-1",
+        image: "/heros2.png",
+        badge: "Mithila Culinary Heritage • 100% Traditional",
+        headingPrimary: "Crafted by Heart.",
+        headingSecondary: "Rooted in Tradition.",
+        subtitle: "Authentic handcrafted flavours from the heart of India, made in small batches and delivered to your home.",
+        primaryBtnText: "Shop Our Flavours",
+        primaryBtnLink: "/shop",
+        secondaryBtnText: "Our Heritage Story",
+        secondaryBtnLink: "/about",
+        imagePosition: "right",
+        textAlign: "left",
+        hideText: false,
+      }
+    ],
+  });
+
+  const fetchLiveProducts = () => {
+    fetch("/api/products")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.success && data.products) {
+          setDynamicProducts(data.products);
+        }
+      })
+      .catch(() => {});
+
+    fetch("/api/hero")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.success && data.heroConfig) {
+          setHeroConfig(data.heroConfig);
+        }
+      })
+      .catch(() => {});
+  };
+
+  React.useEffect(() => {
+    fetchLiveProducts();
+    const onFocus = () => fetchLiveProducts();
+    window.addEventListener("focus", onFocus);
+    return () => window.removeEventListener("focus", onFocus);
+  }, []);
+
+  const featuredProducts = dynamicProducts.filter(
+    (p) =>
+      p.isFeatured === true ||
+      String(p.isFeatured) === "true" ||
+      p.isBestseller === true ||
+      String(p.isBestseller) === "true"
+  );
+  const displayProducts =
+    featuredProducts.length > 0 ? featuredProducts : dynamicProducts;
+  const bundleProducts = dynamicProducts.filter((p) => p.category === "bundles");
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FFF9F3]">
       {/* HERO SECTION */}
-      <section className="w-full bg-[#FFF9F3] text-[#231F20] border-b border-[#EFE7DD] overflow-hidden">
-        {/* 2-column layout */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5">
-          <div className="flex flex-col lg:flex-row items-stretch gap-0 min-h-[300px] sm:min-h-[320px] lg:min-h-[360px]">
+      <HeroSection slides={heroConfig.slides} />
 
-            {/* LEFT: Text */}
-            <div className="lg:flex-[0_0_42%] py-10 sm:py-12 lg:py-20 flex flex-col justify-center pr-0 lg:pr-10">
-              <Reveal direction="up" delay={100}>
-                <h1 className="font-serif tracking-tight leading-[1.06] mb-4">
-                  <span className="block text-5xl sm:text-6xl lg:text-7xl font-bold text-[#8C201C]">
-                    Crafted by Heart.
-                  </span>
-                  <span className="block text-5xl sm:text-6xl lg:text-7xl italic font-normal text-[#231F20] mt-1">
-                    Rooted in Tradition.
-                  </span>
-                </h1>
-              </Reveal>
-              <Reveal direction="up" delay={500}>
-                <div className="flex flex-wrap items-center gap-3.5">
-                  <Link
-                    href="/shop"
-                    className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-sm px-7 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
-                  >
-                    <span>Shop Our Flavours</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+      {/* ── 5-Pillar Bottom Trust Strip (Marquee) ── */}
+      <section className="border-t border-[#EFE7DD] bg-[#FFF9F3] py-3 sm:py-3.5 overflow-hidden">
+        <div className="flex animate-marquee gap-8 sm:gap-12 pl-8 sm:pl-12">
+          {/* We render the list twice to create an infinite scroll effect */}
+          {[...Array(2)].map((_, i) => (
+            <React.Fragment key={i}>
+              <div className="flex items-center gap-2.5 shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                  <Sun className="w-4 h-4 text-[#8C201C]" />
                 </div>
-              </Reveal>
-            </div>
-
-            {/* RIGHT: Slider */}
-            <HeroSlider />
-          </div>
-        </div>
-
-        {/* ── 5-Pillar Bottom Trust Strip ── */}
-        <div className="border-t border-[#EFE7DD] bg-[#FFF9F3] py-4 px-6 sm:px-8 lg:px-12">
-          <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
-            {/* 1 */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
-                <Sun className="w-4 h-4 text-[#8C201C]" />
-              </div>
-              <div>
-                <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">100%</span>
-                <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Sun-Cured &amp; Natural</span>
-              </div>
-            </div>
-            {/* 2 */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-4 h-4 text-[#8C201C]" />
-              </div>
-              <div>
-                <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">Zero</span>
-                <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Synthetic Additives</span>
-              </div>
-            </div>
-            {/* 3 */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
-                <Award className="w-4 h-4 text-[#8C201C]" />
-              </div>
-              <div>
-                <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">GI-Tag</span>
-                <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Mithila Wetland Origin</span>
-              </div>
-            </div>
-            {/* 4 */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-4 h-4 text-[#8C201C]" />
-              </div>
-              <div>
-                <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">Premium</span>
-                <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Ingredients</span>
-              </div>
-            </div>
-            {/* 5 */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
-                <Heart className="w-4 h-4 text-[#8C201C]" />
-              </div>
-              <div>
-                <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">Made with Love</span>
-                <span className="text-[11px] text-[#666666] font-semibold block leading-tight">In Small Batches</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. BESTSELLERS SECTION - Solid Clean White Surface */}
-      <section className="pt-8 sm:pt-10 pb-14 sm:pb-20 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-b border-[rgba(51,51,51,0.10)]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-12">
-            <Reveal direction="up" delay={0}>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
-                Customer Favourites
-              </span>
-            </Reveal>
-            <Reveal direction="up" delay={200}>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#231F20] mt-1.5 mb-2">
-                The Flavours You Keep Coming Back For
-              </h2>
-            </Reveal>
-            <Reveal direction="up" delay={400}>
-              <p className="text-xs sm:text-sm text-[#555555] font-medium max-w-lg mx-auto">
-                Freshly cured batches bottled and dispatched weekly from our kitchen in Vaishali.
-              </p>
-            </Reveal>
-            <Reveal direction="up" delay={580}>
-              <Link
-                href="/shop"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#8C201C] hover:text-[#6B1815] transition-colors mt-3 group"
-              >
-                <span>View All Flavours</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Reveal>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
-            {bestsellerProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. BRAND STORY ("More Than Food. It's a Taste of Home.") - Solid Cream Background */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] text-[#231F20] border-b border-[rgba(51,51,51,0.10)]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Large Editorial Image */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-2xl border-4 border-[#FFFFFF] bg-white">
-              <Image
-                src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=80"
-                alt="Traditional Indian Sun Curing & Pickle Jars"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#231F20]/70 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#FFFFFF] border border-[rgba(51,51,51,0.10)] shadow-lg">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-[#8C201C] block mb-1">
-                  Heirloom Craftsmanship
-                </span>
-                <p className="font-serif text-base italic font-bold text-[#231F20]">
-                  &quot;In our kitchen, time and sunlight are the two most valuable ingredients.&quot;
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Story Copy */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-[#FFFFFF] text-[#8C201C] text-xs font-bold px-3.5 py-1.5 rounded-full border border-[rgba(51,51,51,0.10)] shadow-xs">
-              <Heart className="w-3.5 h-3.5 text-[#E07A4A]" />
-              <span>Our Culinary Heritage</span>
-            </div>
-
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold leading-tight text-[#8C201C]">
-              More Than Food. <br />
-              <span className="italic font-normal text-[#231F20]">
-                It&apos;s a Taste of Home.
-              </span>
-            </h2>
-
-            <p className="text-sm sm:text-base text-[#231F20] font-medium leading-relaxed">
-              Every bottle of Chachiji cuisine begins in Vaishali, Bihar, where recipes have been guarded and perfected across four generations. We do not use commercial vinegar, chemical preservatives, or industrial curing chambers.
-            </p>
-
-            <p className="text-sm sm:text-base text-[#231F20] font-medium leading-relaxed">
-              Instead, our Banarasi red chillies and raw orchard mangoes sit under the warm northern sun in ceramic martabans. They are bathed in pure wood-churned cold-pressed mustard oil and hand-roasted panchphoron spices ground in-house on traditional stone silbattas.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-xs">
-              <div className="flex items-start gap-3 bg-[#FFFFFF] p-4 rounded-2xl border border-[rgba(51,51,51,0.10)] shadow-xs">
-                <CheckCircle2 className="w-5 h-5 text-[#8C201C] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-sm text-[#231F20]">Zero Factory Shortcuts</h4>
-                  <p className="text-[#555555] text-xs mt-0.5">Slow 14-day natural fermentation in porcelain jars.</p>
+                  <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">100%</span>
+                  <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Sun-Cured &amp; Natural</span>
                 </div>
               </div>
-              <div className="flex items-start gap-3 bg-[#FFFFFF] p-4 rounded-2xl border border-[rgba(51,51,51,0.10)] shadow-xs">
-                <CheckCircle2 className="w-5 h-5 text-[#8C201C] shrink-0 mt-0.5" />
+              <div className="flex items-center gap-2.5 shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-4 h-4 text-[#8C201C]" />
+                </div>
                 <div>
-                  <h4 className="font-bold text-sm text-[#231F20]">Kachchi Ghani Mustard Oil</h4>
-                  <p className="text-[#555555] text-xs mt-0.5">Slow wood-pressed oil with high pungency and aroma.</p>
+                  <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">Zero</span>
+                  <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Synthetic Additives</span>
                 </div>
               </div>
-            </div>
-
-            <div className="pt-2">
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs px-8 py-4 rounded-xl transition-all shadow-md"
-              >
-                <span>Meet Chachiji &amp; Our Kitchen</span>
-                <ArrowRight className="w-4 h-4 text-[#FFFFFF]" />
-              </Link>
-            </div>
-          </div>
+              <div className="flex items-center gap-2.5 shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                  <Award className="w-4 h-4 text-[#8C201C]" />
+                </div>
+                <div>
+                  <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">GI-Tag</span>
+                  <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Mithila Wetland Origin</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2.5 shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-4 h-4 text-[#8C201C]" />
+                </div>
+                <div>
+                  <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">Premium</span>
+                  <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Ingredients</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2.5 shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                  <Heart className="w-4 h-4 text-[#8C201C]" />
+                </div>
+                <div>
+                  <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">Made with Love</span>
+                  <span className="text-[11px] text-[#666666] font-semibold block leading-tight">In Small Batches</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2.5 shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                  <Leaf className="w-4 h-4 text-[#8C201C]" />
+                </div>
+                <div>
+                  <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">Authentic</span>
+                  <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Indian Heritage</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2.5 shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-[#FFFFFF]/70 border border-[#EFE7DD] flex items-center justify-center shrink-0">
+                  <PackageCheck className="w-4 h-4 text-[#8C201C]" />
+                </div>
+                <div>
+                  <span className="font-serif text-sm font-bold text-[#8C201C] block leading-tight">Carefully</span>
+                  <span className="text-[11px] text-[#666666] font-semibold block leading-tight">Handpacked</span>
+                </div>
+              </div>
+            </React.Fragment>
+          ))}
         </div>
       </section>
 
-      {/* 6. MITHILA HERITAGE SECTION - Solid White Canvas */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-b border-[rgba(51,51,51,0.10)]">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-[#FFF9F3] rounded-3xl border border-[rgba(51,51,51,0.10)] p-8 sm:p-12 lg:p-16 shadow-lg relative overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
-                  Geographical Indication (GI Tag) Origin
-                </span>
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] mt-2 mb-4">
-                  From Mithila, <br />
-                  <span className="italic font-normal text-[#8C201C]">
-                    With Sacred Tradition.
-                  </span>
-                </h2>
-                <p className="text-xs sm:text-sm text-[#231F20] font-medium leading-relaxed mb-4">
-                  Mithila in Northern Bihar is the historic heartland of Makhana (Fox Nuts), producing over 85% of India&apos;s crop. Deep within the freshwater ponds and wetlands of Darbhanga and Madhubani, local harvesting families dive to gather the spiny seeds of the giant water lily (*Euryale Ferox*).
-                </p>
-                <p className="text-xs sm:text-sm text-[#231F20] font-medium leading-relaxed mb-6">
-                  Our fox nuts are manually sun-dried, fire-roasted in clay ovens, and hand-popped at peak temperature. We select only the Grade A+ jumbo white kernels, ensuring unbeatable natural crunch and pristine purity.
-                </p>
-
-                <div className="flex flex-wrap gap-3">
-                  <div className="bg-[#FFFFFF] border border-[rgba(51,51,51,0.10)] px-4 py-2 rounded-xl text-xs font-bold text-[#8C201C] shadow-2xs">
-                    🌱 Naturally Gluten-Free
-                  </div>
-                  <div className="bg-[#FFFFFF] border border-[rgba(51,51,51,0.10)] px-4 py-2 rounded-xl text-xs font-bold text-[#8C201C] shadow-2xs">
-                    💪 9.7g Protein per 100g
-                  </div>
-                  <div className="bg-[#FFFFFF] border border-[rgba(51,51,51,0.10)] px-4 py-2 rounded-xl text-xs font-bold text-[#8C201C] shadow-2xs">
-                    ❤️ Zero Cholesterol &amp; Trans Fat
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-md border-4 border-[#FFFFFF] bg-white">
-                <Image
-                  src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=1200&q=80"
-                  alt="Mithila Fox Nuts Harvesting and Popping"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+      {/* TASTE THE TRADITION: MIXED PICKLE FEATURE SECTION */}
+      <section className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          {/* Left Column: Transparent Mix Pickle Image (Image on Left - 7/12 cols) */}
+          <div className="order-1 lg:order-1 lg:col-span-7 flex items-center justify-center lg:justify-start w-full">
+            <Reveal direction="right" delay={120} duration={1.4} className="w-full flex justify-center lg:justify-start">
+              <div className="group relative w-full h-[380px] sm:h-[480px] lg:h-[580px] xl:h-[640px] cursor-pointer">
+                <AutoHoverImage
+                  src1="/mixpickle2-clean.png"
+                  alt1="Chachiji's Homemade Mixed Pickle Jar with fresh mangoes, chillies and mustard oil"
+                  src2="/mixpickle-clean.png"
+                  alt2="Chachiji's Homemade Mixed Pickle close-up texture and whole spices"
+                  sizes="(max-width: 1024px) 100vw, 75vw"
+                  objectFit="contain"
+                  objectPosition="center"
                 />
               </div>
-            </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column: Text & Story (Text on Right - 5/12 cols) */}
+          <div className="space-y-3 order-2 lg:order-2 lg:col-span-5 max-w-lg lg:max-w-none">
+            <Reveal direction="left" delay={100} duration={1.4}>
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
+                At Chachiji&apos;s Homemade Cuisine
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
+                Taste the Tradition: <br />
+                <span className="italic font-normal text-[#8C201C]">Crafted by Heart, Ground by Hand.</span>
+              </h2>
+            </Reveal>
+
+            <Reveal direction="left" delay={250} duration={1.4}>
+              <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
+                We believe that the soul of an authentic Indian pickle lies in the uncompromising purity of its ingredients and the patience of traditional recipes.
+              </p>
+              <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed mt-2">
+                Every jar of our Homemade Mixed Pickle brings together fresh raw mangoes, lemons, green &amp; red chillies, pungent mustard oil, and heirloom whole spices crushed on stone sil-batta — cured naturally under open sunshine without any synthetic vinegar or artificial preservatives.
+              </p>
+            </Reveal>
+
+            <Reveal direction="left" delay={400} duration={1.4}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-0.5">
+                <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                  <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
+                    Stone Sil-Batta Spices
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-[#555555] font-medium leading-relaxed">
+                    Whole spices slowly roasted and crushed in-house for deep aroma and authentic texture.
+                  </p>
+                </div>
+
+                <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                  <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
+                    100% Sun-Cured
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-[#555555] font-medium leading-relaxed">
+                    Aged naturally in traditional porcelain martabans with pure kachchi ghani mustard oil.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <Link
+                  href="/shop/achar"
+                  className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
+                >
+                  <span>Explore Heritage Pickles</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
+
+      {/* 3. FEATURED & BESTSELLER PRODUCTS SECTION */}
+      {displayProducts.length > 0 && (
+        <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-b border-[#EFE7DD]">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10 gap-4">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#E07A4A] flex items-center gap-1.5 mb-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#8C201C]" />
+                  Curated by Chachiji
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#231F20]">
+                  Featured Heritage Flavours
+                </h2>
+                <p className="text-xs sm:text-sm text-[#555555] font-medium mt-1">
+                  Handcrafted in limited seasonal batches under the bright Bihar sun.
+                </p>
+              </div>
+
+              <Link
+                href="/shop/achar"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#8C201C] hover:text-[#6B1815] bg-[#FFF9F3] border border-[#EFE7DD] px-4 py-2.5 rounded-xl shadow-2xs hover:shadow-xs transition-all self-start sm:self-auto"
+              >
+                <span>View Full Store Catalog</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
+              {displayProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 4. STORIES OF FLAVOUR BENTO GRID SECTION (Primary Brand Theme, Compact Balanced Height) */}
+      <section className="py-8 sm:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] text-[#231F20] border-b border-[#EFE7DD]">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-6 sm:mb-8">
+            <Reveal direction="up" delay={0}>
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
+                From Mithila, With Love
+              </span>
+            </Reveal>
+            <Reveal direction="up" delay={150}>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] mt-1.5 mb-2">
+                Stories of flavour, made the slow way
+              </h2>
+            </Reveal>
+            <Reveal direction="up" delay={300}>
+              <p className="text-xs sm:text-sm text-[#555555] font-medium max-w-xl mx-auto leading-relaxed">
+                Not just products—small glimpses of ingredients, craft and traditions behind every batch.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* Bento Grid: 4-col Left Portrait Card + 8-col Right Stack (Ultra-Thin Hairline Gaps) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-1.5 sm:gap-2 items-stretch">
+            {/* Left Portrait Tile: Slow-Crafted Achar (4 cols, Dual Image Hover Swap) */}
+            <Link
+              href="/shop/achar"
+              className="group relative lg:col-span-4 min-h-[420px] sm:min-h-[500px] lg:min-h-[570px] xl:min-h-[600px] rounded-2xl overflow-hidden bg-gradient-to-b from-[#F4F8FC] via-[#EAF2F8] to-[#DFEBF4] border border-[#D4E2ED] shadow-sm hover:shadow-xl hover:border-[#8C201C]/40 transition-all flex flex-col justify-end p-5 sm:p-7 cursor-pointer"
+            >
+              {/* Image Container with Auto/Hover Image */}
+              <div className="absolute inset-0 overflow-hidden">
+                <AutoHoverImage
+                  src1="/achaar-clean.png"
+                  alt1="Traditional homemade mixed pickle with fresh ingredients and wooden spoon"
+                  src2="/achaar2-clean.png"
+                  alt2="Traditional homemade mixed pickle jar with jute rope cover"
+                  sizes="(max-width: 1024px) 100vw, 35vw"
+                  objectFit="cover"
+                  objectPosition="center"
+                  isAutoActive={activeBentoIndex === 0}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#152332]/85 via-[#152332]/25 to-transparent pointer-events-none" />
+              </div>
+
+              {/* Tile Content */}
+              <div className="relative z-10 space-y-1">
+                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#E07A4A] block">
+                  Slow-Crafted
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#FFFFFF] leading-tight">
+                  Achar, just like home
+                </h3>
+                <p className="text-xs sm:text-sm text-[#E5F0FA] font-medium">
+                  Sun-cured spices, generations of patience.
+                </p>
+              </div>
+            </Link>
+
+            {/* Right Column: 1 Top Wide Tile + 2 Bottom Tiles (8 cols) */}
+            <div className="lg:col-span-8 flex flex-col gap-1.5 sm:gap-2 justify-between">
+              {/* Top Wide Tile: Mithila's Pride Makhana (Dual Image Hover Swap) */}
+              <Link
+                href="/shop/makhana"
+                className="group relative min-h-[210px] sm:min-h-[250px] lg:min-h-[285px] xl:min-h-[300px] rounded-2xl overflow-hidden bg-gradient-to-b from-[#F4F8FC] via-[#EAF2F8] to-[#DFEBF4] border border-[#D4E2ED] shadow-sm hover:shadow-xl hover:border-[#8C201C]/40 transition-all flex flex-col justify-end p-5 sm:p-7 cursor-pointer"
+              >
+                {/* Image Container with Auto/Hover Image */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <AutoHoverImage
+                    src1="/makh1-clean.png"
+                    alt1="Chachiji Mithila Makhana with craft pouch and lotus leaves"
+                    src2="/makh2-clean.png"
+                    alt2="Chachiji Mithila Makhana craft pouch and painted Madhubani bowl"
+                    sizes="(max-width: 1024px) 100vw, 65vw"
+                    objectFit="contain"
+                    objectPosition="center 30%"
+                    isAutoActive={activeBentoIndex === 1}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#152332]/85 via-[#152332]/25 to-transparent pointer-events-none" />
+                </div>
+
+                {/* Tile Content */}
+                <div className="relative z-10 space-y-1">
+                  <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#E07A4A] block">
+                    Mithila&apos;s Pride
+                  </span>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#FFFFFF] leading-tight">
+                    Light, crisp, unforgettable
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#E5F0FA] font-medium">
+                    Handpicked makhana in flavours worth sharing.
+                  </p>
+                </div>
+              </Link>
+
+              {/* Bottom Row: 2 Compact Tiles */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 flex-1">
+                {/* Tile 1: Our Promise (Dual Image Hover Swap: promp & prom1) */}
+                <Link
+                  href="/about"
+                  className="group relative min-h-[190px] sm:min-h-[225px] lg:min-h-[260px] xl:min-h-[275px] rounded-2xl overflow-hidden bg-gradient-to-b from-[#F4F8FC] via-[#EAF2F8] to-[#DFEBF4] border border-[#D4E2ED] shadow-sm hover:shadow-xl hover:border-[#8C201C]/40 transition-all flex flex-col justify-end p-5 sm:p-6 cursor-pointer"
+                >
+                  {/* Image Container with Auto/Hover Image */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <AutoHoverImage
+                      src1="/promp-clean.png"
+                      alt1="Family enjoying Chachiji Mithila Makhana together"
+                      src2="/prom1-clean.png"
+                      alt2="Traditional family moments enjoying Mithila Makhana"
+                      sizes="(max-width: 640px) 100vw, 32vw"
+                      objectFit="contain"
+                      objectPosition="center 30%"
+                      isAutoActive={activeBentoIndex === 2}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#152332]/85 via-[#152332]/25 to-transparent pointer-events-none" />
+                  </div>
+
+                  <div className="relative z-10 space-y-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#E07A4A] block">
+                      Our Promise
+                    </span>
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#FFFFFF] leading-tight">
+                      Made with care
+                    </h3>
+                  </div>
+                </Link>
+
+                {/* Tile 2: Rooted in Craft (Dual Image Hover Swap: trust & trust1) */}
+                <Link
+                  href="/about#process"
+                  className="group relative min-h-[190px] sm:min-h-[225px] lg:min-h-[260px] xl:min-h-[275px] rounded-2xl overflow-hidden bg-gradient-to-b from-[#F4F8FC] via-[#EAF2F8] to-[#DFEBF4] border border-[#D4E2ED] shadow-sm hover:shadow-xl hover:border-[#8C201C]/40 transition-all flex flex-col justify-end p-5 sm:p-6 cursor-pointer"
+                >
+                  {/* Image Container with Auto/Hover Image */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <AutoHoverImage
+                      src1="/trust-clean.png"
+                      alt1="Traditional terracotta hand-painted pot and craft pouch of Mithila Makhana"
+                      src2="/trust1-clean.png"
+                      alt2="Generations of women sharing authentic Mithila Makhana pouch"
+                      sizes="(max-width: 640px) 100vw, 32vw"
+                      objectFit="contain"
+                      objectPosition="center 30%"
+                      isAutoActive={activeBentoIndex === 3}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#152332]/85 via-[#152332]/25 to-transparent pointer-events-none" />
+                  </div>
+
+                  <div className="relative z-10 space-y-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#E07A4A] block">
+                      Rooted in Craft
+                    </span>
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#FFFFFF] leading-tight">
+                      From soil to soul
+                    </h3>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Bar */}
+          <div className="mt-5 pt-4 border-t border-[#EFE7DD] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-[#555555] font-medium text-center sm:text-left">
+              Each tile can open its category, story, or featured collection.
+            </p>
+            <Link
+              href="/shop/achar"
+              className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs px-6 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95 shrink-0"
+            >
+              <span>Explore all flavours</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. MITHILA MAKHANA FEATURE SECTION */}
+      <section className="py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          {/* Left Column: Text & Story (Text on Left - 5/12 cols) */}
+          <div className="space-y-3 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
+            <Reveal direction="right" delay={100} duration={1.4}>
+              <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
+                GI-Tagged Mithila Origin
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#231F20] leading-[1.12]">
+                Mithila Makhana: <br />
+                <span className="italic font-normal text-[#8C201C]">Direct from Pristine Sacred Waters.</span>
+              </h2>
+            </Reveal>
+
+            <Reveal direction="right" delay={250} duration={1.4}>
+              <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
+                At Chachiji&apos;s, we offer a wide range of high-quality Pokhar Makhana (or Pokhara Makhana) — premium popped lotus seeds (fox nuts) sourced directly from the mineral-rich freshwater wetlands of Mithila.
+              </p>
+              <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed mt-2">
+                Celebrated for centuries as a sacred, nutrient-dense superfood, each kernel is hand-harvested by local diving families, naturally sun-cured, and slowly roasted in small batches to preserve its irresistible natural crunch, rich antioxidants, plant protein, and calcium.
+              </p>
+            </Reveal>
+
+            <Reveal direction="right" delay={400} duration={1.4}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-0.5">
+                <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                  <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
+                    Ethical Wetland Sourced
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-[#555555] font-medium leading-relaxed">
+                    Hand-harvested from deep freshwater lakes of Darbhanga &amp; Madhubani with zero factory shortcuts.
+                  </p>
+                </div>
+
+                <div className="bg-[#FFFFFF] p-2.5 sm:p-3 rounded-2xl border border-[#EFE7DD] shadow-2xs space-y-0.5">
+                  <h3 className="font-serif text-xs sm:text-sm font-bold text-[#8C201C]">
+                    Grade A+ Jumbo Blooms
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-[#555555] font-medium leading-relaxed">
+                    Extra-large, sun-dried white pearls roasted to light, crispy perfection with 100% natural spices.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <Link
+                  href="/shop/makhana"
+                  className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
+                >
+                  <span>Explore Mithila Makhana</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column: Transparent Makhana Image (Image on Right - 7/12 cols, Interactive Hover Angle) */}
+          <div className="order-1 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
+            <Reveal direction="left" delay={120} duration={1.4} className="w-full flex justify-center lg:justify-end">
+              <div className="group relative w-full h-[380px] sm:h-[480px] lg:h-[580px] xl:h-[640px] cursor-pointer">
+                {/* Default Primary Makhana Image (makhana1) */}
+                <Image
+                  src="/makhana1-clean.png"
+                  alt="Chachiji's Mixed Mithila Makhana Craft Pouch and Roasted Bowl"
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 75vw"
+                  style={{ objectFit: "contain", objectPosition: "center" }}
+                  className="select-none pointer-events-none transition-all duration-700 ease-in-out opacity-100 group-hover:opacity-0 group-hover:scale-95"
+                />
+
+                {/* Secondary Hover Makhana Image (makhana2) */}
+                <Image
+                  src="/makhana2-clean.png"
+                  alt="Chachiji's Mixed Mithila Makhana Glass Jar and Madhubani Pottery"
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 75vw"
+                  style={{ objectFit: "contain", objectPosition: "center" }}
+                  className="select-none pointer-events-none transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:scale-105"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* 7. HOW IT'S MADE (4-STEP TIMELINE) - Solid White Surface with Cream Cards */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-b border-[rgba(51,51,51,0.10)]">

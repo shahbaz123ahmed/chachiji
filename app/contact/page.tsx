@@ -80,7 +80,7 @@ export default function ContactPage() {
 
               <div className="flex items-center gap-3 text-xs pt-2 border-t border-[rgba(51,51,51,0.10)]">
                 <Phone className="w-4 h-4 text-[#8C201C] shrink-0" />
-                <a href="tel:+918860488004" className="text-[#231F20] font-bold hover:text-[#8C201C]">
+                <a href={`tel:${BRAND_INFO.phone.replace(/\s+/g, '')}`} className="text-[#231F20] font-bold hover:text-[#8C201C]">
                   {BRAND_INFO.phone}
                 </a>
               </div>

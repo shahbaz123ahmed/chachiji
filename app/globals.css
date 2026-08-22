@@ -83,3 +83,17 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   outline-offset: 2px;
 }
 
+@keyframes marquee-right-to-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-right-to-left 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

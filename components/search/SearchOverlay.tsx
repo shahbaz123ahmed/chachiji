@@ -5,13 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSearch } from "@/context/SearchContext";
 import { useCart } from "@/context/CartContext";
-import { PRODUCTS } from "@/data/products";
+import { Product } from "@/types/ecommerce";
 import { Search, X, ArrowRight, Sparkles, ShoppingBag } from "lucide-react";
 
 export default function SearchOverlay() {
   const { isSearchOpen, setIsSearchOpen, searchQuery, setSearchQuery } = useSearch();
   const { addToCart } = useCart();
   const inputRef = useRef<HTMLInputElement>(null);
+  const [allProducts, setAllProducts] = React.useState<Product[]>([]);
 
   const popularSearches = [
     "Bharwa Lal Mirch",
@@ -26,6 +27,14 @@ export default function SearchOverlay() {
     if (isSearchOpen) {
       document.body.style.overflow = "hidden";
       setTimeout(() => inputRef.current?.focus(), 50);
+      fetch("/api/products")
+        .then((r) => r.json())
+        .then((data) => {
+          if (data.success && data.products) {
+            setAllProducts(data.products);
+          }
+        })
+        .catch(() => {});
     } else {
       document.body.style.overflow = "unset";
     }
@@ -48,14 +57,14 @@ export default function SearchOverlay() {
 
   const filteredProducts = searchQuery.trim() === ""
     ? []
-    : PRODUCTS.filter((item) => {
+    : allProducts.filter((item) => {
         const query = searchQuery.toLowerCase();
         return (
           item.name.toLowerCase().includes(query) ||
           (item.hindiName && item.hindiName.toLowerCase().includes(query)) ||
           item.category.toLowerCase().includes(query) ||
-          item.shortDescription.toLowerCase().includes(query) ||
-          item.ingredients.some((ing) => ing.toLowerCase().includes(query))
+          (item.shortDescription && item.shortDescription.toLowerCase().includes(query)) ||
+          (item.ingredients && item.ingredients.some((ing) => ing.toLowerCase().includes(query)))
         );
       });
 

@@ -9,7 +9,7 @@ export const CATEGORIES: CategoryInfo[] = [
     headline: "Bold, Tangy & Sun-Cured with Heirloom Mithila Recipes",
     tagline: "Bold, tangy and traditionally crafted.",
     description: "Crafted in earthen martabans under bright natural sunshine. Made exclusively with pure wood cold-pressed mustard oil, whole hand-roasted spices, and fresh seasonal harvests from local Bihar orchards.",
-    heroImage: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1400&q=80",
+    heroImage: "/achaar-clean.png",
     seoTitle: "Traditional Bihari & Mithila Achar | Handcrafted Pickles Online - Chachiji",
     seoDescription: "Buy authentic sun-cured Bihari pickles online. Hand-stuffed Bharwa Lal Mirch, Kacha Aam, and Oal Jimikand achar in pure cold-pressed mustard oil. Zero preservatives.",
     highlights: [
@@ -27,7 +27,7 @@ export const CATEGORIES: CategoryInfo[] = [
     headline: "Light, Crunchy & Sourced from Sacred Mithila Wetlands",
     tagline: "Light, crunchy and naturally delicious.",
     description: "Harvested directly from pristine lotus ponds across Mithila, Bihar. Our Grade A+ jumbo fox nuts are naturally popped and roasted in pure A2 Desi Cow Ghee with organic rock salts and herbal spices.",
-    heroImage: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=1400&q=80",
+    heroImage: "/makh1-clean.png",
     seoTitle: "Authentic Mithila Makhana Online | Raw & Ghee-Roasted Fox Nuts - Chachiji",
     seoDescription: "Order GI-Tagged Mithila Makhana online from Chachiji. Jumbo grade raw and A2 cow ghee roasted flavours. Protein-rich, gluten-free traditional Indian superfood.",
     highlights: [
@@ -45,7 +45,7 @@ export const CATEGORIES: CategoryInfo[] = [
     headline: "Handpicked Heritage Collections for Gifting & Feasting",
     tagline: "Taste of home, beautifully boxed.",
     description: "Experience the complete spectrum of Chachiji's culinary heritage. Handcrafted gift boxes featuring our most celebrated pickles, premium makhana packs, and artisan wooden accessories.",
-    heroImage: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1400&q=80",
+    heroImage: "/promp-clean.png",
     seoTitle: "Indian Food Gift Boxes & Pickle Hampers | Bundles - Chachiji",
     seoDescription: "Explore luxury gift boxes and value bundles of authentic Indian pickles and Mithila makhana. Packed in premium keepsake boxes with complimentary wooden spoons.",
     highlights: [

@@ -1,0 +1,74 @@
+{
+  "slides": [
+    {
+      "id": "slide-1787375743849",
+      "image": "/h3.png",
+      "badge": "Mithila Culinary Heritage • 100% Traditional",
+      "headingPrimary": "Crafted by Heart.",
+      "headingSecondary": "Rooted in Tradition.",
+      "subtitle": "Authentic handcrafted flavours from the heart of India, made in small batches and delivered to your home.",
+      "primaryBtnText": "Shop Our Flavours",
+      "primaryBtnLink": "/shop",
+      "secondaryBtnText": "Our Heritage Story",
+      "secondaryBtnLink": "/about",
+      "imagePosition": "right",
+      "textAlign": "left"
+    },
+    {
+      "id": "slide-1787375777615",
+      "image": "/h4.png",
+      "badge": "Mithila Culinary Heritage • 100% Traditional",
+      "headingPrimary": "Crafted by Chachji's Natural Makhana",
+      "headingSecondary": "Rooted in  IndianTradition.",
+      "subtitle": "Authentic handcrafted flavours from the heart of India, made in small batches and delivered to your home.",
+      "primaryBtnText": "Shop Our Flavours",
+      "primaryBtnLink": "/shop",
+      "secondaryBtnText": "Our Heritage Story",
+      "secondaryBtnLink": "/about",
+      "imagePosition": "right",
+      "textAlign": "left"
+    },
+    {
+      "id": "slide-1787390808570",
+      "image": "/uploads/1787390986817_multi.png",
+      "badge": "Mithila Culinary Heritage • 100% Traditional",
+      "headingPrimary": "Crafted by Heart.",
+      "headingSecondary": "Rooted in Tradition.",
+      "subtitle": "Authentic handcrafted flavours from the heart of India, made in small batches and delivered to your home.",
+      "primaryBtnText": "Shop Our Flavours",
+      "primaryBtnLink": "/shop",
+      "secondaryBtnText": "Our Heritage Story",
+      "secondaryBtnLink": "/about",
+      "imagePosition": "right",
+      "textAlign": "left"
+    },
+    {
+      "id": "slide-1787394714883",
+      "image": "/uploads/1787394763646_chatgpt_image_aug_22_2026_04_02_23_pm.png",
+      "badge": "Mithila Culinary Heritage • 100% Traditional",
+      "headingPrimary": "Crafted by Heart.",
+      "headingSecondary": "Rooted in Tradition.",
+      "subtitle": "Authentic handcrafted flavours from the heart of India, made in small batches and delivered to your home.",
+      "primaryBtnText": "Shop Our Flavours",
+      "primaryBtnLink": "/shop",
+      "secondaryBtnText": "Our Heritage Story",
+      "secondaryBtnLink": "/about",
+      "imagePosition": "right",
+      "textAlign": "left"
+    },
+    {
+      "id": "slide-1787394979896",
+      "image": "/uploads/1787394986937_chatgpt_image_aug_22_2026_04_06_01_pm.png",
+      "badge": "Mithila Culinary Heritage • 100% Traditional",
+      "headingPrimary": "Crafted by Heart.",
+      "headingSecondary": "Rooted in Tradition.",
+      "subtitle": "Authentic handcrafted flavours from the heart of India, made in small batches and delivered to your home.",
+      "primaryBtnText": "Shop Our Flavours",
+      "primaryBtnLink": "/shop",
+      "secondaryBtnText": "Our Heritage Story",
+      "secondaryBtnLink": "/about",
+      "imagePosition": "right",
+      "textAlign": "left"
+    }
+  ]
+}

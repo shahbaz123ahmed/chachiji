@@ -14,6 +14,10 @@ import {
 } from "lucide-react";
 import { BRAND_INFO } from "@/data/brandInfo";
 import Reveal from "@/components/ui/Reveal";
+import HeroSection from "@/components/hero/HeroSection";
+import { getAboutConfig } from "@/lib/db";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "About US — Handcrafted Culinary Heritage of Bihar & Mithila",
@@ -22,72 +26,21 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const aboutConfig = getAboutConfig();
+
   return (
     <div className="bg-[#FFFFFF] min-h-screen">
-      {/* Hero: 2-Column with Cream Background & Directional Animations */}
-      <section className="relative bg-[#FFF9F3] text-[#231F20] py-1 sm:py-1.5 lg:py-2 border-b border-[#EFE7DD] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 min-h-[320px]">
-            {/* Left Column: Text (Animates from Left) */}
-            <div className="flex-1 max-w-lg text-left">
-              <Reveal direction="right" delay={80}>
-                <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-2 shadow-2xs">
-                  Our Roots in Vaishali, Bihar
-                </span>
-              </Reveal>
-              <Reveal direction="right" delay={180}>
-                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.08] mb-2.5">
-                  <span className="block text-[#8C201C]">Crafted by Heart.</span>
-                  <span className="block italic font-normal text-[#231F20] mt-0.5">Ground by Hand.</span>
-                </h1>
-              </Reveal>
-              <Reveal direction="right" delay={280}>
-                <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed mb-3.5">
-                  Chachiji was born from an unwavering devotion to the authentic, unadulterated tastes of home — where every achar is cured under open sunshine and every makhana is harvested from sacred wetlands.
-                </p>
-              </Reveal>
-              <Reveal direction="right" delay={380}>
-                <div className="flex flex-wrap items-center gap-3">
-                  <Link
-                    href="/shop"
-                    className="inline-flex items-center gap-2 bg-[#8C201C] hover:bg-[#6B1815] text-[#FFFFFF] font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
-                  >
-                    <span>Explore Our Heritage Jars</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </Reveal>
-            </div>
+      {/* Dynamic Hero Section identical to Main Page with Admin Management */}
+      <HeroSection slides={aboutConfig.slides} />
 
-            {/* Right Column: Transparent about.png (Animates from Right - Enlarged) */}
-            <div className="flex-1 lg:flex-[1.2] relative flex items-center justify-center lg:justify-end w-full">
-              <Reveal direction="left" delay={120} className="w-full flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[500px]">
-                  <Image
-                    src="/about-hero-v2.png"
-                    alt="Chachiji Traditional Sil-Batta, Pickles & Makhana Heritage"
-                    fill
-                    priority
-                    quality={100}
-                    unoptimized
-                    sizes="(max-width: 1024px) 100vw, 60vw"
-                    style={{ objectFit: "contain", objectPosition: "center right" }}
-                    className="select-none pointer-events-none"
-                  />
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Chapter 1: Our Commitment - Solid Soft Cream Background */}
-      <section className="py-1 sm:py-1.5 lg:py-2 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
-          {/* Left: Transparent Commitment Image (Animates from Left - Ultra-HD & Enlarged) */}
-          <div className="flex items-center justify-center lg:justify-start w-full">
+      <section className="py-3 sm:py-4 lg:py-6 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 items-center">
+          {/* Left on Desktop / Bottom on Mobile: Transparent Commitment Image */}
+          <div className="order-2 lg:order-1 flex items-center justify-center lg:justify-start w-full">
             <Reveal direction="right" delay={120} className="w-full flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[500px]">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl h-[240px] sm:h-[320px] lg:h-[460px] xl:h-[500px]">
                 <Image
                   src="/commitment-v3.png"
                   alt="Chachiji Artisans grinding spices on traditional sil-batta and handpicking Mithila makhana"
@@ -97,14 +50,14 @@ export default function AboutPage() {
                   unoptimized
                   sizes="(max-width: 1024px) 100vw, 65vw"
                   style={{ objectFit: "contain", objectPosition: "center left" }}
-                  className="select-none pointer-events-none"
+                  className="select-none pointer-events-none transform scale-[1.18] sm:scale-100 origin-center lg:origin-left"
                 />
               </div>
             </Reveal>
           </div>
 
-          {/* Right: Content (Animates from Right) */}
-          <div className="space-y-3">
+          {/* Right on Desktop / Top on Mobile: Content */}
+          <div className="order-1 lg:order-2 space-y-3">
             <Reveal direction="left" delay={80}>
               <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
                 Our Commitment
@@ -150,10 +103,10 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 2: Taste the Tradition - Solid Soft Cream Background */}
-      <section className="py-1 sm:py-1.5 lg:py-2 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
-          {/* Left Column: Text & 3 Pillars (Compact Width - 5/12 cols) */}
-          <div className="space-y-2.5 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
+      <section className="py-3 sm:py-4 lg:py-6 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10 items-center">
+          {/* Left Column on Desktop / Top on Mobile: Text & 3 Pillars (Compact Width - 5/12 cols) */}
+          <div className="space-y-2.5 order-1 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
             <Reveal direction="right" delay={80}>
               <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
                 Taste the Tradition
@@ -205,10 +158,10 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          {/* Right Column: Transparent Image (Massively Enlarged - 7/12 cols) */}
-          <div className="order-1 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
+          {/* Right Column on Desktop / Bottom on Mobile: Transparent Image (7/12 cols, Big & Compact on Mobile) */}
+          <div className="order-2 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
             <Reveal direction="left" delay={120} className="w-full flex justify-center lg:justify-end">
-              <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[580px] xl:h-[640px]">
+              <div className="relative w-full h-[260px] sm:h-[350px] lg:h-[580px] xl:h-[640px]">
                 <Image
                   src="/our-v3.png"
                   alt="Traditional Grandmother and Child Grinding Heirloom Spices on Stone Sil-Batta"
@@ -217,8 +170,8 @@ export default function AboutPage() {
                   quality={100}
                   unoptimized
                   sizes="(max-width: 1024px) 100vw, 75vw"
-                  style={{ objectFit: "contain", objectPosition: "center right" }}
-                  className="select-none pointer-events-none"
+                  style={{ objectFit: "contain", objectPosition: "center" }}
+                  className="select-none pointer-events-none transform scale-[1.25] sm:scale-100 origin-center lg:origin-right"
                 />
               </div>
             </Reveal>
@@ -227,12 +180,12 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 3: The Mithila Wetland Connection - Solid Cream Section */}
-      <section id="mithila" className="py-1 sm:py-1.5 lg:py-2 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Column: Transparent Makhana Image (Animates from Left) */}
-          <div className="order-1 lg:order-1 flex items-center justify-center lg:justify-start w-full">
+      <section id="mithila" className="py-3 sm:py-4 lg:py-6 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-y border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
+          {/* Left Column on Desktop / Bottom on Mobile: Transparent Makhana Image */}
+          <div className="order-2 lg:order-1 flex items-center justify-center lg:justify-start w-full">
             <Reveal direction="right" delay={120} className="w-full flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[500px]">
+              <div className="relative w-full max-w-lg sm:max-w-xl lg:max-w-2xl h-[240px] sm:h-[320px] lg:h-[460px] xl:h-[500px]">
                 <Image
                   src="/mithila-clean.png"
                   alt="GI-Tagged Mithila Makhana and Spiced Roasted Fox Nuts"
@@ -242,14 +195,14 @@ export default function AboutPage() {
                   unoptimized
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   style={{ objectFit: "contain", objectPosition: "center" }}
-                  className="select-none pointer-events-none"
+                  className="select-none pointer-events-none transform scale-[1.18] sm:scale-100 origin-center"
                 />
               </div>
             </Reveal>
           </div>
 
-          {/* Right Column: Text (Animates from Right) */}
-          <div className="order-2 lg:order-2">
+          {/* Right Column on Desktop / Top on Mobile: Text */}
+          <div className="order-1 lg:order-2">
             <Reveal direction="left" delay={80}>
               <div className="space-y-3.5">
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8C201C]">
@@ -279,10 +232,10 @@ export default function AboutPage() {
       </section>
 
       {/* Chapter 4: Our Promise to You - Solid Soft Cream Background */}
-      <section className="py-1 sm:py-1.5 lg:py-2 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
-          {/* Left Column: Text & Promises (Animates from Left - 5/12 cols) */}
-          <div className="space-y-3 order-2 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
+      <section className="py-3 sm:py-4 lg:py-6 px-4 sm:px-6 lg:px-8 bg-[#FFF9F3] border-b border-[#EFE7DD] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10 items-center">
+          {/* Left Column on Desktop / Top on Mobile: Text & Promises (5/12 cols) */}
+          <div className="space-y-3 order-1 lg:order-1 lg:col-span-5 max-w-lg lg:max-w-none">
             <Reveal direction="right" delay={80}>
               <span className="inline-block bg-[#FFFFFF] border border-[#EFE7DD] text-[#8C201C] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-1 shadow-2xs">
                 Our Promise to You
@@ -325,10 +278,10 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          {/* Right Column: Transparent Promise Image (Massively Enlarged - 7/12 cols) */}
-          <div className="order-1 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
+          {/* Right Column on Desktop / Bottom on Mobile: Transparent Promise Image (7/12 cols, Big & Compact on Mobile) */}
+          <div className="order-2 lg:order-2 lg:col-span-7 flex items-center justify-center lg:justify-end w-full">
             <Reveal direction="left" delay={120} className="w-full flex justify-center lg:justify-end">
-              <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[580px] xl:h-[640px]">
+              <div className="relative w-full h-[260px] sm:h-[350px] lg:h-[680px] xl:h-[760px] 2xl:h-[820px]">
                 <Image
                   src="/promise-clean.png"
                   alt="Chachiji's Homemade Cuisine — Our Promise to You 3-Generation Family Gathering"
@@ -336,9 +289,9 @@ export default function AboutPage() {
                   priority
                   quality={100}
                   unoptimized
-                  sizes="(max-width: 1024px) 100vw, 75vw"
-                  style={{ objectFit: "contain", objectPosition: "center right" }}
-                  className="select-none pointer-events-none"
+                  sizes="(max-width: 1024px) 100vw, 85vw"
+                  style={{ objectFit: "contain", objectPosition: "center" }}
+                  className="select-none pointer-events-none transform scale-[1.25] sm:scale-100 lg:scale-105 xl:scale-110 origin-center lg:origin-right"
                 />
               </div>
             </Reveal>
@@ -482,10 +435,10 @@ export default function AboutPage() {
           </p>
           <div className="pt-2">
             <Link
-              href="/shop"
+              href="/shop/achar"
               className="inline-flex items-center gap-2 bg-[#E07A4A] hover:bg-[#C96635] text-[#231F20] font-bold text-xs px-8 py-3.5 rounded-xl shadow-md transition-all"
             >
-              <span>Explore Our Shop</span>
+              <span>Explore Our Pickles</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

@@ -3,97 +3,101 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-const SLIDES = [
-  {
-    src: '/heros2.png',
-    alt: 'Chachiji Mix Pickle, Mango Pickle, Masala Chana and Mithila Makhana jars',
-    // Centred jar composition — can go bigger
-    scale: 1.6,
-    objectPosition: 'center',
-  },
-  {
-    src: '/h3.png',
-    alt: 'Chachiji Authentic Mango Pickle in traditional ceramic martaban',
-    // Wide landscape — scale 1.0 so full image (jar + oil bottle) stays uncropped
-    scale: 1.05,
-    objectPosition: 'center',
-  },
-  {
-    src: '/h4.png',
-    alt: 'Chachiji Mithila Makhana Pure Crunchy Nutritious',
-    // Wide landscape image — no upscale, full visible
-    scale: 1.2,
-    objectPosition: 'center',
-  },
+const DEFAULT_SLIDES = [
+  '/heros2.png',
+  '/h3.png',
+  '/h4.png',
+  '/slide4.png',
+  '/slide5.png',
 ];
 
+const INTERVAL_MS = 3800;
 
-const INTERVAL_MS = 3500;
-const FADE_MS = 1200;
+interface HeroSliderProps {
+  slides?: string[];
+  isFullCenter?: boolean;
+}
 
-export default function HeroSlider() {
+export default function HeroSlider({
+  slides,
+  isFullCenter = false,
+}: HeroSliderProps) {
+  const slideImages = Array.isArray(slides) && slides.length > 0 ? slides : DEFAULT_SLIDES;
   const [current, setCurrent] = useState(0);
-  const [imagesReady, setImagesReady] = useState(false);
+
+  // Ensure current index is always within valid bounds when slides change
+  useEffect(() => {
+    if (current >= slideImages.length) {
+      setCurrent(0);
+    }
+  }, [slideImages.length, current]);
 
   useEffect(() => {
-    const ready = setTimeout(() => setImagesReady(true), 300);
-    return () => clearTimeout(ready);
-  }, []);
-
-  useEffect(() => {
-    if (!imagesReady) return;
+    if (slideImages.length <= 1) return;
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % SLIDES.length);
+      setCurrent((prev) => (prev + 1) % slideImages.length);
     }, INTERVAL_MS);
     return () => clearInterval(interval);
-  }, [imagesReady]);
+  }, [slideImages.length]);
 
   return (
-    <div className="flex-1 relative min-h-[280px] sm:min-h-[320px] lg:min-h-0">
-      {SLIDES.map((slide, i) => (
-        <div
-          key={slide.src}
-          className="absolute inset-0"
-          style={{
-            opacity: i === current ? 1 : 0,
-            transition: `opacity ${FADE_MS}ms ease-in-out`,
-            zIndex: i === current ? 1 : 0,
-          }}
-        >
-          {/* Per-slide scale wrapper — overflow hidden only within each slide */}
+    <div
+      className={`relative w-full flex items-center justify-center overflow-hidden group ${
+        isFullCenter
+          ? 'h-[340px] sm:h-[400px] md:h-[460px] lg:h-[500px]'
+          : 'h-[320px] sm:h-[380px] md:h-[440px] lg:h-[480px]'
+      }`}
+    >
+      {slideImages.map((src, i) => {
+        const isCurrent = i === current;
+
+        return (
           <div
-            className="absolute inset-0 overflow-hidden"
-            style={{ transform: `scale(${slide.scale})`, transformOrigin: 'center' }}
+            key={src + i}
+            className={`absolute inset-0 w-full h-full flex items-center justify-center transition-opacity duration-700 ease-in-out ${
+              isCurrent ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
+            }`}
           >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              priority
-              quality={100}
-              sizes="100vw"
-              style={{ objectFit: 'contain', objectPosition: slide.objectPosition }}
-              className="select-none pointer-events-none"
-            />
+            <div className="relative w-full h-full flex items-center justify-center p-2 sm:p-4">
+              <Image
+                src={src}
+                alt={`Hero Slide ${i + 1}`}
+                fill
+                priority={i === 0}
+                quality={100}
+                unoptimized
+                sizes="100vw"
+                style={{
+                  objectFit: isFullCenter ? 'contain' : 'contain',
+                  objectPosition: 'center',
+                }}
+                className={`select-none ${
+                  !isFullCenter ? 'transform scale-[1.05] sm:scale-[1.12] lg:scale-[1.18] origin-center drop-shadow-md' : 'p-2 sm:p-4 drop-shadow-md'
+                }`}
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
       {/* Carousel Dots */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
-        {SLIDES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            aria-label={`Go to slide ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${i === current
-              ? 'w-3 h-3 bg-[#8C201C] scale-110'
-              : 'w-2 h-2 bg-[#EFE7DD] hover:bg-[#C96635]'
+      {slideImages.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-30 bg-black/25 backdrop-blur-xs px-3.5 py-1.5 rounded-full shadow-xs">
+          {slideImages.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setCurrent(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`rounded-full transition-all duration-300 cursor-pointer ${
+                i === current
+                  ? 'w-4 h-2 bg-[#8C201C] shadow-xs'
+                  : 'w-2 h-2 bg-white/70 hover:bg-white'
               }`}
-          />
-        ))}
-      </div>
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
-

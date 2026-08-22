@@ -1,21 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
-import { PRODUCTS } from "@/data/products";
 import { BRAND_INFO } from "@/data/brandInfo";
+import { Product } from "@/types/ecommerce";
 import {
   X,
   Plus,
   Minus,
   Trash2,
   ShoppingBag,
-  ArrowRight,
   Sparkles,
-  Truck,
+  ArrowRight,
+  ShieldCheck,
   Tag,
+  Check,
+  Truck,
 } from "lucide-react";
 
 export default function CartDrawer() {
@@ -38,13 +40,27 @@ export default function CartDrawer() {
   } = useCart();
 
   const [couponInput, setCouponInput] = useState("");
-  const [couponError, setCouponError] = useState<string | null>(null);
+  const [couponError, setCouponError] = useState("");
+  const [dynamicProducts, setDynamicProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    if (isCartDrawerOpen) {
+      fetch("/api/products")
+        .then((r) => r.json())
+        .then((data) => {
+          if (data.success && data.products) {
+            setDynamicProducts(data.products);
+          }
+        })
+        .catch(() => {});
+    }
+  }, [isCartDrawerOpen]);
 
   if (!isCartDrawerOpen) return null;
 
   const handleApplyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
-    setCouponError(null);
+    setCouponError("");
     if (!couponInput.trim()) return;
     const res = applyCoupon(couponInput);
     if (!res.success) {
@@ -54,9 +70,9 @@ export default function CartDrawer() {
     }
   };
 
-  const upsellProducts = PRODUCTS.filter(
-    (p) => !cart.some((item) => item.productId === p.id)
-  ).slice(0, 3);
+  const upsellProducts = dynamicProducts
+    .filter((p) => !cart.some((item) => item.productId === p.id))
+    .slice(0, 3);
 
   const freeShippingPercentage = Math.min(
     100,

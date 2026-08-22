@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
 import { WishlistProvider } from "@/context/WishlistContext";
 import { SearchProvider } from "@/context/SearchContext";
@@ -28,29 +29,34 @@ export const metadata: Metadata = {
     "Chachiji",
     "Chachiji Achar",
     "Mithila Makhana",
-    "Bihari Pickle Online",
-    "Bharwa Lal Mirch Achar",
-    "Kacha Aam Achar",
-    "Oal Jimikand Achar",
-    "Wood Cold Pressed Mustard Oil Pickle",
-    "Sun Cured Pickles India",
-    "GI Tagged Mithila Makhana",
+    "Bihar Pickle",
+    "Homemade Achar",
+    "Bharwa Mirch Achar",
+    "Organic Makhana",
+    "Vaishali Pickles",
   ],
   authors: [{ name: "Chachiji's Homemade Cuisine", url: "https://chachiji.in" }],
+  creator: "Chachiji Heritage Foods",
+  publisher: "Chachiji",
+  formatDetection: {
+    telephone: true,
+    address: true,
+    email: true,
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://chachiji.in",
-    siteName: "Chachiji's Homemade Cuisine",
+    siteName: "Chachiji — Authentic Handcrafted Achar & Mithila Makhana",
     title: "Chachiji — Authentic Handcrafted Achar & Mithila Makhana",
     description:
       "Authentic handcrafted flavours from the heart of India, made in small batches and delivered to your home.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1200&q=80",
+        url: "https://chachiji.in/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Chachiji Handcrafted Indian Pickles and Makhana",
+        alt: "Chachiji — Authentic Handcrafted Achar & Mithila Makhana",
       },
     ],
   },
@@ -60,7 +66,7 @@ export const metadata: Metadata = {
     description:
       "Authentic handcrafted flavours from the heart of India, made in small batches and delivered to your home.",
     images: [
-      "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1200&q=80",
+      "https://chachiji.in/og-image.jpg",
     ],
   },
   robots: {
@@ -80,21 +86,22 @@ export default function RootLayout({
         className="min-h-screen flex flex-col bg-[#FFF9F3] text-[#231F20] antialiased"
         suppressHydrationWarning
       >
-        <CartProvider>
-          <WishlistProvider>
-            <SearchProvider>
-              <Navbar />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <CartDrawer />
-              <SearchOverlay />
-              <WhatsAppButton />
-              <Toast />
-            </SearchProvider>
-          </WishlistProvider>
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <WishlistProvider>
+              <SearchProvider>
+                <Navbar />
+                <main className="flex-1">{children}</main>
+                <Footer />
+                <CartDrawer />
+                <SearchOverlay />
+                <WhatsAppButton />
+                <Toast />
+              </SearchProvider>
+            </WishlistProvider>
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
 }
-

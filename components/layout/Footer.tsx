@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { BRAND_INFO } from "@/data/brandInfo";
 import {
   Mail,
@@ -16,6 +17,7 @@ import {
 import { InstagramIcon, FacebookIcon } from "@/components/ui/Icons";
 
 export default function Footer() {
+  const pathname = usePathname();
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -27,10 +29,32 @@ export default function Footer() {
     setTimeout(() => setIsSubscribed(false), 5000);
   };
 
+  // If on /admin page, render ONLY the clean minimal bottom copyright strip (no big consumer footer)
+  if (pathname?.startsWith("/admin")) {
+    return (
+      <footer className="border-t border-[#EFE7DD] bg-[#EFE7DD] py-4 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[#555555]">
+          <p>© {new Date().getFullYear()} Chachiji&apos;s Homemade Cuisine. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-2.5 font-medium text-[11px] sm:text-xs">
+            <span>
+              FSSAI Lic. No: <strong className="text-[#8C201C]">{BRAND_INFO.fssaiNumber}</strong>
+            </span>
+            <span>•</span>
+            <span>
+              GSTIN: <strong>{BRAND_INFO.gstNumber}</strong>
+            </span>
+            <span>•</span>
+            <span>Vaishali, Bihar</span>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="bg-[#FFF9F3] text-[#231F20] border-t border-[#EFE7DD] relative overflow-hidden">
-      {/* 16. Promotional / Newsletter Strip - Solid #6B1815 background with #E07A4A CTA */}
-      <div className="border-b border-[#6B1815] bg-[#6B1815] py-12 px-4 sm:px-6 lg:px-8">
+      {/* 16. Promotional / Newsletter Strip - Solid #8C201C background with #E07A4A CTA */}
+      <div className="border-b border-[#6B1815] bg-[#8C201C] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left max-w-xl">
             <span className="text-[11px] uppercase tracking-widest text-[#E07A4A] font-bold flex items-center justify-center lg:justify-start gap-1.5 mb-1.5">
@@ -100,7 +124,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#E07A4A] shrink-0" />
-                <a href="tel:+918860488004" className="hover:text-[#E07A4A] transition-colors font-medium">
+                <a href={`tel:${BRAND_INFO.phone.replace(/\s+/g, '')}`} className="hover:text-[#E07A4A] transition-colors font-medium">
                   {BRAND_INFO.phone}
                 </a>
               </div>
@@ -162,11 +186,6 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-[#444444]">
               <li>
-                <Link href="/shop" className="hover:text-[#E07A4A] transition-colors">
-                  All Products
-                </Link>
-              </li>
-              <li>
                 <Link href="/shop/achar" className="hover:text-[#E07A4A] transition-colors">
                   Handcrafted Achar
                 </Link>
@@ -177,8 +196,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/shop/bundles" className="hover:text-[#E07A4A] transition-colors">
-                  Gift Boxes &amp; Bundles
+                <Link href="/product/traditional-kacha-aam-ka-achar" className="hover:text-[#E07A4A] transition-colors">
+                  Kacha Aam Ka Achar
                 </Link>
               </li>
               <li>

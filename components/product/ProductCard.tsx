@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Product, ProductVariant } from "@/types/ecommerce";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
-import { Heart, Star, ShoppingBag, Sparkles, Check } from "lucide-react";
+import { Heart, Star, ShoppingBag, Sparkles, Check, ArrowRight } from "lucide-react";
 
 interface ProductCardProps {
   product: Product;
@@ -174,26 +174,27 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
           )}
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-baseline gap-2">
+          <div className="flex items-center justify-between pt-1 gap-2">
+            <div className="flex items-baseline gap-1.5 min-w-0">
               <span className="font-serif text-xl sm:text-2xl font-bold text-[#8C201C]">
                 ₹{selectedVariant.price}
               </span>
               {selectedVariant.mrp > selectedVariant.price && (
-                <span className="text-xs text-[#888888] line-through font-medium">
+                <span className="text-xs text-[#888888] line-through font-medium truncate">
                   ₹{selectedVariant.mrp}
                 </span>
               )}
             </div>
 
-            {/* Mobile Quick Add Button */}
-            <button
-              onClick={handleQuickAdd}
-              className="sm:hidden p-2 rounded-xl bg-[#8C201C] text-[#FFFFFF] hover:bg-[#6B1815] transition-colors shadow-xs"
-              aria-label="Add to cart"
+            {/* Professional Maroon View Details Button */}
+            <Link
+              href={`/product/${product.slug}`}
+              className="inline-flex items-center gap-1 bg-[#8C201C] hover:bg-[#6B1815] text-white text-[11px] font-bold px-3 py-1.5 rounded-xl shadow-xs hover:shadow-sm transition-all active:scale-95 shrink-0 group/btn"
+              title="View Product Details"
             >
-              <ShoppingBag className="w-4 h-4" />
-            </button>
+              <span>View Details</span>
+              <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
+            </Link>
           </div>
         </div>
       </div>

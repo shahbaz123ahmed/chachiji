@@ -1,0 +1,19 @@
+{
+  "slides": [
+    {
+      "id": "about-slide-1",
+      "image": "/about-hero-v2.png",
+      "badge": "Our Roots in Vaishali, Bihar",
+      "headingPrimary": "Crafted by Heart.",
+      "headingSecondary": "Ground by Hand.",
+      "subtitle": "Chachiji was born from an unwavering devotion to the authentic, unadulterated tastes of home — where every achar is cured under open sunshine and every makhana is harvested from sacred wetlands.",
+      "primaryBtnText": "Explore Our Heritage Jars",
+      "primaryBtnLink": "/shop/achar",
+      "secondaryBtnText": "Our Story & Vision",
+      "secondaryBtnLink": "/about#story",
+      "imagePosition": "right",
+      "textAlign": "left",
+      "hideText": false
+    }
+  ]
+}
